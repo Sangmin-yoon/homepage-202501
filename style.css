@@ -634,6 +634,46 @@ body {
 
 /* 반응형 디자인 - 태블릿 크기 */
 @media (max-width: 768px) {
+    /* 태블릿에서도 불필요한 줄바꿈 제거 */
+    .description-preview br,
+    .description-full br {
+        display: none; /* 브랜드 설명 문단에서만 br 태그 숨기기 */
+    }
+    
+    /* 청춘다움 이야기 텍스트의 br 제거 */
+    .greeting-preview br,
+    .greeting-full br {
+        display: none; /* 청춘다움 이야기 문단에서만 br 태그 숨기기 */
+    }
+    
+    /* 미션 부제목의 br 제거 */
+    .mission-subtitle br {
+        display: none; /* 미션 부제목에서 br 태그 숨기기 */
+    }
+    
+    /* 약속 내용의 br 제거 */
+    .promise-content br {
+        display: none; /* 약속 내용에서 br 태그 숨기기 */
+    }
+    
+    /* 브랜드 설명 텍스트를 자연스럽게 */
+    .description-preview,
+    .description-full {
+        text-align: justify; /* 양쪽 정렬 */
+        line-height: 1.6; /* 줄 간격 조정 */
+        word-break: keep-all; /* 단어 단위로 줄바꿈 */
+        word-spacing: 0.05em; /* 단어 간격 조정 */
+    }
+    
+    /* 청춘다움 이야기 텍스트도 자연스럽게 */
+    .greeting-preview p,
+    .greeting-full p {
+        text-align: justify; /* 양쪽 정렬 */
+        line-height: 1.6; /* 줄 간격 조정 */
+        word-break: keep-all; /* 단어 단위로 줄바꿈 */
+        word-spacing: 0.05em; /* 단어 간격 조정 */
+        margin-bottom: 1em; /* 문단 간격 추가 */
+    }
     .header-container {
         display: grid !important; /* 그리드 레이아웃 사용 */
         grid-template-columns: auto 1fr auto; /* 3개 열: 로고, 회사명, 로그인 */
@@ -802,6 +842,62 @@ body {
 
 /* 반응형 디자인 - 모바일 크기 */
 @media (max-width: 480px) {
+    /* 모바일에서 불필요한 줄바꿈 제거 */
+    .description-preview br,
+    .description-full br {
+        display: none; /* 브랜드 설명 문단에서만 br 태그 숨기기 */
+    }
+    
+    /* 청춘다움 이야기 텍스트의 br 제거 */
+    .greeting-preview br,
+    .greeting-full br {
+        display: none; /* 청춘다움 이야기 문단에서만 br 태그 숨기기 */
+    }
+    
+    /* 미션 부제목의 br 제거 */
+    .mission-subtitle br {
+        display: none; /* 미션 부제목에서 br 태그 숨기기 */
+    }
+    
+    /* 약속 내용의 br 제거 */
+    .promise-content br {
+        display: none; /* 약속 내용에서 br 태그 숨기기 */
+    }
+    
+    /* 브랜드 설명 텍스트를 자연스럽게 */
+    .description-preview,
+    .description-full {
+        text-align: justify; /* 양쪽 정렬 */
+        line-height: 1.7; /* 줄 간격 증가 */
+        word-break: keep-all; /* 단어 단위로 줄바꿈 */
+        word-spacing: 0.1em; /* 단어 간격 조정 */
+    }
+    
+    /* 청춘다움 이야기 텍스트도 자연스럽게 */
+    .greeting-preview p,
+    .greeting-full p {
+        text-align: justify; /* 양쪽 정렬 */
+        line-height: 1.7; /* 줄 간격 증가 */
+        word-break: keep-all; /* 단어 단위로 줄바꿈 */
+        word-spacing: 0.1em; /* 단어 간격 조정 */
+        margin-bottom: 1em; /* 문단 간격 추가 */
+    }
+    
+    /* 미션 텍스트도 자연스럽게 */
+    .mission-subtitle {
+        text-align: center; /* 가운데 정렬 유지 */
+        line-height: 1.6; /* 줄 간격 조정 */
+        word-break: keep-all; /* 단어 단위로 줄바꿈 */
+        word-spacing: 0.1em; /* 단어 간격 조정 */
+    }
+    
+    /* 약속 내용 텍스트도 자연스럽게 */
+    .promise-content {
+        text-align: center; /* 가운데 정렬 유지 */
+        line-height: 1.7; /* 줄 간격 증가 */
+        word-break: keep-all; /* 단어 단위로 줄바꿈 */
+        word-spacing: 0.1em; /* 단어 간격 조정 */
+    }
     .header-container {
         padding: 0 15px; /* 좌우 여백 줄이기 */
         display: grid !important; /* 그리드 레이아웃 사용 (flex 오버라이드) */
@@ -894,22 +990,30 @@ body {
         font-size: 20px; /* 글자 크기 더 줄이기 */
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* 그림자 효과 유지 */
         white-space: normal; /* 모바일에서는 줄바꿈 허용 */
+        line-height: 1.3; /* 줄 간격 조정 */
+        word-break: keep-all; /* 단어 단위로 줄바꿈 */
     }
     
     .hero-subtitle {
         font-size: 16px; /* 글자 크기 더 줄이기 */
         white-space: normal; /* 모바일에서는 줄바꿈 허용 */
+        line-height: 1.4; /* 줄 간격 조정 */
+        word-break: keep-all; /* 단어 단위로 줄바꿈 */
     }
     
     .hero-description {
         font-size: 14px; /* 글자 크기 더 줄이기 */
         white-space: normal; /* 모바일에서는 줄바꿈 허용 */
+        line-height: 1.5; /* 줄 간격 조정 */
+        word-break: keep-all; /* 단어 단위로 줄바꿈 */
     }
     
     .hero-list li {
         font-size: 14px; /* 글자 크기 더 줄이기 */
         font-weight: 700; /* 굵은 글자 유지 */
         text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8); /* 더 강한 그림자 효과 유지 */
+        line-height: 1.4; /* 줄 간격 조정 */
+        word-break: keep-all; /* 단어 단위로 줄바꿈 */
     }
     
     .hero-arrow {
