@@ -635,22 +635,53 @@ body {
 /* 반응형 디자인 - 태블릿 크기 */
 @media (max-width: 768px) {
     .header-container {
-        flex-direction: column; /* 세로로 배치 */
-        gap: 15px; /* 간격 늘리기 */
-        align-items: center; /* 세로 배치 시 모든 요소 가운데 정렬 */
+        display: grid !important; /* 그리드 레이아웃 사용 */
+        grid-template-columns: auto 1fr auto; /* 3개 열: 로고, 회사명, 로그인 */
+        grid-template-rows: auto auto; /* 2개 행 */
+        gap: 10px 15px; /* 행 간격 10px, 열 간격 15px */
+        align-items: center; /* 세로 가운데 정렬 */
+        flex-direction: unset; /* 기존 flex-direction 제거 */
+        justify-content: unset; /* 기존 justify-content 제거 */
+    }
+    
+    /* 첫 번째 줄 배치 */
+    .logo {
+        grid-column: 1; /* 첫 번째 열 */
+        grid-row: 1; /* 첫 번째 행 */
     }
     
     .brand-name {
+        grid-column: 2; /* 두 번째 열 */
+        grid-row: 1; /* 첫 번째 행 */
         height: auto; /* 태블릿에서는 높이 자동 조정 */
         justify-content: center; /* 가운데 정렬 */
+        margin: 0;
+    }
+    
+    .login-section {
+        grid-column: 3; /* 세 번째 열 */
+        grid-row: 1; /* 첫 번째 행 */
+    }
+    
+    /* 두 번째 줄 배치 */
+    .nav-menu {
+        grid-column: 1 / -1; /* 전체 열 차지 */
+        grid-row: 2; /* 두 번째 행 */
     }
     
     .brand-name h1 {
         font-size: 20px; /* 글자 크기 줄이기 */
+        text-align: center;
+        margin: 0;
     }
     
+    /* 태블릿 네비게이션 메뉴 */
     .nav-menu ul {
-        gap: 20px; /* 메뉴 간격 줄이기 */
+        flex-direction: row; /* 메뉴를 가로로 배치 */
+        gap: 20px; /* 간격 */
+        justify-content: center; /* 가운데 정렬 */
+        margin: 0;
+        padding: 0;
     }
     
     .nav-menu a {
@@ -773,27 +804,66 @@ body {
 @media (max-width: 480px) {
     .header-container {
         padding: 0 15px; /* 좌우 여백 줄이기 */
-        align-items: center; /* 모든 요소 가운데 정렬 */
+        display: grid !important; /* 그리드 레이아웃 사용 (flex 오버라이드) */
+        grid-template-columns: auto 1fr auto; /* 3개 열: 로고, 회사명, 로그인 */
+        grid-template-rows: auto auto; /* 2개 행 */
+        gap: 8px 10px; /* 행 간격 8px, 열 간격 10px */
+        align-items: center; /* 세로 가운데 정렬 */
+        flex-direction: unset; /* 기존 flex-direction 제거 */
+        justify-content: unset; /* 기존 justify-content 제거 */
     }
     
-    .logo img {
-        height: 55px; /* 로고 크기 - 모바일에서도 조금 더 크게 */
+    /* 첫 번째 줄 배치 */
+    .logo {
+        grid-column: 1; /* 첫 번째 열 */
+        grid-row: 1; /* 첫 번째 행 */
     }
     
     .brand-name {
-        height: 55px; /* 모바일에서 로고 높이와 맞춤 */
+        grid-column: 2; /* 두 번째 열 */
+        grid-row: 1; /* 첫 번째 행 */
         justify-content: center; /* 가운데 정렬 */
+    }
+    
+    .login-section {
+        grid-column: 3; /* 세 번째 열 */
+        grid-row: 1; /* 첫 번째 행 */
+    }
+    
+    /* 두 번째 줄 배치 */
+    .nav-menu {
+        grid-column: 1 / -1; /* 전체 열 차지 */
+        grid-row: 2; /* 두 번째 행 */
+    }
+    
+    .logo img {
+        height: 35px; /* 로고 크기 줄이기 */
+    }
+    
+    .brand-name {
+        height: auto;
+        margin: 0;
     }
     
     .brand-name h1 {
-        font-size: 18px; /* 글자 크기 더 줄이기 */
+        font-size: 14px; /* 글자 크기 줄이기 */
+        text-align: center;
+        margin: 0;
+        line-height: 1.2;
     }
     
+    .login-btn {
+        padding: 6px 12px; /* 버튼 크기 줄이기 */
+        font-size: 12px; /* 글자 크기 줄이기 */
+    }
+    
+    /* 두 번째 줄: 네비게이션 메뉴 */
     .nav-menu ul {
         flex-direction: row; /* 메뉴를 가로로 배치 */
-        gap: 15px; /* 간격 조정 */
-        flex-wrap: wrap; /* 필요시 줄바꿈 허용 */
+        gap: 12px; /* 간격 줄이기 */
         justify-content: center; /* 가운데 정렬 */
+        margin: 0;
+        padding: 0;
     }
     
     .nav-menu a {
