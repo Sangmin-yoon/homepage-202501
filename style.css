@@ -634,27 +634,6 @@ body {
 
 /* 반응형 디자인 - 태블릿 크기 */
 @media (max-width: 768px) {
-    /* 태블릿에서도 불필요한 줄바꿈 제거 */
-    .description-preview br,
-    .description-full br {
-        display: none; /* 브랜드 설명 문단에서만 br 태그 숨기기 */
-    }
-    
-    /* 청춘다움 이야기 텍스트의 br 제거 */
-    .greeting-preview br,
-    .greeting-full br {
-        display: none; /* 청춘다움 이야기 문단에서만 br 태그 숨기기 */
-    }
-    
-    /* 미션 부제목의 br 제거 */
-    .mission-subtitle br {
-        display: none; /* 미션 부제목에서 br 태그 숨기기 */
-    }
-    
-    /* 약속 내용의 br 제거 */
-    .promise-content br {
-        display: none; /* 약속 내용에서 br 태그 숨기기 */
-    }
     
     /* 브랜드 설명 텍스트를 자연스럽게 */
     .description-preview,
@@ -842,27 +821,6 @@ body {
 
 /* 반응형 디자인 - 모바일 크기 */
 @media (max-width: 480px) {
-    /* 모바일에서 불필요한 줄바꿈 제거 */
-    .description-preview br,
-    .description-full br {
-        display: none; /* 브랜드 설명 문단에서만 br 태그 숨기기 */
-    }
-    
-    /* 청춘다움 이야기 텍스트의 br 제거 */
-    .greeting-preview br,
-    .greeting-full br {
-        display: none; /* 청춘다움 이야기 문단에서만 br 태그 숨기기 */
-    }
-    
-    /* 미션 부제목의 br 제거 */
-    .mission-subtitle br {
-        display: none; /* 미션 부제목에서 br 태그 숨기기 */
-    }
-    
-    /* 약속 내용의 br 제거 */
-    .promise-content br {
-        display: none; /* 약속 내용에서 br 태그 숨기기 */
-    }
     
     /* 브랜드 설명 텍스트를 자연스럽게 */
     .description-preview,
