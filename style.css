@@ -1,0 +1,2365 @@
+/* 초기 설정 - 모든 요소의 기본 여백과 패딩을 없애요 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 스무스 스크롤링 설정 */
+html {
+    scroll-behavior: smooth;
+}
+
+/* 전체 페이지 설정 */
+body {
+    font-family: 'Nanum Gothic', sans-serif; /* 나눔고딕 폰트 사용 */
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f8f8;
+}
+
+/* 헤더 전체 영역 설정 */
+.header {
+    background-color: white; /* 배경색상: 흰색 */
+    padding: 15px 0; /* 위아래 여백 15px */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* 헤더 아래 그림자 효과 */
+    position: sticky; /* 스크롤해도 헤더가 위에 고정되도록 */
+    top: 0;
+    z-index: 1000; /* 다른 요소들 위에 표시 */
+}
+
+/* 헤더 내용물을 담는 컨테이너 */
+.header-container {
+    max-width: 1200px; /* 최대 너비 제한 */
+    margin: 0 auto; /* 가운데 정렬 */
+    padding: 0 20px; /* 좌우 여백 */
+    display: flex; /* 가로로 나란히 배치 */
+    align-items: center; /* 세로 가운데로 배치 */
+    justify-content: space-between; /* 양쪽 끝과 가운데로 배치 */
+    gap: 10px; /* 사이사이 간격을 10px */
+}
+
+/* 로고 이미지 설정 */
+.logo a {
+    display: block; /* 블록 요소로 설정 */
+    transition: transform 0.3s ease; /* 부드러운 변화 효과 */
+}
+
+.logo img {
+    height: 70px; /* 로고 높이 - 더 크게 변경 */
+    width: auto; /* 너비는 자동으로 조정 */
+}
+
+.logo a:hover {
+    transform: scale(1.05); /* 마우스 오버시 살짝 확대 */
+}
+
+/* 브랜드 이름 컨테이너 설정 */
+.brand-name {
+    display: flex; /* 플렉스 컨테이너로 설정 */
+    align-items: center; /* 세로 가운데 정렬 */
+    height: 70px; /* 로고 높이와 동일하게 설정 */
+}
+
+/* 브랜드 이름 링크 설정 */
+.brand-name a {
+    text-decoration: none; /* 밑줄 제거 */
+    transition: transform 0.3s ease; /* 부드러운 변화 효과 */
+    display: block; /* 블록 요소로 설정 */
+}
+
+.brand-name a:hover {
+    transform: scale(1.02); /* 마우스 오버시 살짝 확대 */
+}
+
+/* 브랜드 이름 설정 */
+.brand-name h1 {
+    font-size: 24px; /* 글자 크기 */
+    font-weight: 700; /* 굵은 글자 */
+    color: #2B5797; /* 로고와 동일한 파란색 계열 */
+    text-align: center; /* 가운데 정렬 */
+    margin: 0; /* 기본 margin 제거하여 로고와 수직 정렬 맞춤 */
+    padding: 0; /* 기본 padding 제거 */
+    line-height: 1.2; /* 줄 간격 조정 */
+    transition: color 0.3s ease; /* 색상 변화 효과 */
+}
+
+.brand-name a:hover h1 {
+    color: #1a3f66; /* 마우스 오버시 더 진한 파란색 */
+}
+
+/* 가운데 메뉴 설정 */
+.nav-menu ul {
+    display: flex; /* 메뉴를 가로로 나란히 배치 */
+    list-style: none; /* 리스트 점 제거 */
+    gap: 30px; /* 메뉴 사이 간격 */
+    align-items: center; /* 세로 가운데 정렬 */
+}
+
+.nav-menu a {
+    text-decoration: none; /* 밑줄 제거 */
+    color: #333; /* 글자 색상 */
+    font-weight: 700; /* 굵은 글자로 변경 */
+    font-size: 16px; /* 글자 크기 */
+    padding: 10px 15px; /* 안쪽 여백 */
+    border-radius: 5px; /* 모서리 둥글게 */
+    transition: all 0.3s ease; /* 부드러운 효과 */
+}
+
+.nav-menu a:hover {
+    background-color: #f0f0f0; /* 마우스 올렸을 때 배경색 */
+    color: #2c5530; /* 마우스 올렸을 때 글자색 */
+}
+
+/* 로그인 버튼 설정 */
+.login-btn {
+    background-color: white; /* 흰색 바탕 */
+    color: #333; /* 글자 색상 */
+    border: 2px solid #333; /* 검은색 테두리 */
+    border-radius: 25px; /* 둥근 모서리 (radius 25) */
+    padding: 10px 20px; /* 안쪽 여백 */
+    font-size: 16px; /* 글자 크기 */
+    font-weight: 500; /* 중간 굵기 */
+    cursor: pointer; /* 마우스 커서 모양 */
+    transition: all 0.3s ease; /* 부드러운 효과 */
+}
+
+.login-btn:hover {
+    background-color: #333; /* 마우스 올렸을 때 배경색 */
+    color: white; /* 마우스 올렸을 때 글자색 */
+}
+
+/* 히어로 섹션 전체 설정 */
+.hero {
+    position: relative; /* 화살표와 인디케이터 위치 기준 */
+    width: 100%; /* 좌우로 꽉 차게 */
+    height: 600px; /* 높이 설정 */
+    overflow: hidden; /* 넘치는 부분 숨김 */
+}
+
+/* 히어로 컨테이너 */
+.hero-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* 히어로 슬라이드 하나하나 설정 */
+.hero-slide {
+    position: absolute; /* 겹쳐서 배치 */
+    width: 100%;
+    height: 100%;
+    background-size: cover; /* 배경 이미지 꽉 채움 */
+    background-position: center; /* 배경 이미지 가운데 정렬 */
+    background-repeat: no-repeat; /* 배경 이미지 반복 안함 */
+    opacity: 0; /* 처음에는 투명하게 */
+    transition: opacity 1s ease-in-out; /* 부드러운 전환 효과 */
+    display: flex; /* 내용을 가운데 정렬하기 위해 */
+    align-items: center; /* 세로 가운데 정렬 */
+    justify-content: center; /* 가로 가운데 정렬 */
+}
+
+/* 활성화된 슬라이드만 보이게 */
+.hero-slide.active {
+    opacity: 1; /* 활성화된 슬라이드는 보이게 */
+}
+
+/* 히어로 내용 컨테이너 */
+.hero-content {
+    text-align: center; /* 텍스트 가운데 정렬 */
+    max-width: 1000px; /* 최대 너비 늘림 - 긴 텍스트도 한 줄로 */
+    margin: 0 auto; /* 가운데 정렬 */
+}
+
+/* 히어로 텍스트 박스 - 박스 없이 텍스트만 강조 */
+.hero-text-box {
+    padding: 40px; /* 안쪽 여백 */
+    /* 배경, 그림자, 테두리 모두 제거 */
+}
+
+/* 히어로 브랜드 이름 */
+.hero-brand {
+    font-size: 32px; /* 글씨 크기 줄여서 한 줄로 */
+    font-weight: 700; /* 굵은 글자 */
+    color: #ffffff; /* 흰색 글자로 변경 */
+    margin-bottom: 20px; /* 아래 여백 */
+    line-height: 1.2; /* 줄 간격 */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* 강한 검은색 그림자로 가독성 향상 */
+    white-space: nowrap; /* 한 줄로 강제 */
+}
+
+/* 히어로 부제목 */
+.hero-subtitle {
+    font-size: 22px; /* 글자 크기 줄여서 한 줄로 */
+    font-weight: 600; /* 중간 굵기 */
+    color: #ffffff; /* 흰색 글자로 변경 */
+    margin-bottom: 15px; /* 아래 여백 */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* 강한 검은색 그림자로 가독성 향상 */
+    white-space: nowrap; /* 한 줄로 강제 */
+}
+
+/* 히어로 설명 */
+.hero-description {
+    font-size: 16px; /* 글자 크기 줄여서 한 줄로 */
+    color: #ffffff; /* 흰색 글자로 변경 */
+    line-height: 1.6; /* 줄 간격 */
+    margin-bottom: 0; /* 아래 여백 제거 */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* 강한 검은색 그림자로 가독성 향상 */
+    white-space: nowrap; /* 한 줄로 강제 */
+}
+
+/* 히어로 리스트 */
+.hero-list {
+    list-style: none; /* 기본 리스트 스타일 제거 */
+    padding: 0; /* 패딩 제거 */
+    margin: 20px 0; /* 위아래 여백 */
+}
+
+.hero-list li {
+    font-size: 18px; /* 글자 크기 */
+    color: #ffffff; /* 흰색 글자로 변경 */
+    margin-bottom: 10px; /* 아래 여백 */
+    font-weight: 700; /* 굵은 글자로 변경 */
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8); /* 더 강한 검은색 그림자로 가독성 향상 */
+}
+
+/* 좌우 화살표 버튼 */
+.hero-arrow {
+    position: absolute; /* 절대 위치 */
+    top: 50%; /* 세로 중앙 */
+    transform: translateY(-50%); /* 정확한 가운데 정렬 */
+    background-color: rgba(255, 255, 255, 0.8); /* 흰색 배경 */
+    color: #333; /* 글자 색상 */
+    border: none; /* 테두리 없음 */
+    width: 50px; /* 너비 */
+    height: 50px; /* 높이 */
+    border-radius: 50%; /* 원형 */
+    font-size: 24px; /* 글자 크기 */
+    cursor: pointer; /* 마우스 커서 */
+    transition: all 0.3s ease; /* 부드러운 효과 */
+    z-index: 10; /* 다른 요소 위에 표시 */
+}
+
+.hero-arrow:hover {
+    background-color: rgba(255, 255, 255, 1); /* 마우스 올렸을 때 불투명하게 */
+    transform: translateY(-50%) scale(1.1); /* 살짝 크게 */
+}
+
+/* 왼쪽 화살표 */
+.hero-arrow-left {
+    left: 30px; /* 왼쪽에서 30px */
+}
+
+/* 오른쪽 화살표 */
+.hero-arrow-right {
+    right: 30px; /* 오른쪽에서 30px */
+}
+
+/* 슬라이드 인디케이터 */
+.hero-indicators {
+    position: absolute; /* 절대 위치 */
+    bottom: 30px; /* 아래에서 30px */
+    left: 50%; /* 왼쪽에서 50% */
+    transform: translateX(-50%); /* 가운데 정렬 */
+    display: flex; /* 가로 정렬 */
+    gap: 10px; /* 간격 */
+}
+
+/* 인디케이터 점 */
+.indicator {
+    width: 12px; /* 너비 */
+    height: 12px; /* 높이 */
+    border-radius: 50%; /* 원형 */
+    background-color: rgba(255, 255, 255, 0.5); /* 반투명 흰색 */
+    cursor: pointer; /* 마우스 커서 */
+    transition: all 0.3s ease; /* 부드러운 효과 */
+}
+
+/* 활성화된 인디케이터 */
+.indicator.active {
+    background-color: white; /* 흰색 */
+    transform: scale(1.2); /* 조금 크게 */
+}
+
+/* 운영브랜드 섹션 전체 설정 */
+.brands-section {
+    padding: 80px 0; /* 위아래 여백 */
+    background-color: #f8f9fa; /* 연한 회색 배경 */
+    scroll-margin-top: 100px; /* 스크롤 오프셋 설정 */
+}
+
+/* 컨테이너 설정 */
+.container {
+    max-width: 1200px; /* 최대 너비 */
+    margin: 0 auto; /* 가운데 정렬 */
+    padding: 0 20px; /* 좌우 여백 */
+}
+
+/* 섹션 제목 */
+.product-title {
+    font-size: 30px; /* 글씨 크기 30% 축소 (42px → 30px) */
+    font-weight: 700; /* 굵은 글자 */
+    color: #2B5797; /* 청춘다움 로고와 동일한 파란색 */
+    text-align: center; /* 가운데 정렬 */
+    margin-bottom: 60px; /* 아래 여백 */
+    line-height: 1.2; /* 줄 간격 */
+    
+    /* 디자인 요소 추가 */
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); /* 부드러운 그라데이션 배경 */
+    padding: 28px 42px; /* 안쪽 여백 30% 축소 (40px → 28px, 60px → 42px) */
+    border-radius: 14px; /* 둥근 모서리 30% 축소 (20px → 14px) */
+    box-shadow: 
+        0 7px 21px rgba(43, 87, 151, 0.1), /* 메인 그림자 30% 축소 */
+        0 3px 10px rgba(0, 0, 0, 0.05), /* 보조 그림자 30% 축소 */
+        inset 0 1px 0 rgba(255, 255, 255, 0.8); /* 내부 하이라이트 */
+    text-shadow: 0 2px 4px rgba(43, 87, 151, 0.1); /* 텍스트 그림자 */
+    position: relative; /* 장식 요소를 위한 기준점 */
+    overflow: hidden; /* 장식 요소가 넘치지 않도록 */
+    border: 1px solid rgba(43, 87, 151, 0.1); /* 미세한 테두리 */
+    transition: all 0.3s ease; /* 부드러운 애니메이션 */
+    max-width: 560px; /* 최대 너비 30% 축소 (800px → 560px) */
+    margin: 0 auto 60px auto; /* 가운데 정렬과 아래 여백 */
+}
+
+/* 제목에 호버 효과 추가 */
+.product-title:hover {
+    transform: translateY(-2px); /* 살짝 위로 이동 */
+    box-shadow: 
+        0 10px 28px rgba(43, 87, 151, 0.15), /* 더 강한 메인 그림자 30% 축소 */
+        0 4px 14px rgba(0, 0, 0, 0.08), /* 더 강한 보조 그림자 30% 축소 */
+        inset 0 1px 0 rgba(255, 255, 255, 0.8); /* 내부 하이라이트 유지 */
+}
+
+/* 제목 앞에 장식적 요소 추가 */
+.product-title::before {
+    content: "✦"; /* 별 모양 장식 */
+    position: absolute;
+    left: 21px; /* 위치 30% 축소 (30px → 21px) */
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 17px; /* 크기 30% 축소 (24px → 17px) */
+    color: rgba(43, 87, 151, 0.3);
+    animation: sparkle 3s ease-in-out infinite; /* 반짝이는 애니메이션 */
+}
+
+/* 제목 뒤에 장식적 요소 추가 */
+.product-title::after {
+    content: "✦"; /* 별 모양 장식 */
+    position: absolute;
+    right: 21px; /* 위치 30% 축소 (30px → 21px) */
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 17px; /* 크기 30% 축소 (24px → 17px) */
+    color: rgba(43, 87, 151, 0.3);
+    animation: sparkle 3s ease-in-out infinite 1.5s; /* 다른 타이밍으로 반짝이기 */
+}
+
+/* 반짝이는 애니메이션 정의 */
+@keyframes sparkle {
+    0%, 100% { 
+        opacity: 0.3; 
+        transform: translateY(-50%) scale(1);
+    }
+    50% { 
+        opacity: 0.8; 
+        transform: translateY(-50%) scale(1.1);
+    }
+}
+
+/* 브랜드 컨테이너 */
+.brands-container {
+    display: flex; /* 세로 배치를 위한 플렉스 */
+    flex-direction: column; /* 세로로 배치 */
+    gap: 60px; /* 각 매장 사이 간격 */
+}
+
+/* 각 브랜드 아이템 */
+.brand-item {
+    background-color: white; /* 흰색 배경 */
+    border-radius: 15px; /* 둥근 모서리 */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* 부드러운 그림자 */
+    overflow: hidden; /* 넘치는 부분 숨김 */
+    transition: transform 0.3s ease; /* 부드러운 효과 */
+}
+
+/* 브랜드 아이템 호버 효과 */
+.brand-item:hover {
+    transform: translateY(-5px); /* 마우스 올리면 살짝 위로 */
+}
+
+/* 브랜드 이미지 */
+.brand-image {
+    width: 100%; /* 전체 너비 */
+    height: 300px; /* 고정 높이 */
+    object-fit: cover; /* 이미지 비율 유지하며 크기 맞춤 */
+    margin: 0 3px; /* 좌우여백 3px */
+}
+
+/* 브랜드 콘텐츠 영역 */
+.brand-content {
+    padding: 30px; /* 안쪽 여백 */
+}
+
+/* 브랜드 이름 */
+.brand-name {
+    font-size: 24px; /* 글자 크기 */
+    font-weight: 700; /* 굵은 글자 */
+    color: #333; /* 글자 색상 */
+    margin-bottom: 20px; /* 아래 여백 */
+    text-align: center; /* 가운데 정렬 */
+}
+
+/* 브랜드 설명 영역 */
+.brand-description {
+    margin-bottom: 30px; /* 아래 여백 */
+}
+
+/* 설명 텍스트 */
+.description-preview,
+.description-full {
+    font-size: 16px; /* 글자 크기 */
+    line-height: 1.6; /* 줄 간격 */
+    color: #666; /* 글자 색상 */
+    margin-bottom: 15px; /* 아래 여백 */
+}
+
+/* 더보기/접기 버튼 */
+.toggle-btn {
+    background-color: #2B5797; /* 브랜드 색상 */
+    color: white; /* 흰색 글자 */
+    border: none; /* 테두리 없음 */
+    padding: 10px 20px; /* 안쪽 여백 */
+    border-radius: 25px; /* 둥근 모서리 */
+    font-size: 14px; /* 글자 크기 */
+    font-weight: 500; /* 중간 굵기 */
+    cursor: pointer; /* 마우스 커서 */
+    transition: all 0.3s ease; /* 부드러운 효과 */
+    display: block; /* 블록 요소 */
+    margin: 0 auto; /* 가운데 정렬 */
+}
+
+.toggle-btn:hover {
+    background-color: #1e4a7a; /* 마우스 올렸을 때 더 진한 색 */
+    transform: scale(1.05); /* 살짝 크게 */
+}
+
+/* 매장문의 영역 */
+.brand-contact {
+    text-align: center; /* 가운데 정렬 */
+    border-top: 1px solid #eee; /* 위쪽 테두리 */
+    padding-top: 20px; /* 위쪽 여백 */
+}
+
+/* 매장문의 텍스트 */
+.contact-text {
+    font-size: 16px; /* 글자 크기 */
+    font-weight: 600; /* 조금 굵은 글자 */
+    color: #333; /* 글자 색상 */
+    margin-bottom: 15px; /* 아래 여백 */
+}
+
+/* 연락처 정보 컨테이너 */
+.contact-info {
+    display: flex; /* 가로 배치 */
+    align-items: center; /* 가운데 정렬로 변경 */
+    justify-content: center; /* 가운데 정렬 */
+    gap: 20px; /* QR코드와 계정 정보 사이 간격 */
+    flex-wrap: wrap; /* 작은 화면에서 줄바꿈 허용 */
+}
+
+/* QR코드 이미지 */
+.qr-code {
+    width: 120px; /* 너비 - 핸드폰으로 인식 가능한 크기 */
+    height: 120px; /* 높이 */
+    border-radius: 10px; /* 둥근 모서리 */
+    transition: transform 0.3s ease; /* 부드러운 효과 */
+}
+
+.qr-code:hover {
+    transform: scale(1.1); /* 마우스 올리면 조금 크게 */
+}
+
+/* 계정 정보 영역 */
+.account-info {
+    display: flex; /* 세로 배치 */
+    flex-direction: column; /* 세로 정렬 */
+    gap: 8px; /* 각 계정 사이 간격 */
+    align-items: center; /* 가운데 정렬로 변경 */
+}
+
+/* 각 계정 아이템 */
+.account-item {
+    display: flex; /* 가로 배치 */
+    align-items: center; /* 세로 가운데 정렬 */
+    gap: 8px; /* 아이콘과 텍스트 사이 간격 */
+    background-color: #f8f9fa; /* 연한 회색 배경 */
+    padding: 8px 12px; /* 안쪽 여백 */
+    border-radius: 20px; /* 둥근 모서리 */
+    border: 1px solid #e9ecef; /* 테두리 */
+    transition: all 0.3s ease; /* 부드러운 효과 */
+    min-width: 0; /* 텍스트 줄바꿈을 위한 최소 너비 */
+}
+
+.account-item:hover {
+    background-color: #e9ecef; /* 마우스 올렸을 때 조금 더 진한 배경 */
+    transform: translateY(-2px); /* 살짝 위로 */
+}
+
+/* 플랫폼 아이콘 */
+.platform-icon {
+    width: 20px; /* 아이콘 너비 */
+    height: 20px; /* 아이콘 높이 */
+    object-fit: contain; /* 비율 유지 */
+    flex-shrink: 0; /* 축소 방지 */
+}
+
+/* 계정 이름 */
+.account-name {
+    font-size: 14px; /* 글자 크기 */
+    font-weight: 500; /* 중간 굵기 */
+    color: #495057; /* 글자 색상 */
+    word-break: break-all; /* 긴 텍스트 줄바꿈 */
+}
+
+/* H.O.P.E 채팅봇 섹션 스타일 */
+.chatbot-section {
+    margin-top: 20px; /* 위쪽 여백 */
+    padding-top: 20px; /* 안쪽 위 여백 */
+    border-top: 1px solid #eee; /* 위쪽 경계선 */
+}
+
+.chatbot-btn {
+    display: flex; /* 플렉스 컨테이너 */
+    align-items: center; /* 세로 가운데 정렬 */
+    gap: 10px; /* 아이콘과 텍스트 사이 간격 */
+    background: linear-gradient(135deg, #a8b5d1 0%, #c8d2e7 100%); /* 연한 그라데이션 배경 */
+    color: #2B5797; /* 브랜드 색상 글자 */
+    text-decoration: none; /* 밑줄 제거 */
+    padding: 12px 20px; /* 안쪽 여백 */
+    border-radius: 25px; /* 둥근 모서리 */
+    margin: 10px 0; /* 위아래 여백 */
+    transition: all 0.3s ease; /* 부드러운 효과 */
+    box-shadow: 0 4px 15px rgba(168, 181, 209, 0.25); /* 연한 그림자 효과 */
+    justify-content: center; /* 가로 가운데 정렬 */
+    border: 1px solid rgba(43, 87, 151, 0.15); /* 미세한 브랜드 색상 테두리 */
+}
+
+.chatbot-btn:hover {
+    transform: translateY(-2px); /* 마우스 오버시 위로 살짝 이동 */
+    box-shadow: 0 6px 20px rgba(168, 181, 209, 0.35); /* 연한 그림자 강화 */
+    background: linear-gradient(135deg, #95a8c7 0%, #b8c7de 100%); /* 호버시 살짝 더 진한 그라데이션 */
+    border-color: rgba(43, 87, 151, 0.25); /* 호버시 테두리 색상 강화 */
+}
+
+.chatbot-icon {
+    font-size: 20px; /* 아이콘 크기 */
+    animation: bounce 2s infinite; /* 바운스 애니메이션 */
+}
+
+.chatbot-text {
+    font-weight: 600; /* 굵은 글자 */
+    font-size: 14px; /* 글자 크기 */
+}
+
+.chatbot-description {
+    font-size: 12px; /* 작은 글자 */
+    color: #888; /* 회색 글자 */
+    text-align: center; /* 가운데 정렬 */
+    margin-top: 8px; /* 위쪽 여백 */
+    line-height: 1.4; /* 줄 간격 */
+}
+
+/* 채팅봇 아이콘 바운스 애니메이션 */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-3px);
+    }
+    60% {
+        transform: translateY(-2px);
+    }
+}
+
+/* 맨 위로 가기 버튼 스타일 */
+.scroll-to-top-btn {
+    position: fixed; /* 화면에 고정 */
+    bottom: 30px; /* 화면 하단에서 30px */
+    right: 30px; /* 화면 우측에서 30px */
+    width: 60px; /* 버튼 너비 */
+    height: 60px; /* 버튼 높이 */
+    background: linear-gradient(135deg, #2B5797 0%, #1a3f66 100%); /* 브랜드 색상 그라데이션 */
+    color: white; /* 흰색 글자 */
+    border: none; /* 테두리 제거 */
+    border-radius: 50%; /* 원형 버튼 */
+    cursor: pointer; /* 마우스 커서 변경 */
+    box-shadow: 0 4px 20px rgba(43, 87, 151, 0.3); /* 그림자 효과 */
+    transition: all 0.3s ease; /* 부드러운 변화 효과 */
+    display: flex; /* 플렉스 컨테이너 */
+    flex-direction: column; /* 세로 배치 */
+    align-items: center; /* 가운데 정렬 */
+    justify-content: center; /* 가운데 정렬 */
+    z-index: 1000; /* 다른 요소들 위에 표시 */
+    opacity: 0; /* 처음에는 투명 */
+    visibility: hidden; /* 처음에는 숨김 */
+    transform: translateY(20px); /* 처음에는 아래쪽에 위치 */
+}
+
+.scroll-to-top-btn.show {
+    opacity: 1; /* 보이기 */
+    visibility: visible; /* 표시 */
+    transform: translateY(0); /* 원래 위치로 */
+}
+
+.scroll-to-top-btn:hover {
+    transform: translateY(-5px); /* 마우스 오버시 위로 이동 */
+    box-shadow: 0 6px 25px rgba(43, 87, 151, 0.4); /* 그림자 강화 */
+    background: linear-gradient(135deg, #1a3f66 0%, #2B5797 100%); /* 그라데이션 반전 */
+}
+
+.scroll-arrow {
+    font-size: 18px; /* 화살표 크기 */
+    font-weight: bold; /* 굵은 글자 */
+    margin-bottom: 2px; /* 아래 여백 */
+}
+
+.scroll-text {
+    font-size: 10px; /* 작은 글자 */
+    font-weight: 600; /* 중간 굵기 */
+    letter-spacing: 1px; /* 글자 간격 */
+}
+
+
+
+/* 반응형 디자인 - 태블릿 크기 */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column; /* 세로로 배치 */
+        gap: 15px; /* 간격 늘리기 */
+        align-items: center; /* 세로 배치 시 모든 요소 가운데 정렬 */
+    }
+    
+    .brand-name {
+        height: auto; /* 태블릿에서는 높이 자동 조정 */
+        justify-content: center; /* 가운데 정렬 */
+    }
+    
+    .brand-name h1 {
+        font-size: 20px; /* 글자 크기 줄이기 */
+    }
+    
+    .nav-menu ul {
+        gap: 20px; /* 메뉴 간격 줄이기 */
+    }
+    
+    .nav-menu a {
+        font-size: 14px; /* 글자 크기 줄이기 */
+        font-weight: 700; /* 굵은 글자 유지 */
+        padding: 8px 12px; /* 패딩 줄이기 */
+    }
+    
+    /* 히어로 섹션 태블릿 반응형 */
+    .hero {
+        height: 500px; /* 높이 줄이기 */
+    }
+    
+    .hero-text-box {
+        padding: 30px; /* 패딩 줄이기 */
+    }
+    
+    .hero-brand {
+        font-size: 26px; /* 글자 크기 줄이기 */
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* 그림자 효과 유지 */
+        white-space: normal; /* 태블릿에서는 줄바꿈 허용 */
+    }
+    
+    .hero-subtitle {
+        font-size: 18px; /* 글자 크기 줄이기 */
+        white-space: normal; /* 태블릿에서는 줄바꿈 허용 */
+    }
+    
+    .hero-description {
+        font-size: 14px; /* 글자 크기 줄이기 */
+        white-space: normal; /* 태블릿에서는 줄바꿈 허용 */
+    }
+    
+    .hero-list li {
+        font-size: 16px; /* 글자 크기 줄이기 */
+        font-weight: 700; /* 굵은 글자 유지 */
+        text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8); /* 더 강한 그림자 효과 유지 */
+    }
+    
+    .hero-arrow {
+        width: 40px; /* 크기 줄이기 */
+        height: 40px; /* 크기 줄이기 */
+        font-size: 20px; /* 글자 크기 줄이기 */
+    }
+    
+    .hero-arrow-left {
+        left: 20px; /* 여백 줄이기 */
+    }
+    
+    .hero-arrow-right {
+        right: 20px; /* 여백 줄이기 */
+    }
+    
+    /* 운영브랜드 섹션 태블릿 반응형 */
+    .brands-section {
+        padding: 60px 0; /* 패딩 조정 */
+    }
+    
+    .product-title {
+        font-size: 25px; /* 제목 크기 30% 축소 (36px → 25px) */
+        margin-bottom: 50px; /* 여백 조정 */
+        padding: 25px 35px; /* 패딩 30% 축소 (35px → 25px, 50px → 35px) */
+        max-width: 490px; /* 최대 너비 30% 축소 (700px → 490px) */
+        border-radius: 10px; /* 모서리 반지름 30% 축소 (14px → 10px) */
+    }
+    
+    .product-title::before,
+    .product-title::after {
+        font-size: 14px; /* 장식 요소 크기 30% 축소 (20px → 14px) */
+        left: 18px; /* 위치 30% 축소 (25px → 18px) */
+        right: 18px; /* 위치 30% 축소 (25px → 18px) */
+    }
+    
+    .brands-container {
+        gap: 50px; /* 매장 사이 간격 조정 */
+    }
+    
+    .brand-image {
+        height: 250px; /* 이미지 높이 조정 */
+    }
+    
+    .brand-content {
+        padding: 25px; /* 패딩 조정 */
+    }
+    
+    .brand-name {
+        font-size: 22px; /* 브랜드 이름 크기 조정 */
+    }
+    
+    .description-preview,
+    .description-full {
+        font-size: 15px; /* 텍스트 크기 조정 */
+    }
+    
+    .qr-code {
+        width: 110px; /* QR코드 크기 조정 */
+        height: 110px; /* QR코드 크기 조정 */
+    }
+    
+    /* 연락처 정보 태블릿 반응형 */
+    .contact-info {
+        gap: 15px; /* 간격 조정 */
+    }
+    
+    .account-item {
+        padding: 6px 10px; /* 패딩 줄이기 */
+    }
+    
+    .platform-icon {
+        width: 18px; /* 아이콘 크기 조정 */
+        height: 18px; /* 아이콘 크기 조정 */
+    }
+    
+    .account-name {
+        font-size: 13px; /* 글자 크기 조정 */
+    }
+}
+
+/* 반응형 디자인 - 모바일 크기 */
+@media (max-width: 480px) {
+    .header-container {
+        padding: 0 15px; /* 좌우 여백 줄이기 */
+        align-items: center; /* 모든 요소 가운데 정렬 */
+    }
+    
+    .logo img {
+        height: 55px; /* 로고 크기 - 모바일에서도 조금 더 크게 */
+    }
+    
+    .brand-name {
+        height: 55px; /* 모바일에서 로고 높이와 맞춤 */
+        justify-content: center; /* 가운데 정렬 */
+    }
+    
+    .brand-name h1 {
+        font-size: 18px; /* 글자 크기 더 줄이기 */
+    }
+    
+    .nav-menu ul {
+        flex-direction: column; /* 메뉴를 세로로 배치 */
+        gap: 10px; /* 간격 줄이기 */
+    }
+    
+    .nav-menu a {
+        font-size: 14px; /* 글자 크기 */
+        padding: 8px 15px; /* 패딩 조정 */
+    }
+    
+    .login-btn {
+        padding: 8px 16px; /* 버튼 크기 줄이기 */
+        font-size: 14px; /* 글자 크기 줄이기 */
+    }
+    
+    /* 히어로 섹션 모바일 반응형 */
+    .hero {
+        height: 400px; /* 높이 더 줄이기 */
+    }
+    
+    .hero-content {
+        max-width: 90%; /* 너비 조정 */
+        margin: 0 auto; /* 가운데 정렬 */
+    }
+    
+    .hero-text-box {
+        padding: 20px; /* 패딩 더 줄이기 */
+    }
+    
+    .hero-brand {
+        font-size: 20px; /* 글자 크기 더 줄이기 */
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* 그림자 효과 유지 */
+        white-space: normal; /* 모바일에서는 줄바꿈 허용 */
+    }
+    
+    .hero-subtitle {
+        font-size: 16px; /* 글자 크기 더 줄이기 */
+        white-space: normal; /* 모바일에서는 줄바꿈 허용 */
+    }
+    
+    .hero-description {
+        font-size: 14px; /* 글자 크기 더 줄이기 */
+        white-space: normal; /* 모바일에서는 줄바꿈 허용 */
+    }
+    
+    .hero-list li {
+        font-size: 14px; /* 글자 크기 더 줄이기 */
+        font-weight: 700; /* 굵은 글자 유지 */
+        text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8); /* 더 강한 그림자 효과 유지 */
+    }
+    
+    .hero-arrow {
+        width: 35px; /* 크기 더 줄이기 */
+        height: 35px; /* 크기 더 줄이기 */
+        font-size: 16px; /* 글자 크기 더 줄이기 */
+    }
+    
+    .hero-arrow-left {
+        left: 10px; /* 여백 더 줄이기 */
+    }
+    
+    .hero-arrow-right {
+        right: 10px; /* 여백 더 줄이기 */
+    }
+    
+    .hero-indicators {
+        bottom: 20px; /* 아래 여백 줄이기 */
+    }
+    
+    .indicator {
+        width: 10px; /* 크기 줄이기 */
+        height: 10px; /* 크기 줄이기 */
+    }
+    
+    /* 운영브랜드 섹션 모바일 반응형 */
+    .brands-section {
+        padding: 50px 0; /* 패딩 줄이기 */
+    }
+    
+    .product-title {
+        font-size: 20px; /* 제목 크기 30% 축소 (28px → 20px) */
+        margin-bottom: 40px; /* 여백 줄이기 */
+        padding: 18px 25px; /* 패딩 30% 축소 (25px → 18px, 35px → 25px) */
+        max-width: 90%; /* 모바일에서 너비 조정 */
+        border-radius: 10px; /* 모서리 반지름 30% 축소 (15px → 10px) */
+    }
+    
+    .product-title::before,
+    .product-title::after {
+        font-size: 11px; /* 장식 요소 크기 30% 축소 (16px → 11px) */
+        left: 11px; /* 위치 30% 축소 (15px → 11px) */
+        right: 11px; /* 위치 30% 축소 (15px → 11px) */
+    }
+    
+    .brands-container {
+        gap: 40px; /* 매장 사이 간격 줄이기 */
+    }
+    
+    .brand-image {
+        height: 200px; /* 이미지 높이 줄이기 */
+    }
+    
+    .brand-content {
+        padding: 20px; /* 패딩 줄이기 */
+    }
+    
+    .brand-name {
+        font-size: 20px; /* 브랜드 이름 크기 줄이기 */
+    }
+    
+    .description-preview,
+    .description-full {
+        font-size: 14px; /* 텍스트 크기 줄이기 */
+    }
+    
+    .qr-code {
+        width: 100px; /* QR코드 크기 줄이기 */
+        height: 100px; /* QR코드 크기 줄이기 */
+    }
+    
+    /* 연락처 정보 모바일 반응형 */
+    .contact-info {
+        flex-direction: column; /* 세로 배치로 변경 */
+        gap: 15px; /* 간격 조정 */
+        align-items: center; /* 가운데 정렬 */
+    }
+    
+    .account-info {
+        align-items: center; /* 가운데 정렬 */
+        width: 100%; /* 전체 너비 사용 */
+    }
+    
+    .account-item {
+        padding: 6px 10px; /* 패딩 줄이기 */
+        justify-content: center; /* 가운데 정렬 */
+        width: fit-content; /* 내용에 맞는 너비 */
+    }
+    
+    .platform-icon {
+        width: 16px; /* 아이콘 크기 더 줄이기 */
+        height: 16px; /* 아이콘 크기 더 줄이기 */
+    }
+    
+    .account-name {
+        font-size: 12px; /* 글자 크기 더 줄이기 */
+    }
+    
+    /* H.O.P.E 채팅봇 모바일 스타일 */
+    .chatbot-btn {
+        padding: 10px 15px; /* 모바일에서 패딩 줄이기 */
+    }
+    
+    .chatbot-icon {
+        font-size: 18px; /* 아이콘 크기 줄이기 */
+    }
+    
+    .chatbot-text {
+        font-size: 13px; /* 텍스트 크기 줄이기 */
+    }
+    
+    .chatbot-description {
+        font-size: 11px; /* 설명 글자 더 작게 */
+    }
+    
+    /* 맨 위로 가기 버튼 모바일 스타일 */
+    .scroll-to-top-btn {
+        bottom: 20px; /* 모바일에서 하단 여백 줄이기 */
+        right: 20px; /* 모바일에서 우측 여백 줄이기 */
+        width: 50px; /* 버튼 크기 줄이기 */
+        height: 50px; /* 버튼 크기 줄이기 */
+    }
+    
+    .scroll-arrow {
+        font-size: 16px; /* 화살표 크기 줄이기 */
+    }
+    
+    .scroll-text {
+        font-size: 9px; /* 텍스트 크기 줄이기 */
+    }
+}
+
+/* 청춘다움 소개 섹션 전체 설정 */
+.youthfulness-section {
+    padding: 80px 0; /* 위아래 여백 80px */
+    background-color: white; /* 흰색 배경 */
+    scroll-margin-top: 100px; /* 스크롤 오프셋 설정 */
+}
+
+/* 청춘다움 미션 컨테이너 */
+.mission-container {
+    text-align: center; /* 가운데 정렬 */
+    margin-bottom: 80px; /* 아래 여백 80px */
+    padding: 60px 40px; /* 안쪽 여백 */
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); /* 부드러운 그라데이션 배경 */
+    border-radius: 20px; /* 둥근 모서리 */
+    box-shadow: 0 8px 25px rgba(43, 87, 151, 0.1); /* 부드러운 그림자 */
+}
+
+/* 미션 제목 */
+.mission-title {
+    font-size: 36px; /* 큰 글씨 */
+    font-weight: 700; /* 굵은 글자 */
+    color: #2B5797; /* 브랜드 색상 */
+    margin-bottom: 30px; /* 아래 여백 */
+    text-shadow: 0 2px 4px rgba(43, 87, 151, 0.1); /* 텍스트 그림자 */
+}
+
+/* 미션 부제목 */
+.mission-subtitle {
+    font-size: 24px; /* 글자 크기 늘리기 */
+    font-weight: 700; /* 굵은 글자로 변경 */
+    color: #2B5797; /* 브랜드 색상으로 변경 */
+    line-height: 1.5; /* 줄 간격 조정 */
+    margin-bottom: 40px; /* 아래 여백 */
+    text-shadow: 0 2px 4px rgba(43, 87, 151, 0.1); /* 텍스트 그림자 추가 */
+    letter-spacing: 0.5px; /* 글자 간격 추가 */
+}
+
+/* 미션 리스트 */
+.mission-list {
+    display: grid; /* 그리드 레이아웃 사용 */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* 반응형 그리드 */
+    gap: 30px; /* 각 미션 카드 사이 간격 */
+    margin-top: 20px; /* 위쪽 여백 */
+}
+
+/* 미션 아이템 - 카드형 디자인 */
+.mission-item {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%); /* 흰색 그라데이션 배경 */
+    color: #333; /* 어두운 글자 */
+    padding: 30px 25px; /* 안쪽 여백 늘리기 */
+    border-radius: 15px; /* 둥근 모서리 */
+    font-size: 16px; /* 글자 크기 */
+    font-weight: 600; /* 중간 굵기 */
+    box-shadow: 
+        0 8px 25px rgba(43, 87, 151, 0.15), /* 메인 그림자 */
+        0 4px 10px rgba(0, 0, 0, 0.08); /* 보조 그림자 */
+    transition: all 0.4s ease; /* 부드러운 효과 */
+    cursor: pointer; /* 마우스 커서 */
+    position: relative; /* 숫자 배치를 위한 상대 위치 */
+    border: 2px solid rgba(43, 87, 151, 0.1); /* 미세한 테두리 */
+    text-align: center; /* 가운데 정렬 */
+    min-height: 120px; /* 최소 높이 설정 */
+    display: flex; /* 플렉스 컨테이너 */
+    align-items: center; /* 세로 가운데 정렬 */
+    justify-content: center; /* 가로 가운데 정렬 */
+}
+
+/* 미션 아이템에 숫자 추가 */
+.mission-item::before {
+    content: attr(data-number); /* HTML data 속성에서 숫자 가져오기 */
+    position: absolute; /* 절대 위치 */
+    top: -15px; /* 위쪽으로 올리기 */
+    left: 20px; /* 왼쪽에서 20px */
+    background: linear-gradient(135deg, #2B5797 0%, #1e4a7a 100%); /* 브랜드 색상 그라데이션 */
+    color: white; /* 흰색 글자 */
+    width: 40px; /* 너비 */
+    height: 40px; /* 높이 */
+    border-radius: 50%; /* 원형 */
+    display: flex; /* 플렉스 컨테이너 */
+    align-items: center; /* 세로 가운데 정렬 */
+    justify-content: center; /* 가로 가운데 정렬 */
+    font-size: 18px; /* 글자 크기 */
+    font-weight: 700; /* 굵은 글자 */
+    box-shadow: 0 4px 15px rgba(43, 87, 151, 0.3); /* 그림자 */
+}
+
+/* 미션 아이템 호버 효과 */
+.mission-item:hover {
+    transform: translateY(-8px) scale(1.02); /* 위로 이동하며 살짝 확대 */
+    box-shadow: 
+        0 15px 35px rgba(43, 87, 151, 0.2), /* 더 강한 메인 그림자 */
+        0 8px 15px rgba(0, 0, 0, 0.12); /* 더 강한 보조 그림자 */
+    border-color: rgba(43, 87, 151, 0.3); /* 테두리 색상 강화 */
+}
+
+/* 미션 아이템 호버 시 숫자 효과 */
+.mission-item:hover::before {
+    transform: scale(1.1); /* 숫자 확대 */
+    box-shadow: 0 6px 20px rgba(43, 87, 151, 0.4); /* 더 강한 그림자 */
+}
+
+/* 청춘다움의 약속 컨테이너 */
+.promise-container {
+    text-align: center; /* 가운데 정렬 */
+    margin-bottom: 80px; /* 아래 여백 */
+    padding: 50px 40px; /* 안쪽 여백 */
+}
+
+/* 약속 제목 */
+.promise-title {
+    font-size: 32px; /* 글자 크기 */
+    font-weight: 700; /* 굵은 글자 */
+    color: #2B5797; /* 브랜드 색상 */
+    margin-bottom: 30px; /* 아래 여백 */
+}
+
+/* 약속 내용 */
+.promise-content {
+    font-size: 20px; /* 글자 크기 늘리기 */
+    font-weight: 600; /* 중간 굵기로 강화 */
+    color: #333; /* 글자 색상 */
+    line-height: 1.7; /* 줄 간격 조정 */
+    margin-bottom: 40px; /* 아래 여백 */
+    max-width: 700px; /* 최대 너비 늘리기 */
+    margin-left: auto; /* 가운데 정렬 */
+    margin-right: auto; /* 가운데 정렬 */
+    letter-spacing: 0.3px; /* 글자 간격 추가 */
+}
+
+/* 약속 내용의 강조 텍스트 */
+.promise-highlight {
+    color: #2B5797; /* 브랜드 색상 */
+    font-weight: 700; /* 굵은 글자 */
+    text-shadow: 0 1px 2px rgba(43, 87, 151, 0.1); /* 미세한 그림자 */
+}
+
+/* 약속 내용의 숫자 강조 */
+.promise-number {
+    color: #f39c12; /* 주황 골드색으로 강조 */
+    font-weight: 800; /* 매우 굵은 글자 */
+    font-size: 1.1em; /* 조금 더 크게 */
+    text-shadow: 0 1px 2px rgba(243, 156, 18, 0.2); /* 색상에 맞는 그림자 */
+}
+
+/* 더알아보기 버튼 */
+.learn-more-btn {
+    display: inline-block; /* 인라인 블록 요소 */
+    background-color: #2B5797; /* 브랜드 색상 배경 */
+    color: white; /* 흰색 글자 */
+    text-decoration: none; /* 밑줄 제거 */
+    padding: 15px 30px; /* 안쪽 여백 */
+    border-radius: 30px; /* 둥근 모서리 */
+    font-size: 16px; /* 글자 크기 */
+    font-weight: 600; /* 중간 굵기 */
+    transition: all 0.3s ease; /* 부드러운 효과 */
+    box-shadow: 0 4px 15px rgba(43, 87, 151, 0.2); /* 그림자 */
+}
+
+/* 더알아보기 버튼 호버 효과 */
+.learn-more-btn:hover {
+    background-color: #1e4a7a; /* 더 진한 색 */
+    transform: translateY(-2px); /* 살짝 위로 이동 */
+    box-shadow: 0 6px 20px rgba(43, 87, 151, 0.3); /* 더 강한 그림자 */
+}
+
+/* 청춘다움의 발걸음 컨테이너 */
+.steps-container {
+    text-align: center; /* 가운데 정렬 */
+}
+
+/* 발걸음 제목 */
+.steps-title {
+    font-size: 32px; /* 글자 크기 */
+    font-weight: 700; /* 굵은 글자 */
+    color: #2B5797; /* 브랜드 색상 */
+    margin-bottom: 40px; /* 아래 여백 */
+}
+
+/* 발걸음 슬라이더 전체 */
+.steps-slider {
+    position: relative; /* 화살표와 인디케이터 위치 기준 */
+    width: 100%; /* 전체 너비 */
+    height: 400px; /* 높이 설정 */
+    overflow: hidden; /* 넘치는 부분 숨김 */
+    border-radius: 15px; /* 둥근 모서리 */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); /* 부드러운 그림자 */
+}
+
+/* 발걸음 슬라이드 하나하나 */
+.steps-slide {
+    position: absolute; /* 겹쳐서 배치 */
+    width: 100%; /* 전체 너비 */
+    height: 100%; /* 전체 높이 */
+    opacity: 0; /* 처음에는 투명하게 */
+    transition: opacity 1s ease-in-out; /* 부드러운 전환 효과 */
+}
+
+/* 활성화된 발걸음 슬라이드만 보이게 */
+.steps-slide.active {
+    opacity: 1; /* 활성화된 슬라이드는 보이게 */
+}
+
+/* 발걸음 이미지 */
+.steps-image {
+    width: 100%; /* 전체 너비 */
+    height: 100%; /* 전체 높이 */
+    object-fit: cover; /* 이미지 비율 유지하며 크기 맞춤 */
+}
+
+/* 발걸음 좌우 화살표 버튼 */
+.steps-arrow {
+    position: absolute; /* 절대 위치 */
+    top: 50%; /* 세로 중앙 */
+    transform: translateY(-50%); /* 정확한 가운데 정렬 */
+    background-color: rgba(255, 255, 255, 0.8); /* 흰색 배경 */
+    color: #333; /* 글자 색상 */
+    border: none; /* 테두리 없음 */
+    width: 50px; /* 너비 */
+    height: 50px; /* 높이 */
+    border-radius: 50%; /* 원형 */
+    font-size: 24px; /* 글자 크기 */
+    cursor: pointer; /* 마우스 커서 */
+    transition: all 0.3s ease; /* 부드러운 효과 */
+    z-index: 10; /* 다른 요소 위에 표시 */
+}
+
+/* 발걸음 화살표 호버 효과 */
+.steps-arrow:hover {
+    background-color: rgba(255, 255, 255, 1); /* 마우스 올렸을 때 불투명하게 */
+    transform: translateY(-50%) scale(1.1); /* 살짝 크게 */
+}
+
+/* 발걸음 왼쪽 화살표 */
+.steps-arrow-left {
+    left: 20px; /* 왼쪽에서 20px */
+}
+
+/* 발걸음 오른쪽 화살표 */
+.steps-arrow-right {
+    right: 20px; /* 오른쪽에서 20px */
+}
+
+/* 발걸음 슬라이드 인디케이터 */
+.steps-indicators {
+    position: absolute; /* 절대 위치 */
+    bottom: 20px; /* 아래에서 20px */
+    left: 50%; /* 왼쪽에서 50% */
+    transform: translateX(-50%); /* 가운데 정렬 */
+    display: flex; /* 가로 정렬 */
+    gap: 10px; /* 간격 */
+}
+
+/* 발걸음 인디케이터 점 */
+.steps-indicator {
+    width: 12px; /* 너비 */
+    height: 12px; /* 높이 */
+    border-radius: 50%; /* 원형 */
+    background-color: rgba(255, 255, 255, 0.5); /* 반투명 흰색 */
+    cursor: pointer; /* 마우스 커서 */
+    transition: all 0.3s ease; /* 부드러운 효과 */
+}
+
+/* 활성화된 발걸음 인디케이터 */
+.steps-indicator.active {
+    background-color: white; /* 흰색 */
+    transform: scale(1.2); /* 조금 크게 */
+}
+
+/* 반응형 디자인 - 태블릿 크기 (청춘다움 섹션) */
+@media (max-width: 768px) {
+    .youthfulness-section {
+        padding: 60px 0; /* 패딩 줄이기 */
+    }
+    
+    .mission-container {
+        margin-bottom: 60px; /* 여백 줄이기 */
+        padding: 40px 30px; /* 패딩 줄이기 */
+    }
+    
+    .mission-title {
+        font-size: 28px; /* 글자 크기 줄이기 */
+        margin-bottom: 25px; /* 여백 줄이기 */
+    }
+    
+    .mission-subtitle {
+        font-size: 20px; /* 글자 크기 조정 (임팩트 유지) */
+        margin-bottom: 30px; /* 여백 줄이기 */
+        font-weight: 700; /* 굵기 유지 */
+    }
+    
+    .mission-list {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* 태블릿에서 카드 크기 조정 */
+        gap: 25px; /* 간격 줄이기 */
+    }
+    
+    .mission-item {
+        padding: 25px 20px; /* 패딩 줄이기 */
+        font-size: 15px; /* 글자 크기 줄이기 */
+        min-height: 100px; /* 최소 높이 줄이기 */
+    }
+    
+    .mission-item::before {
+        width: 35px; /* 숫자 원 크기 줄이기 */
+        height: 35px; /* 숫자 원 크기 줄이기 */
+        font-size: 16px; /* 숫자 글자 크기 줄이기 */
+        top: -12px; /* 위치 조정 */
+    }
+    
+    .promise-container {
+        margin-bottom: 60px; /* 여백 줄이기 */
+        padding: 40px 30px; /* 패딩 줄이기 */
+    }
+    
+    .promise-title {
+        font-size: 26px; /* 글자 크기 줄이기 */
+        margin-bottom: 25px; /* 여백 줄이기 */
+    }
+    
+    .promise-content {
+        font-size: 18px; /* 글자 크기 조정 (임팩트 유지) */
+        margin-bottom: 30px; /* 여백 줄이기 */
+        font-weight: 600; /* 굵기 유지 */
+    }
+    
+    .promise-highlight {
+        font-weight: 700; /* 강조 텍스트 굵기 유지 */
+    }
+    
+    .promise-number {
+        font-weight: 800; /* 숫자 강조 굵기 유지 */
+    }
+    
+    .learn-more-btn {
+        padding: 12px 25px; /* 패딩 줄이기 */
+        font-size: 15px; /* 글자 크기 줄이기 */
+    }
+    
+    .steps-title {
+        font-size: 26px; /* 글자 크기 줄이기 */
+        margin-bottom: 30px; /* 여백 줄이기 */
+    }
+    
+    .steps-slider {
+        height: 300px; /* 높이 줄이기 */
+    }
+    
+    .steps-arrow {
+        width: 40px; /* 크기 줄이기 */
+        height: 40px; /* 크기 줄이기 */
+        font-size: 20px; /* 글자 크기 줄이기 */
+    }
+    
+    .steps-arrow-left {
+        left: 15px; /* 여백 줄이기 */
+    }
+    
+    .steps-arrow-right {
+        right: 15px; /* 여백 줄이기 */
+    }
+}
+
+/* 반응형 디자인 - 모바일 크기 (청춘다움 섹션) */
+@media (max-width: 480px) {
+    .youthfulness-section {
+        padding: 50px 0; /* 패딩 더 줄이기 */
+    }
+    
+    .mission-container {
+        margin-bottom: 50px; /* 여백 더 줄이기 */
+        padding: 30px 20px; /* 패딩 더 줄이기 */
+    }
+    
+    .mission-title {
+        font-size: 24px; /* 글자 크기 더 줄이기 */
+        margin-bottom: 20px; /* 여백 더 줄이기 */
+    }
+    
+    .mission-subtitle {
+        font-size: 18px; /* 글자 크기 조정 (임팩트 유지) */
+        margin-bottom: 25px; /* 여백 더 줄이기 */
+        font-weight: 700; /* 굵기 유지 */
+        letter-spacing: 0.3px; /* 글자 간격 조정 */
+    }
+    
+    .mission-list {
+        grid-template-columns: 1fr; /* 모바일에서 한 줄로 배치 */
+        gap: 20px; /* 간격 조정 */
+        margin-top: 15px; /* 위쪽 여백 줄이기 */
+    }
+    
+    .mission-item {
+        padding: 20px 15px; /* 패딩 조정 */
+        font-size: 14px; /* 글자 크기 더 줄이기 */
+        min-height: 80px; /* 최소 높이 더 줄이기 */
+    }
+    
+    .mission-item::before {
+        width: 30px; /* 숫자 원 크기 더 줄이기 */
+        height: 30px; /* 숫자 원 크기 더 줄이기 */
+        font-size: 14px; /* 숫자 글자 크기 더 줄이기 */
+        top: -10px; /* 위치 조정 */
+        left: 15px; /* 왼쪽 위치 조정 */
+    }
+    
+    .promise-container {
+        margin-bottom: 50px; /* 여백 더 줄이기 */
+        padding: 30px 20px; /* 패딩 더 줄이기 */
+    }
+    
+    .promise-title {
+        font-size: 22px; /* 글자 크기 더 줄이기 */
+        margin-bottom: 20px; /* 여백 더 줄이기 */
+    }
+    
+    .promise-content {
+        font-size: 16px; /* 글자 크기 조정 (임팩트 유지) */
+        margin-bottom: 25px; /* 여백 더 줄이기 */
+        font-weight: 600; /* 굵기 유지 */
+        letter-spacing: 0.2px; /* 글자 간격 조정 */
+    }
+    
+    .promise-highlight {
+        font-weight: 700; /* 강조 텍스트 굵기 유지 */
+    }
+    
+    .promise-number {
+        font-weight: 800; /* 숫자 강조 굵기 유지 */
+        font-size: 1.05em; /* 모바일에서 숫자 크기 조정 */
+    }
+    
+    .learn-more-btn {
+        padding: 10px 20px; /* 패딩 더 줄이기 */
+        font-size: 14px; /* 글자 크기 더 줄이기 */
+    }
+    
+    .steps-title {
+        font-size: 22px; /* 글자 크기 더 줄이기 */
+        margin-bottom: 25px; /* 여백 더 줄이기 */
+    }
+    
+    .steps-slider {
+        height: 250px; /* 높이 더 줄이기 */
+    }
+    
+    .steps-arrow {
+        width: 35px; /* 크기 더 줄이기 */
+        height: 35px; /* 크기 더 줄이기 */
+        font-size: 16px; /* 글자 크기 더 줄이기 */
+    }
+    
+    .steps-arrow-left {
+        left: 10px; /* 여백 더 줄이기 */
+    }
+    
+    .steps-arrow-right {
+        right: 10px; /* 여백 더 줄이기 */
+    }
+    
+    .steps-indicators {
+        bottom: 15px; /* 위치 조정 */
+    }
+    
+    .steps-indicator {
+                 width: 10px; /* 크기 줄이기 */
+         height: 10px; /* 크기 줄이기 */
+     }
+}
+
+/* 청춘다움 이야기 섹션 전체 설정 */
+.greeting-section {
+    padding: 80px 0; /* 위아래 여백 80px */
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%); /* 그라데이션 배경 */
+    scroll-margin-top: 100px; /* 스크롤 오프셋 설정 */
+}
+
+/* 인사말 제목 */
+.greeting-title {
+    font-size: 42px; /* 글자 크기 늘리기 */
+    font-weight: 700; /* 굵은 글자 */
+    color: #2B5797; /* 브랜드 색상 */
+    text-align: center; /* 가운데 정렬 */
+    margin-bottom: 70px; /* 아래 여백 늘리기 */
+    text-shadow: 0 2px 4px rgba(43, 87, 151, 0.1); /* 텍스트 그림자 */
+    position: relative; /* 장식 요소를 위한 기준점 */
+}
+
+/* 제목 아래 장식 라인 */
+.greeting-title::after {
+    content: ""; /* 빈 내용 */
+    position: absolute; /* 절대 위치 */
+    bottom: -15px; /* 제목 아래 15px */
+    left: 50%; /* 가운데 정렬 */
+    transform: translateX(-50%); /* 정확한 가운데 정렬 */
+    width: 80px; /* 너비 */
+    height: 4px; /* 높이 */
+    background: linear-gradient(90deg, #2B5797 0%, #f39c12 100%); /* 브랜드 색상 그라데이션 */
+    border-radius: 2px; /* 둥근 모서리 */
+}
+
+/* 인사말 콘텐츠 컨테이너 - 카드 스타일로 변경 */
+.greeting-content {
+    background-color: white; /* 흰색 배경 */
+    border-radius: 20px; /* 둥근 모서리 */
+    padding: 50px; /* 안쪽 여백 */
+    box-shadow: 
+        0 20px 40px rgba(43, 87, 151, 0.08), /* 메인 그림자 */
+        0 8px 16px rgba(0, 0, 0, 0.04); /* 보조 그림자 */
+    display: flex; /* 가로로 나란히 배치 */
+    align-items: center; /* 세로 가운데 정렬 */
+    gap: 60px; /* 이미지와 텍스트 사이 간격 늘리기 */
+    margin-bottom: 60px; /* 아래 여백 */
+    border: 1px solid rgba(43, 87, 151, 0.05); /* 미세한 테두리 */
+    position: relative; /* 장식 요소를 위한 기준점 */
+    overflow: hidden; /* 장식 요소가 넘치지 않도록 */
+}
+
+/* 카드 장식 요소 */
+.greeting-content::before {
+    content: ""; /* 빈 내용 */
+    position: absolute; /* 절대 위치 */
+    top: 0; /* 맨 위 */
+    left: 0; /* 맨 왼쪽 */
+    width: 100%; /* 전체 너비 */
+    height: 6px; /* 높이 */
+    background: linear-gradient(90deg, #2B5797 0%, #f39c12 100%); /* 브랜드 색상 그라데이션 */
+}
+
+/* 왼쪽 이미지 영역 */
+.greeting-image {
+    flex: 0 0 350px; /* 고정 너비 350px로 늘리기 */
+    position: relative; /* 장식 요소를 위한 기준점 */
+}
+
+/* 대표 이미지 */
+.man-image {
+    width: 100%; /* 전체 너비 */
+    height: 450px; /* 고정 높이 늘리기 */
+    object-fit: cover; /* 이미지 비율 유지하며 크기 맞춤 */
+    border-radius: 20px; /* 둥근 모서리 늘리기 */
+    box-shadow: 
+        0 15px 30px rgba(43, 87, 151, 0.15), /* 더 강한 그림자 */
+        0 5px 15px rgba(0, 0, 0, 0.1); /* 보조 그림자 */
+    transition: all 0.3s ease; /* 부드러운 효과 */
+    border: 3px solid white; /* 흰색 테두리 */
+}
+
+/* 이미지 호버 효과 */
+.man-image:hover {
+    transform: translateY(-5px) scale(1.02); /* 위로 이동하며 살짝 확대 */
+    box-shadow: 
+        0 20px 40px rgba(43, 87, 151, 0.2), /* 더 강한 메인 그림자 */
+        0 8px 20px rgba(0, 0, 0, 0.15); /* 더 강한 보조 그림자 */
+}
+
+/* 오른쪽 텍스트 영역 */
+.greeting-text {
+    flex: 1; /* 남은 공간 모두 차지 */
+    padding: 0; /* 패딩 제거 (카드 전체에서 관리) */
+}
+
+/* 인사말 부제목 */
+.greeting-subtitle {
+    font-size: 28px; /* 글자 크기 늘리기 */
+    font-weight: 700; /* 굵은 글자 */
+    color: #2B5797; /* 브랜드 색상 */
+    margin-bottom: 30px; /* 아래 여백 늘리기 */
+    line-height: 1.3; /* 줄 간격 조정 */
+    letter-spacing: 0.5px; /* 글자 간격 추가 */
+}
+
+/* 인사말 미리보기와 전체 텍스트 */
+.greeting-preview p,
+.greeting-full p {
+    font-size: 17px; /* 글자 크기 늘리기 */
+    font-weight: 400; /* 일반 굵기 */
+    color: #444; /* 글자 색상 조금 더 진하게 */
+    line-height: 1.8; /* 줄 간격 늘리기 */
+    margin-bottom: 25px; /* 아래 여백 늘리기 */
+    letter-spacing: 0.2px; /* 글자 간격 추가 */
+}
+
+/* 인사말 전체 텍스트의 강조 부분 */
+.greeting-full strong {
+    color: #2B5797; /* 브랜드 색상 */
+    font-weight: 700; /* 굵은 글자 */
+    font-size: 20px; /* 글씨 크기 늘리기 */
+    display: block; /* 블록 요소 */
+    margin-top: 30px; /* 위쪽 여백 늘리기 */
+    text-align: center; /* 가운데 정렬 */
+    padding: 25px 30px; /* 안쪽 여백 늘리기 */
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); /* 그라데이션 배경 */
+    border-radius: 15px; /* 둥근 모서리 늘리기 */
+    border-left: 5px solid #2B5797; /* 왼쪽 강조 테두리 늘리기 */
+    box-shadow: 0 4px 15px rgba(43, 87, 151, 0.1); /* 그림자 추가 */
+    position: relative; /* 장식 요소를 위한 기준점 */
+}
+
+/* 강조 부분 장식 아이콘 */
+.greeting-full strong::before {
+    content: "💫"; /* 반짝이는 이모지 */
+    position: absolute; /* 절대 위치 */
+    top: -10px; /* 위쪽으로 올리기 */
+    right: 20px; /* 오른쪽에서 20px */
+    font-size: 24px; /* 크기 */
+}
+
+/* 더보기/닫기 버튼 */
+.greeting-toggle-btn {
+    background: linear-gradient(135deg, #2B5797 0%, #1e4a7a 100%); /* 그라데이션 배경 */
+    color: white; /* 흰색 글자 */
+    border: none; /* 테두리 없음 */
+    padding: 15px 30px; /* 안쪽 여백 늘리기 */
+    border-radius: 30px; /* 둥근 모서리 늘리기 */
+    font-size: 15px; /* 글자 크기 늘리기 */
+    font-weight: 600; /* 중간 굵기 */
+    cursor: pointer; /* 마우스 커서 */
+    transition: all 0.3s ease; /* 부드러운 효과 */
+    display: block; /* 블록 요소 */
+    margin: 30px auto 0 auto; /* 가운데 정렬, 위쪽 여백 늘리기 */
+    box-shadow: 0 4px 15px rgba(43, 87, 151, 0.2); /* 그림자 추가 */
+    letter-spacing: 0.5px; /* 글자 간격 추가 */
+}
+
+/* 더보기/닫기 버튼 호버 효과 */
+.greeting-toggle-btn:hover {
+    background: linear-gradient(135deg, #1e4a7a 0%, #2B5797 100%); /* 반대 그라데이션 */
+    transform: translateY(-3px) scale(1.05); /* 위로 이동하며 살짝 확대 */
+    box-shadow: 0 8px 25px rgba(43, 87, 151, 0.4); /* 더 강한 그림자 */
+}
+
+/* 연락처 섹션 */
+.contact-section {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%); /* 그라데이션 배경 */
+    padding: 50px; /* 안쪽 여백 늘리기 */
+    border-radius: 20px; /* 둥근 모서리 늘리기 */
+    text-align: center; /* 가운데 정렬 */
+    box-shadow: 
+        0 15px 35px rgba(43, 87, 151, 0.1), /* 더 강한 메인 그림자 */
+        0 6px 15px rgba(0, 0, 0, 0.05); /* 보조 그림자 */
+    border: 2px solid rgba(43, 87, 151, 0.1); /* 미세한 테두리 */
+    position: relative; /* 장식 요소를 위한 기준점 */
+    overflow: hidden; /* 장식 요소가 넘치지 않도록 */
+}
+
+/* 연락처 섹션 장식 요소 */
+.contact-section::before {
+    content: ""; /* 빈 내용 */
+    position: absolute; /* 절대 위치 */
+    top: 0; /* 맨 위 */
+    left: 0; /* 맨 왼쪽 */
+    width: 100%; /* 전체 너비 */
+    height: 5px; /* 높이 */
+    background: linear-gradient(90deg, #f39c12 0%, #2B5797 100%); /* 주황에서 파랑 그라데이션 */
+}
+
+/* 연락처 메시지 */
+.contact-message {
+    font-size: 20px; /* 글자 크기 */
+    font-weight: 600; /* 중간 굵기 */
+    color: #333; /* 글자 색상 */
+    margin-bottom: 40px; /* 아래 여백 */
+    line-height: 1.6; /* 줄 간격 */
+    letter-spacing: 0.3px; /* 글자 간격 */
+    text-align: center; /* 가운데 정렬 */
+    position: relative; /* 장식 요소를 위한 기준점 */
+}
+
+/* 연락처 메시지 장식 아이콘 */
+.contact-message::before {
+    content: "💬"; /* 말풍선 이모지 */
+    margin-right: 10px; /* 오른쪽 여백 */
+    font-size: 22px; /* 크기 */
+}
+
+/* 연락처 상세 정보 */
+.contact-details {
+    display: flex; /* 가로 배치 */
+    flex-direction: column; /* 세로 배치로 변경 */
+    align-items: center; /* 가운데 정렬 */
+    gap: 25px; /* 간격 */
+}
+
+/* 연락처 항목 공통 스타일 */
+.contact-item {
+    display: flex; /* 가로 배치 */
+    align-items: center; /* 세로 가운데 정렬 */
+    gap: 15px; /* 아이콘과 텍스트 간격 */
+    transition: all 0.3s ease; /* 부드러운 효과 */
+    padding: 8px 0; /* 위아래 패딩 */
+}
+
+/* 연락처 항목 호버 효과 */
+.contact-item:hover {
+    transform: translateX(5px); /* 살짝 오른쪽으로 이동 */
+}
+
+/* 연락처 아이콘 */
+.contact-icon {
+    width: 50px; /* 너비 */
+    height: 50px; /* 높이 */
+    display: flex; /* 플렉스 컨테이너 */
+    align-items: center; /* 세로 가운데 정렬 */
+    justify-content: center; /* 가로 가운데 정렬 */
+    border-radius: 50%; /* 원형 */
+    font-size: 24px; /* 아이콘 크기 */
+    transition: all 0.3s ease; /* 부드러운 효과 */
+}
+
+/* 이메일 아이콘 */
+.email-icon {
+    background: linear-gradient(135deg, rgba(43, 87, 151, 0.1) 0%, rgba(43, 87, 151, 0.2) 100%); /* 연한 브랜드 색상 배경 */
+    color: #2B5797; /* 브랜드 색상 */
+    border: 2px solid rgba(43, 87, 151, 0.2); /* 연한 테두리 */
+}
+
+/* 이름 아이콘 */
+.name-icon {
+    background: linear-gradient(135deg, rgba(243, 156, 18, 0.1) 0%, rgba(243, 156, 18, 0.2) 100%); /* 연한 주황 배경 */
+    color: #f39c12; /* 주황색 */
+    border: 2px solid rgba(243, 156, 18, 0.2); /* 연한 테두리 */
+}
+
+/* 아이콘 호버 효과 */
+.contact-item:hover .email-icon {
+    background: linear-gradient(135deg, #2B5797 0%, #1e4a7a 100%); /* 진한 브랜드 색상 */
+    color: white; /* 흰색 */
+    transform: scale(1.1); /* 살짝 확대 */
+    box-shadow: 0 4px 15px rgba(43, 87, 151, 0.3); /* 그림자 */
+}
+
+.contact-item:hover .name-icon {
+    background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%); /* 진한 주황색 */
+    color: white; /* 흰색 */
+    transform: scale(1.1); /* 살짝 확대 */
+    box-shadow: 0 4px 15px rgba(243, 156, 18, 0.3); /* 그림자 */
+}
+
+/* 연락처 텍스트 */
+.contact-text {
+    display: flex; /* 플렉스 컨테이너 */
+    flex-direction: column; /* 세로 배치 */
+    gap: 5px; /* 간격 */
+}
+
+/* 연락처 라벨 */
+.contact-label {
+    font-size: 14px; /* 작은 글씨 */
+    font-weight: 500; /* 중간 굵기 */
+    color: #666; /* 회색 */
+    letter-spacing: 0.5px; /* 글자 간격 */
+    text-transform: uppercase; /* 대문자 */
+}
+
+/* 이메일 주소 */
+.contact-email {
+    font-size: 20px; /* 글자 크기 */
+    font-weight: 700; /* 굵은 글자 */
+    color: #2B5797; /* 브랜드 색상 */
+    text-decoration: none; /* 밑줄 제거 */
+    letter-spacing: 0.3px; /* 글자 간격 */
+    transition: all 0.3s ease; /* 부드러운 효과 */
+}
+
+/* 이메일 호버 효과 */
+.contact-email:hover {
+    color: #1e4a7a; /* 더 진한 색 */
+    text-shadow: 0 2px 4px rgba(43, 87, 151, 0.2); /* 텍스트 그림자 */
+}
+
+/* 이름 */
+.contact-name {
+    font-size: 18px; /* 글자 크기 */
+    font-weight: 700; /* 굵은 글자 */
+    color: #f39c12; /* 주황색 */
+    letter-spacing: 0.3px; /* 글자 간격 */
+    transition: all 0.3s ease; /* 부드러운 효과 */
+}
+
+/* 이름 호버 효과 */
+.contact-name:hover {
+    color: #e67e22; /* 더 진한 주황색 */
+    text-shadow: 0 2px 4px rgba(243, 156, 18, 0.2); /* 텍스트 그림자 */
+}
+
+/* 청춘다움 더알아보기 버튼 섹션 */
+.instagram-follow-section {
+    text-align: center; /* 가운데 정렬 */
+    margin-top: 25px; /* 위쪽 여백 감소 */
+    padding: 20px 0; /* 위아래 패딩 감소 */
+}
+
+/* 청춘다움 이야기 섹션 내부에 있을 때 */
+.greeting-text .instagram-follow-section {
+    margin-top: 20px; /* 더 작은 위쪽 여백 */
+    padding: 15px 0 0 0; /* 아래쪽 패딩 제거 */
+    border-top: none; /* 경계선 제거 */
+}
+
+/* 청춘다움 이야기 박스 안의 인스타그램 버튼 */
+.greeting-text .instagram-follow-btn {
+    padding: 12px 25px; /* 버튼 크기 조금 감소 */
+    font-size: 15px; /* 글자 크기 조금 감소 */
+    border-radius: 40px; /* 둥근 모서리 감소 */
+    box-shadow: 0 6px 20px rgba(244, 184, 122, 0.2); /* 연한 그림자 효과 감소 */
+}
+
+.greeting-text .instagram-follow-btn:hover {
+    transform: translateY(-2px); /* 호버 효과 감소 */
+    box-shadow: 0 8px 25px rgba(244, 184, 122, 0.3); /* 연한 호버 그림자 조정 */
+}
+
+.instagram-follow-btn {
+    display: inline-flex; /* 인라인 플렉스 컨테이너 */
+    align-items: center; /* 세로 가운데 정렬 */
+    gap: 12px; /* 요소 간 간격 */
+    background: linear-gradient(45deg, #f4b87a 0%, #f0a185 25%, #e8a19f 50%, #d9a3b8 75%, #c9a5d1 100%); /* 연한 인스타그램 그라데이션 */
+    color: white; /* 흰색 글자 */
+    text-decoration: none; /* 밑줄 제거 */
+    padding: 15px 30px; /* 안쪽 여백 */
+    border-radius: 50px; /* 둥근 모서리 */
+    font-weight: 600; /* 굵은 글자 */
+    font-size: 16px; /* 글자 크기 */
+    transition: all 0.3s ease; /* 부드러운 변화 효과 */
+    box-shadow: 0 8px 25px rgba(244, 184, 122, 0.25); /* 연한 그림자 효과 */
+    position: relative; /* 상대 위치 */
+    overflow: hidden; /* 넘치는 부분 숨김 */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* 미세한 흰색 테두리 */
+}
+
+.instagram-follow-btn::before {
+    content: ''; /* 가상 요소 */
+    position: absolute; /* 절대 위치 */
+    top: 0;
+    left: -100%; /* 왼쪽 바깥에 위치 */
+    width: 100%; /* 전체 너비 */
+    height: 100%; /* 전체 높이 */
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent); /* 하이라이트 효과 */
+    transition: left 0.6s ease; /* 이동 효과 */
+}
+
+.instagram-follow-btn:hover::before {
+    left: 100%; /* 오른쪽으로 이동 */
+}
+
+.instagram-follow-btn:hover {
+    transform: translateY(-3px); /* 위로 살짝 이동 */
+    box-shadow: 0 12px 35px rgba(244, 184, 122, 0.35); /* 연한 그림자 강화 */
+    background: linear-gradient(45deg, #f0a185 0%, #e8a19f 25%, #d9a3b8 50%, #c9a5d1 75%, #b8a7d9 100%); /* 호버시 연한 그라데이션 변화 */
+    border-color: rgba(255, 255, 255, 0.3); /* 호버시 테두리 색상 강화 */
+}
+
+.instagram-icon {
+    width: 24px; /* 아이콘 너비 */
+    height: 24px; /* 아이콘 높이 */
+    object-fit: contain; /* 아이콘 비율 유지 */
+    transition: transform 0.3s ease; /* 변화 효과 */
+    background: white; /* 흰색 배경 */
+    border-radius: 6px; /* 모서리 둥글게 */
+    padding: 3px; /* 안쪽 여백 */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15); /* 그림자 효과 */
+}
+
+.instagram-follow-btn:hover .instagram-icon {
+    transform: rotate(15deg) scale(1.1); /* 회전과 확대 효과 */
+}
+
+.follow-text {
+    font-weight: 600; /* 굵은 글자 */
+    letter-spacing: 0.5px; /* 글자 간격 */
+}
+
+.follow-arrow {
+    font-size: 18px; /* 화살표 크기 */
+    transition: transform 0.3s ease; /* 변화 효과 */
+}
+
+.instagram-follow-btn:hover .follow-arrow {
+    transform: translateX(5px); /* 오른쪽으로 이동 */
+}
+
+/* 반응형 디자인 - 태블릿 크기 (인사말 섹션) */
+@media (max-width: 768px) {
+    .greeting-section {
+        padding: 60px 0; /* 패딩 줄이기 */
+    }
+    
+    .greeting-title {
+        font-size: 32px; /* 글자 크기 조정 */
+        margin-bottom: 50px; /* 여백 조정 */
+    }
+    
+    .greeting-content {
+        flex-direction: column; /* 세로로 배치 */
+        gap: 40px; /* 간격 조정 */
+        padding: 40px 30px; /* 패딩 조정 */
+    }
+    
+    .greeting-image {
+        flex: none; /* 플렉스 해제 */
+        align-self: center; /* 가운데 정렬 */
+        max-width: 300px; /* 최대 너비 조정 */
+    }
+    
+    .man-image {
+        height: 350px; /* 높이 조정 */
+    }
+    
+    .greeting-subtitle {
+        font-size: 24px; /* 글자 크기 조정 */
+        margin-bottom: 25px; /* 여백 조정 */
+    }
+    
+    .greeting-preview p,
+    .greeting-full p {
+        font-size: 16px; /* 글자 크기 조정 */
+    }
+    
+    .greeting-full strong {
+        font-size: 18px; /* 강조 텍스트 크기 조정 */
+        padding: 20px 25px; /* 패딩 조정 */
+    }
+    
+    .greeting-toggle-btn {
+        padding: 12px 25px; /* 패딩 조정 */
+        font-size: 14px; /* 글자 크기 조정 */
+    }
+    
+    .contact-section {
+        padding: 40px 30px; /* 패딩 조정 */
+    }
+    
+    .contact-message {
+        font-size: 18px; /* 글자 크기 조정 */
+        margin-bottom: 25px; /* 여백 조정 */
+    }
+    
+    .contact-details {
+        gap: 20px; /* 간격 조정 */
+    }
+    
+    .contact-item {
+        gap: 12px; /* 아이콘과 텍스트 간격 조정 */
+    }
+    
+    .contact-icon {
+        width: 45px; /* 아이콘 크기 조정 */
+        height: 45px; /* 아이콘 크기 조정 */
+        font-size: 22px; /* 아이콘 글자 크기 조정 */
+    }
+    
+    .contact-email {
+        font-size: 18px; /* 글자 크기 조정 */
+    }
+    
+    .contact-name {
+        font-size: 16px; /* 글자 크기 조정 */
+    }
+    
+    /* 인스타그램 버튼 태블릿 스타일 */
+    .instagram-follow-section {
+        margin-top: 30px; /* 위쪽 여백 줄이기 */
+        padding: 25px 0; /* 패딩 줄이기 */
+    }
+    
+    .instagram-follow-btn {
+        padding: 12px 25px; /* 패딩 줄이기 */
+        font-size: 15px; /* 글자 크기 줄이기 */
+        gap: 10px; /* 간격 줄이기 */
+    }
+    
+    /* 청춘다움 이야기 박스 안의 버튼 태블릿 스타일 */
+    .greeting-text .instagram-follow-section {
+        margin-top: 15px; /* 위쪽 여백 더 줄이기 */
+        padding: 10px 0 0 0; /* 패딩 더 줄이기 */
+    }
+    
+    .greeting-text .instagram-follow-btn {
+        padding: 10px 20px; /* 버튼 크기 더 줄이기 */
+        font-size: 14px; /* 글자 크기 더 줄이기 */
+    }
+    
+    .instagram-icon {
+        width: 20px; /* 아이콘 크기 줄이기 */
+        height: 20px;
+        background: white; /* 흰색 배경 */
+        border-radius: 5px; /* 모서리 둥글게 */
+        padding: 2px; /* 안쪽 여백 */
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12); /* 그림자 효과 */
+    }
+    
+    .follow-arrow {
+        font-size: 16px; /* 화살표 크기 줄이기 */
+    }
+}
+
+/* 반응형 디자인 - 모바일 크기 (인사말 섹션) */
+@media (max-width: 480px) {
+    .greeting-section {
+        padding: 50px 0; /* 패딩 조정 */
+    }
+    
+    .greeting-title {
+        font-size: 28px; /* 글자 크기 조정 */
+        margin-bottom: 40px; /* 여백 조정 */
+    }
+    
+    .greeting-content {
+        gap: 30px; /* 간격 조정 */
+        padding: 30px 20px; /* 패딩 조정 */
+    }
+    
+    .greeting-image {
+        max-width: 250px; /* 최대 너비 조정 */
+    }
+    
+    .man-image {
+        height: 300px; /* 높이 조정 */
+    }
+    
+    .greeting-subtitle {
+        font-size: 22px; /* 글자 크기 조정 */
+        margin-bottom: 20px; /* 여백 조정 */
+    }
+    
+    .greeting-preview p,
+    .greeting-full p {
+        font-size: 15px; /* 글자 크기 조정 */
+        line-height: 1.7; /* 줄 간격 조정 */
+    }
+    
+    .greeting-full strong {
+        font-size: 17px; /* 강조 텍스트 크기 조정 */
+        padding: 18px 20px; /* 패딩 조정 */
+    }
+    
+    .greeting-toggle-btn {
+        padding: 12px 25px; /* 패딩 조정 */
+        font-size: 14px; /* 글자 크기 조정 */
+    }
+    
+    .contact-section {
+        padding: 30px 20px; /* 패딩 조정 */
+    }
+    
+    .contact-message {
+        font-size: 17px; /* 글자 크기 조정 */
+        margin-bottom: 20px; /* 여백 조정 */
+    }
+    
+    .contact-details {
+        gap: 18px; /* 간격 조정 */
+    }
+    
+    .contact-item {
+        gap: 10px; /* 아이콘과 텍스트 간격 조정 */
+    }
+    
+    .contact-icon {
+        width: 40px; /* 아이콘 크기 조정 */
+        height: 40px; /* 아이콘 크기 조정 */
+        font-size: 20px; /* 아이콘 글자 크기 조정 */
+    }
+    
+    .contact-label {
+        font-size: 12px; /* 라벨 크기 조정 */
+    }
+    
+    .contact-email {
+        font-size: 16px; /* 글자 크기 조정 */
+    }
+    
+    .contact-name {
+        font-size: 15px; /* 글자 크기 조정 */
+    }
+    
+    /* 인스타그램 버튼 모바일 스타일 */
+    .instagram-follow-section {
+        margin-top: 25px; /* 위쪽 여백 더 줄이기 */
+        padding: 20px 0; /* 패딩 더 줄이기 */
+    }
+    
+    .instagram-follow-btn {
+        padding: 10px 20px; /* 패딩 더 줄이기 */
+        font-size: 14px; /* 글자 크기 더 줄이기 */
+        gap: 8px; /* 간격 더 줄이기 */
+    }
+    
+    /* 청춘다움 이야기 박스 안의 버튼 모바일 스타일 */
+    .greeting-text .instagram-follow-section {
+        margin-top: 12px; /* 위쪽 여백 가장 작게 */
+        padding: 8px 0 0 0; /* 패딩 가장 작게 */
+    }
+    
+    .greeting-text .instagram-follow-btn {
+        padding: 8px 18px; /* 버튼 크기 가장 작게 */
+        font-size: 13px; /* 글자 크기 가장 작게 */
+    }
+    
+    .instagram-icon {
+        width: 18px; /* 아이콘 크기 더 줄이기 */
+        height: 18px;
+        background: white; /* 흰색 배경 */
+        border-radius: 4px; /* 모서리 둥글게 */
+        padding: 2px; /* 안쪽 여백 */
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
+    }
+    
+    .follow-arrow {
+        font-size: 14px; /* 화살표 크기 더 줄이기 */
+    }
+} 
+
+/* ===============================
+   푸터 섹션 스타일
+   =============================== */
+
+/* 푸터 전체 설정 */
+.footer {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%); /* 어두운 그라데이션 배경 */
+    color: #ecf0f1; /* 밝은 글자 색상 */
+    padding: 60px 0 30px 0; /* 위아래 여백 */
+    border-top: 5px solid #2B5797; /* 상단 브랜드 색상 라인 */
+}
+
+/* 푸터 콘텐츠 컨테이너 */
+.footer-content {
+    max-width: 1200px; /* 최대 너비 */
+    margin: 0 auto; /* 가운데 정렬 */
+    padding: 0 20px; /* 좌우 여백 */
+}
+
+/* 푸터 상단 영역 */
+.footer-top {
+    display: flex; /* 가로 배치 */
+    justify-content: space-between; /* 양쪽 끝 정렬 */
+    align-items: flex-start; /* 위쪽 정렬 */
+    gap: 60px; /* 간격 */
+    margin-bottom: 40px; /* 아래 여백 */
+}
+
+/* 회사 정보 영역 */
+.footer-company {
+    flex: 2; /* 더 넓은 공간 차지 */
+}
+
+/* 푸터 링크 (이용약관, 개인정보처리방침) */
+.footer-links {
+    margin-bottom: 30px; /* 아래 여백 */
+}
+
+.footer-link {
+    color: #ecf0f1; /* 밝은 색상 */
+    text-decoration: none; /* 밑줄 제거 */
+    font-weight: 600; /* 중간 굵기 */
+    font-size: 16px; /* 글자 크기 */
+    transition: color 0.3s ease; /* 부드러운 효과 */
+}
+
+.footer-link:hover {
+    color: #2B5797; /* 브랜드 색상으로 변경 */
+}
+
+.separator {
+    margin: 0 15px; /* 좌우 여백 */
+    color: #95a5a6; /* 연한 색상 */
+}
+
+/* 푸터 정보 행들 */
+.footer-info {
+    margin-bottom: 25px; /* 아래 여백 */
+}
+
+.info-row,
+.company-row {
+    display: flex; /* 가로 배치 */
+    margin-bottom: 12px; /* 아래 여백 */
+    align-items: flex-start; /* 위쪽 정렬 */
+}
+
+.info-label,
+.company-label {
+    min-width: 140px; /* 최소 너비 */
+    font-weight: 600; /* 중간 굵기 */
+    color: #bdc3c7; /* 연한 색상 */
+    font-size: 14px; /* 글자 크기 */
+}
+
+.info-value,
+.company-value {
+    color: #ecf0f1; /* 밝은 색상 */
+    font-size: 14px; /* 글자 크기 */
+    line-height: 1.5; /* 줄 간격 */
+}
+
+.info-value a,
+.company-value a {
+    color: #2B5797; /* 브랜드 색상 */
+    text-decoration: none; /* 밑줄 제거 */
+    transition: color 0.3s ease; /* 부드러운 효과 */
+}
+
+.info-value a:hover,
+.company-value a:hover {
+    color: #3498db; /* 더 밝은 파랑 */
+    text-decoration: underline; /* 호버시 밑줄 */
+}
+
+/* 소셜미디어 영역 */
+.footer-social {
+    flex: 1; /* 작은 공간 차지 */
+    text-align: center; /* 가운데 정렬 */
+}
+
+.social-title {
+    font-size: 24px; /* 글자 크기 */
+    font-weight: 700; /* 굵은 글자 */
+    color: #ecf0f1; /* 밝은 색상 */
+    margin-bottom: 25px; /* 아래 여백 */
+    text-align: center; /* 가운데 정렬 */
+}
+
+.social-links {
+    display: flex; /* 가로 배치 */
+    flex-direction: column; /* 세로 배치 */
+    gap: 15px; /* 간격 */
+    align-items: center; /* 가운데 정렬 */
+}
+
+.social-link {
+    display: flex; /* 가로 배치 */
+    align-items: center; /* 세로 가운데 정렬 */
+    gap: 12px; /* 간격 */
+    text-decoration: none; /* 밑줄 제거 */
+    color: #ecf0f1; /* 밝은 색상 */
+    padding: 12px 20px; /* 안쪽 여백 */
+    border-radius: 25px; /* 둥근 모서리 */
+    background: rgba(255, 255, 255, 0.1); /* 반투명 배경 */
+    transition: all 0.3s ease; /* 부드러운 효과 */
+    min-width: 150px; /* 최소 너비 */
+    justify-content: flex-start; /* 왼쪽 정렬 */
+}
+
+.social-link:hover {
+    background: rgba(255, 255, 255, 0.2); /* 더 진한 배경 */
+    transform: translateY(-2px); /* 살짝 위로 이동 */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* 그림자 */
+}
+
+.social-icon {
+    width: 35px; /* 너비 */
+    height: 35px; /* 높이 */
+    display: flex; /* 플렉스 컨테이너 */
+    align-items: center; /* 세로 가운데 정렬 */
+    justify-content: center; /* 가로 가운데 정렬 */
+    border-radius: 50%; /* 원형 */
+    font-size: 20px; /* 글자 크기 */
+}
+
+.social-image {
+    width: 25px; /* 너비 */
+    height: 25px; /* 높이 */
+    object-fit: contain; /* 비율 유지 */
+}
+
+/* 인스타그램 색상 */
+.instagram:hover {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    color: white;
+}
+
+/* 페이스북 색상 */
+.facebook:hover {
+    background: #1877f2;
+    color: white;
+}
+
+/* 유튜브 색상 */
+.youtube:hover {
+    background: #ff0000;
+    color: white;
+}
+
+.social-name {
+    font-weight: 600; /* 중간 굵기 */
+    font-size: 14px; /* 글자 크기 */
+}
+
+/* 푸터 하단 영역 */
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* 상단 경계선 */
+    padding-top: 30px; /* 위쪽 여백 */
+    text-align: center; /* 가운데 정렬 */
+}
+
+.copyright p {
+    color: #95a5a6; /* 연한 색상 */
+    font-size: 14px; /* 글자 크기 */
+    margin: 0; /* 여백 제거 */
+    letter-spacing: 0.5px; /* 글자 간격 */
+}
+
+/* 푸터 반응형 디자인 - 태블릿 */
+@media (max-width: 768px) {
+    .footer {
+        padding: 50px 0 25px 0; /* 패딩 조정 */
+    }
+    
+    .footer-top {
+        flex-direction: column; /* 세로 배치 */
+        gap: 40px; /* 간격 조정 */
+        text-align: center; /* 가운데 정렬 */
+    }
+    
+    .footer-company {
+        order: 2; /* 순서 변경 */
+    }
+    
+    .footer-social {
+        order: 1; /* 순서 변경 */
+    }
+    
+    .info-row,
+    .company-row {
+        flex-direction: column; /* 세로 배치 */
+        text-align: center; /* 가운데 정렬 */
+        gap: 5px; /* 간격 */
+    }
+    
+    .info-label,
+    .company-label {
+        min-width: unset; /* 최소 너비 해제 */
+        font-weight: 700; /* 더 굵게 */
+        color: #ecf0f1; /* 밝은 색상 */
+    }
+    
+    .social-links {
+        flex-direction: row; /* 가로 배치 */
+        flex-wrap: wrap; /* 줄바꿈 허용 */
+        justify-content: center; /* 가운데 정렬 */
+        gap: 10px; /* 간격 조정 */
+    }
+    
+    .social-link {
+        min-width: 120px; /* 최소 너비 조정 */
+        justify-content: center; /* 가운데 정렬 */
+    }
+}
+
+/* 푸터 반응형 디자인 - 모바일 */
+@media (max-width: 480px) {
+    .footer {
+        padding: 40px 0 20px 0; /* 패딩 더 조정 */
+    }
+    
+    .footer-content {
+        padding: 0 15px; /* 좌우 여백 조정 */
+    }
+    
+    .footer-top {
+        gap: 30px; /* 간격 더 조정 */
+    }
+    
+    .social-title {
+        font-size: 20px; /* 글자 크기 조정 */
+        margin-bottom: 20px; /* 여백 조정 */
+    }
+    
+    .social-links {
+        gap: 8px; /* 간격 더 조정 */
+    }
+    
+    .social-link {
+        min-width: 100px; /* 최소 너비 더 조정 */
+        padding: 10px 15px; /* 패딩 조정 */
+        font-size: 12px; /* 글자 크기 조정 */
+    }
+    
+    .social-icon {
+        width: 30px; /* 아이콘 크기 조정 */
+        height: 30px; /* 아이콘 크기 조정 */
+        font-size: 18px; /* 글자 크기 조정 */
+    }
+    
+    .social-image {
+        width: 20px; /* 이미지 크기 조정 */
+        height: 20px; /* 이미지 크기 조정 */
+    }
+    
+    .copyright p {
+        font-size: 12px; /* 글자 크기 조정 */
+        line-height: 1.4; /* 줄 간격 조정 */
+    }
+}

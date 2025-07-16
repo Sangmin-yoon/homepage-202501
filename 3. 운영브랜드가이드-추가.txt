@@ -1,0 +1,17 @@
+- 사진과 같이 6개의 각 운영브랜드 박스 내 매장문의에 큐알코드가 있는데
+  해당 큐알코드 옆에 아래와 같이 각각의 계정 주소를 예쁘게 노출해다오
+  단, WeChat 은 image/wechat.png , instagram 은 image/insta.png 의 사진을 작은 아이콘으로 대체하여
+  예쁘게 만들어다오.
+ 
+- qr1 : WeChat whoau-4
+
+  qr2 : WeChat  ddm_whoau
+
+  qr3 : WeChat  instantfunkmd
+         instagram  instantfunk_myeongdong
+  
+  qr4 : WeChat  instantfunkmd
+
+  qr5 : instagram  oakley_hongdae
+  qr6 : instagram  h.o.p.e_helping_others_place
+ 
