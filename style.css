@@ -790,8 +790,10 @@ body {
     }
     
     .nav-menu ul {
-        flex-direction: column; /* 메뉴를 세로로 배치 */
-        gap: 10px; /* 간격 줄이기 */
+        flex-direction: row; /* 메뉴를 가로로 배치 */
+        gap: 15px; /* 간격 조정 */
+        flex-wrap: wrap; /* 필요시 줄바꿈 허용 */
+        justify-content: center; /* 가운데 정렬 */
     }
     
     .nav-menu a {
