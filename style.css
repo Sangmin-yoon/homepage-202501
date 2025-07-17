@@ -330,7 +330,7 @@ body {
     
     /* 디자인 요소 추가 */
     background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); /* 부드러운 그라데이션 배경 */
-    padding: 28px 42px; /* 안쪽 여백 30% 축소 (40px → 28px, 60px → 42px) */
+    padding: 28px 30px; /* 안쪽 여백 조정 - 별 장식 제거로 좌우 패딩 줄임 */
     border-radius: 14px; /* 둥근 모서리 30% 축소 (20px → 14px) */
     box-shadow: 
         0 7px 21px rgba(43, 87, 151, 0.1), /* 메인 그림자 30% 축소 */
@@ -354,41 +354,7 @@ body {
         inset 0 1px 0 rgba(255, 255, 255, 0.8); /* 내부 하이라이트 유지 */
 }
 
-/* 제목 앞에 장식적 요소 추가 */
-.product-title::before {
-    content: "✦"; /* 별 모양 장식 */
-    position: absolute;
-    left: 21px; /* 위치 30% 축소 (30px → 21px) */
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 17px; /* 크기 30% 축소 (24px → 17px) */
-    color: rgba(43, 87, 151, 0.3);
-    animation: sparkle 3s ease-in-out infinite; /* 반짝이는 애니메이션 */
-}
-
-/* 제목 뒤에 장식적 요소 추가 */
-.product-title::after {
-    content: "✦"; /* 별 모양 장식 */
-    position: absolute;
-    right: 21px; /* 위치 30% 축소 (30px → 21px) */
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 17px; /* 크기 30% 축소 (24px → 17px) */
-    color: rgba(43, 87, 151, 0.3);
-    animation: sparkle 3s ease-in-out infinite 1.5s; /* 다른 타이밍으로 반짝이기 */
-}
-
-/* 반짝이는 애니메이션 정의 */
-@keyframes sparkle {
-    0%, 100% { 
-        opacity: 0.3; 
-        transform: translateY(-50%) scale(1);
-    }
-    50% { 
-        opacity: 0.8; 
-        transform: translateY(-50%) scale(1.1);
-    }
-}
+/* 별 장식 요소 제거 - 모바일에서 가독성 향상을 위해 삭제 */
 
 /* 브랜드 컨테이너 */
 .brands-container {
@@ -803,17 +769,12 @@ body {
     .product-title {
         font-size: 25px; /* 제목 크기 30% 축소 (36px → 25px) */
         margin-bottom: 50px; /* 여백 조정 */
-        padding: 25px 35px; /* 패딩 30% 축소 (35px → 25px, 50px → 35px) */
+        padding: 25px 25px; /* 패딩 조정 - 별 장식 제거로 좌우 패딩 줄임 */
         max-width: 490px; /* 최대 너비 30% 축소 (700px → 490px) */
         border-radius: 10px; /* 모서리 반지름 30% 축소 (14px → 10px) */
     }
     
-    .product-title::before,
-    .product-title::after {
-        font-size: 14px; /* 장식 요소 크기 30% 축소 (20px → 14px) */
-        left: 18px; /* 위치 30% 축소 (25px → 18px) */
-        right: 18px; /* 위치 30% 축소 (25px → 18px) */
-    }
+    /* 별 장식 요소 제거됨 - 태블릿 관련 스타일 삭제 */
     
     .brands-container {
         gap: 50px; /* 매장 사이 간격 조정 */
@@ -1070,17 +1031,12 @@ body {
     .product-title {
         font-size: 20px; /* 제목 크기 30% 축소 (28px → 20px) */
         margin-bottom: 40px; /* 여백 줄이기 */
-        padding: 18px 25px; /* 패딩 30% 축소 (25px → 18px, 35px → 25px) */
+        padding: 18px 20px; /* 패딩 조정 - 별 장식 제거로 좌우 패딩 줄임 */
         max-width: 90%; /* 모바일에서 너비 조정 */
         border-radius: 10px; /* 모서리 반지름 30% 축소 (15px → 10px) */
     }
     
-    .product-title::before,
-    .product-title::after {
-        font-size: 11px; /* 장식 요소 크기 30% 축소 (16px → 11px) */
-        left: 11px; /* 위치 30% 축소 (15px → 11px) */
-        right: 11px; /* 위치 30% 축소 (15px → 11px) */
-    }
+    /* 별 장식 요소 제거됨 - 모바일 관련 스타일 삭제 */
     
     .brands-container {
         gap: 40px; /* 매장 사이 간격 줄이기 */
