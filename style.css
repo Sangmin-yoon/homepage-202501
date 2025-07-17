@@ -651,10 +651,11 @@ body {
     .greeting-preview p,
     .greeting-full p {
         text-align: justify; /* 양쪽 정렬 */
-        line-height: 1.6; /* 줄 간격 조정 */
+        line-height: 1.6; /* 줄 간격 일관되게 유지 */
         word-break: keep-all; /* 단어 단위로 줄바꿈 */
         word-spacing: 0.05em; /* 단어 간격 조정 */
-        margin-bottom: 0.1em; /* 문단 간격 한 줄로 압축 */
+        margin-bottom: 0.8em; /* 문단 간격 일관되게 조정 */
+        letter-spacing: 0.2px; /* 글자 간격 추가 */
     }
     .header-container {
         display: grid !important; /* 그리드 레이아웃 사용 */
@@ -852,10 +853,11 @@ body {
     .greeting-preview p,
     .greeting-full p {
         text-align: justify; /* 양쪽 정렬 */
-        line-height: 1.7; /* 줄 간격 증가 */
+        line-height: 1.6; /* 줄 간격 일관되게 유지 */
         word-break: keep-all; /* 단어 단위로 줄바꿈 */
-        word-spacing: 0.1em; /* 단어 간격 조정 */
-        margin-bottom: 0.1em; /* 문단 간격 한 줄로 압축 */
+        word-spacing: 0.05em; /* 단어 간격 조정 */
+        margin-bottom: 0.8em; /* 문단 간격 일관되게 조정 */
+        letter-spacing: 0.2px; /* 글자 간격 추가 */
     }
     
     /* 미션 텍스트도 자연스럽게 */
@@ -1372,7 +1374,9 @@ body {
 .steps-image {
     width: 100%; /* 전체 너비 */
     height: 100%; /* 전체 높이 */
-    object-fit: cover; /* 이미지 비율 유지하며 크기 맞춤 */
+    object-fit: contain; /* 이미지 전체가 보이도록 설정 */
+    object-position: center; /* 이미지를 가운데 정렬 */
+    background-color: #f8f9fa; /* 배경색 추가로 여백 부분 처리 */
 }
 
 /* 발걸음 좌우 화살표 버튼 */
@@ -1743,10 +1747,12 @@ body {
     font-size: 17px; /* 글자 크기 늘리기 */
     font-weight: 400; /* 일반 굵기 */
     color: #444; /* 글자 색상 조금 더 진하게 */
-    line-height: 1.9; /* 줄 간격 늘리기 */
-    margin-bottom: 0.1em; /* 문단 간격 한 줄로 압축 */
-    letter-spacing: 0.4px; /* 글자 간격 증가 */
-    word-spacing: 0.1em; /* 단어 간격 추가 */
+    line-height: 1.6; /* 줄 간격 깔끔하게 조정 */
+    margin-bottom: 0.8em; /* 문단 간격 일관되게 조정 */
+    letter-spacing: 0.2px; /* 글자 간격 자연스럽게 조정 */
+    word-spacing: 0.05em; /* 단어 간격 자연스럽게 조정 */
+    text-align: justify; /* 양쪽 정렬로 깔끔하게 */
+    word-break: keep-all; /* 한국어 단어 단위로 줄바꿈 */
 }
 
 /* 인사말 전체 텍스트의 강조 부분 */
