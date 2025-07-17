@@ -72,11 +72,27 @@ body {
     transform: scale(1.02); /* 마우스 오버시 살짝 확대 */
 }
 
+/* 헤더의 브랜드 이름 h1 설정 */
+.brand-name h1 {
+    font-size: 24px; /* 글자 크기 */
+    font-weight: 700; /* 굵은 글자 */
+    color: #2B5797; /* 로고와 동일한 파란색 계열 */
+    text-align: center; /* 가운데 정렬 */
+    margin: 0; /* 기본 margin 제거하여 로고와 수직 정렬 맞춤 */
+    padding: 0; /* 기본 padding 제거 */
+    line-height: 1.2; /* 줄 간격 조정 */
+    transition: color 0.3s ease; /* 색상 변화 효과 */
+}
+
+.brand-name a:hover h1 {
+    color: #1a3f66; /* 마우스 오버시 더 진한 파란색 */
+}
+
 /* 브랜드 이름 설정 */
 .brand-name {
     font-size: 24px; /* 글자 크기 */
     font-weight: 700; /* 굵은 글자 */
-    color: #333; /* 글자 색상 */
+    color: #2B5797; /* 로고와 동일한 파란색으로 변경 */
     margin-bottom: 35px; /* 아래 여백 늘리기 (20px → 35px) - 매장명과 소개글 사이 간격 증가 */
     text-align: center; /* 가운데 정렬 */
     line-height: 1.3; /* 줄 간격 추가 */
@@ -206,7 +222,8 @@ body {
     line-height: 1.6; /* 줄 간격 */
     margin-bottom: 0; /* 아래 여백 제거 */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* 강한 검은색 그림자로 가독성 향상 */
-    white-space: nowrap; /* 한 줄로 강제 */
+    white-space: normal; /* 줄바꿈 허용 */
+    text-align: center; /* 가운데 정렬 확실히 적용 */
 }
 
 /* 히어로 리스트 */
@@ -405,7 +422,7 @@ body {
 .brand-name {
     font-size: 24px; /* 글자 크기 */
     font-weight: 700; /* 굵은 글자 */
-    color: #333; /* 글자 색상 */
+    color: #2B5797; /* 로고와 동일한 파란색으로 변경 */
     margin-bottom: 35px; /* 아래 여백 늘리기 (20px → 35px) - 매장명과 소개글 사이 간격 증가 */
     text-align: center; /* 가운데 정렬 */
     line-height: 1.3; /* 줄 간격 추가 */
@@ -424,18 +441,20 @@ body {
 .description-preview,
 .description-full {
     font-size: 16px; /* 글자 크기 */
-    line-height: 1.7; /* 줄 간격 늘리기 (1.6 → 1.7) */
+    line-height: 1.8; /* 줄 간격 늘리기 (1.7 → 1.8) */
     color: #666; /* 글자 색상 */
     margin-bottom: 20px; /* 아래 여백 늘리기 (15px → 20px) */
-    letter-spacing: 0.3px; /* 글자 간격 추가 */
-    word-spacing: 0.1em; /* 단어 간격 추가 */
+    letter-spacing: 0.5px; /* 글자 간격 증가 (0.3px → 0.5px) */
+    word-spacing: 0.2em; /* 단어 간격 증가 (0.1em → 0.2em) */
+    text-align: justify; /* 양쪽 정렬 추가 */
 }
 
 /* 설명 텍스트 문단 간격 조정 */
 .description-preview p,
 .description-full p {
-    margin-bottom: 1.2em; /* 문단 간격 추가 */
-    line-height: 1.7; /* 줄 간격 확실히 적용 */
+    margin-bottom: 1.5em; /* 문단 간격 증가 (1.2em → 1.5em) */
+    line-height: 1.8; /* 줄 간격 확실히 적용 */
+    text-align: justify; /* 양쪽 정렬 확실히 적용 */
 }
 
 /* 더보기/접기 버튼 */
@@ -707,6 +726,7 @@ body {
         font-size: 20px; /* 글자 크기 줄이기 */
         text-align: center;
         margin: 0;
+        color: #2B5797; /* 로고와 동일한 파란색 계열 */
     }
     
     /* 태블릿 네비게이션 메뉴 */
@@ -806,6 +826,7 @@ body {
         margin-bottom: 30px; /* 매장명과 소개글 간격 유지 */
         letter-spacing: 0.4px; /* 글자 간격 유지 */
         padding-bottom: 8px; /* 패딩 조정 */
+        color: #2B5797; /* 로고 컬러 유지 */
     }
     
     .brand-description {
@@ -815,17 +836,19 @@ body {
     .description-preview,
     .description-full {
         font-size: 15px; /* 텍스트 크기 조정 */
-        line-height: 1.7; /* 줄 간격 유지 */
+        line-height: 1.8; /* 줄 간격 유지 */
         margin-bottom: 18px; /* 아래 여백 유지 */
-        letter-spacing: 0.2px; /* 글자 간격 조정 */
-        word-spacing: 0.05em; /* 단어 간격 조정 */
+        letter-spacing: 0.4px; /* 글자 간격 조정 */
+        word-spacing: 0.15em; /* 단어 간격 조정 */
+        text-align: justify; /* 양쪽 정렬 */
     }
     
     /* 설명 텍스트 문단 간격 태블릿 조정 */
     .description-preview p,
     .description-full p {
-        margin-bottom: 1.1em; /* 문단 간격 유지 */
-        line-height: 1.7; /* 줄 간격 확실히 적용 */
+        margin-bottom: 1.3em; /* 문단 간격 유지 */
+        line-height: 1.8; /* 줄 간격 확실히 적용 */
+        text-align: justify; /* 양쪽 정렬 확실히 적용 */
     }
     
     .qr-code {
@@ -937,6 +960,7 @@ body {
         text-align: center;
         margin: 0;
         line-height: 1.2;
+        color: #2B5797; /* 로고와 동일한 파란색 계열 */
     }
     
     .login-btn {
@@ -1067,6 +1091,7 @@ body {
         margin-bottom: 25px; /* 매장명과 소개글 간격 유지 */
         letter-spacing: 0.3px; /* 글자 간격 유지 */
         padding-bottom: 6px; /* 패딩 조정 */
+        color: #2B5797; /* 로고 컬러 유지 */
     }
     
     .brand-description {
@@ -1076,17 +1101,19 @@ body {
     .description-preview,
     .description-full {
         font-size: 14px; /* 텍스트 크기 줄이기 */
-        line-height: 1.7; /* 줄 간격 유지 */
+        line-height: 1.8; /* 줄 간격 유지 */
         margin-bottom: 15px; /* 아래 여백 유지 */
-        letter-spacing: 0.2px; /* 글자 간격 조정 */
-        word-spacing: 0.05em; /* 단어 간격 조정 */
+        letter-spacing: 0.3px; /* 글자 간격 조정 */
+        word-spacing: 0.1em; /* 단어 간격 조정 */
+        text-align: justify; /* 양쪽 정렬 */
     }
     
     /* 설명 텍스트 문단 간격 모바일 조정 */
     .description-preview p,
     .description-full p {
-        margin-bottom: 1em; /* 문단 간격 유지 */
-        line-height: 1.7; /* 줄 간격 확실히 적용 */
+        margin-bottom: 1.2em; /* 문단 간격 유지 */
+        line-height: 1.8; /* 줄 간격 확실히 적용 */
+        text-align: justify; /* 양쪽 정렬 확실히 적용 */
     }
     
     .qr-code {
@@ -1727,6 +1754,7 @@ body {
     margin-bottom: 30px; /* 아래 여백 늘리기 */
     line-height: 1.3; /* 줄 간격 조정 */
     letter-spacing: 0.5px; /* 글자 간격 추가 */
+    text-align: center; /* 가운데 정렬 추가 */
 }
 
 /* 인사말 미리보기와 전체 텍스트 */
@@ -2071,6 +2099,7 @@ body {
     .greeting-subtitle {
         font-size: 24px; /* 글자 크기 조정 */
         margin-bottom: 25px; /* 여백 조정 */
+        text-align: center; /* 가운데 정렬 유지 */
     }
     
     .greeting-preview p,
@@ -2183,6 +2212,7 @@ body {
     .greeting-subtitle {
         font-size: 22px; /* 글자 크기 조정 */
         margin-bottom: 20px; /* 여백 조정 */
+        text-align: center; /* 가운데 정렬 유지 */
     }
     
     .greeting-preview p,
@@ -2553,4 +2583,15 @@ body {
         font-size: 12px; /* 글자 크기 조정 */
         line-height: 1.4; /* 줄 간격 조정 */
     }
+}
+
+/* 약속 내용의 최종 강조 텍스트 */
+.promise-content strong {
+    color: #2B5797; /* 브랜드 색상 */
+    font-weight: 700; /* 굵은 글자 */
+    font-size: 1.2em; /* 크기 강조 */
+    font-style: italic; /* 이탤릭체 */
+    text-shadow: 0 2px 4px rgba(43, 87, 151, 0.2); /* 브랜드 색상 그림자 */
+    display: block; /* 블록 요소로 분리 */
+    margin-top: 10px; /* 위쪽 여백 */
 }
