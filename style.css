@@ -413,9 +413,9 @@ body {
 .description-preview,
 .description-full {
     font-size: 16px; /* 글자 크기 */
-    line-height: 1.8; /* 줄 간격 데스크톱 최적화 - 더 여유있게 */
+    line-height: 1.9; /* 줄 간격 데스크톱 최적화 - 대폭 늘림 */
     color: #666; /* 글자 색상 */
-    margin-bottom: 20px; /* 아래 여백 늘리기 (15px → 20px) */
+    margin-bottom: 25px; /* 아래 여백 더 늘리기 (20px → 25px) */
     letter-spacing: 0.3px; /* 글자 간격 데스크톱 최적화 */
     word-spacing: 0.08em; /* 단어 간격 데스크톱 최적화 */
     text-align: left; /* 왼쪽 정렬로 변경하여 간격 최적화 */
@@ -426,8 +426,8 @@ body {
 /* 설명 텍스트 문단 간격 조정 */
 .description-preview p,
 .description-full p {
-    margin-bottom: 1.4em; /* 문단 간격 데스크톱 최적화 - 더 여유있게 */
-    line-height: 1.8; /* 줄 간격 확실히 적용 - 더 여유있게 */
+    margin-bottom: 2.0em; /* 문단 간격 데스크톱 최적화 - 대폭 늘림 */
+    line-height: 1.9; /* 줄 간격 확실히 적용 - 대폭 늘림 */
     text-align: left; /* 왼쪽 정렬 확실히 적용 */
     word-break: keep-all; /* 한국어 단어 단위 줄바꿈 확실히 적용 */
     text-rendering: optimizeLegibility; /* 텍스트 렌더링 최적화 */
@@ -802,8 +802,8 @@ body {
     .description-preview,
     .description-full {
         font-size: 15px; /* 텍스트 크기 조정 */
-        line-height: 1.8; /* 줄 간격 태블릿 최적화 - 더 여유있게 */
-        margin-bottom: 18px; /* 아래 여백 유지 */
+        line-height: 1.9; /* 줄 간격 태블릿 최적화 - 대폭 늘림 */
+        margin-bottom: 22px; /* 아래 여백 늘림 */
         letter-spacing: 0.2px; /* 글자 간격 태블릿 최적화 */
         word-spacing: 0.05em; /* 단어 간격 태블릿 최적화 */
         text-align: left; /* 왼쪽 정렬로 변경하여 간격 최적화 */
@@ -813,8 +813,8 @@ body {
     /* 설명 텍스트 문단 간격 태블릿 조정 */
     .description-preview p,
     .description-full p {
-        margin-bottom: 1.3em; /* 문단 간격 조정 - 더 여유있게 */
-        line-height: 1.8; /* 줄 간격 확실히 적용 - 더 여유있게 */
+        margin-bottom: 1.8em; /* 문단 간격 조정 - 대폭 늘림 */
+        line-height: 1.9; /* 줄 간격 확실히 적용 - 대폭 늘림 */
         text-align: left; /* 왼쪽 정렬 확실히 적용 */
         word-break: keep-all; /* 한국어 단어 단위 줄바꿈 확실히 적용 */
     }
@@ -1059,8 +1059,8 @@ body {
     .description-preview,
     .description-full {
         font-size: 14px; /* 텍스트 크기 줄이기 */
-        line-height: 1.75; /* 줄 간격 모바일 최적화 - 더 여유있게 */
-        margin-bottom: 15px; /* 아래 여백 유지 */
+        line-height: 1.85; /* 줄 간격 모바일 최적화 - 대폭 늘림 */
+        margin-bottom: 18px; /* 아래 여백 늘림 */
         letter-spacing: 0.1px; /* 글자 간격 모바일 최적화 */
         word-spacing: 0.02em; /* 단어 간격 모바일 최적화 */
         text-align: left; /* 왼쪽 정렬로 변경하여 간격 최적화 */
@@ -1071,8 +1071,8 @@ body {
     /* 설명 텍스트 문단 간격 모바일 조정 */
     .description-preview p,
     .description-full p {
-        margin-bottom: 1.25em; /* 문단 간격 모바일 최적화 - 더 여유있게 */
-        line-height: 1.75; /* 줄 간격 확실히 적용 - 더 여유있게 */
+        margin-bottom: 1.6em; /* 문단 간격 모바일 최적화 - 대폭 늘림 */
+        line-height: 1.85; /* 줄 간격 확실히 적용 - 대폭 늘림 */
         text-align: left; /* 왼쪽 정렬 확실히 적용 */
         word-break: keep-all; /* 한국어 단어 단위 줄바꿈 확실히 적용 */
         text-rendering: optimizeLegibility; /* 텍스트 렌더링 최적화 */
@@ -2572,16 +2572,16 @@ body {
     .description-preview,
     .description-full {
         font-size: 13px; /* 폰트 크기 더 줄이기 */
-        line-height: 1.65; /* 줄 간격 더 최적화 - 더 여유있게 */
+        line-height: 1.75; /* 줄 간격 더 최적화 - 대폭 늘림 */
         letter-spacing: 0.05px; /* 글자 간격 더 세밀하게 */
         word-spacing: 0.01em; /* 단어 간격 더 세밀하게 */
-        margin-bottom: 14px; /* 여백 조정 */
+        margin-bottom: 16px; /* 여백 조정 - 늘림 */
     }
     
     .description-preview p,
     .description-full p {
-        margin-bottom: 1.1em; /* 문단 간격 조정 - 더 여유있게 */
-        line-height: 1.65; /* 줄 간격 맞춤 - 더 여유있게 */
+        margin-bottom: 1.3em; /* 문단 간격 조정 - 대폭 늘림 */
+        line-height: 1.75; /* 줄 간격 맞춤 - 대폭 늘림 */
     }
 }
 
@@ -2598,16 +2598,16 @@ body {
     .description-preview,
     .description-full {
         font-size: 12px; /* 폰트 크기 최소화 */
-        line-height: 1.6; /* 줄 간격 극소형 최적화 - 더 여유있게 */
+        line-height: 1.7; /* 줄 간격 극소형 최적화 - 대폭 늘림 */
         letter-spacing: 0px; /* 글자 간격 최소화 */
         word-spacing: 0px; /* 단어 간격 최소화 */
-        margin-bottom: 12px; /* 여백 최소화 */
+        margin-bottom: 14px; /* 여백 최소화 - 늘림 */
     }
     
     .description-preview p,
     .description-full p {
-        margin-bottom: 1.0em; /* 문단 간격 최소화 - 조금 여유있게 */
-        line-height: 1.6; /* 줄 간격 맞춤 - 더 여유있게 */
+        margin-bottom: 1.2em; /* 문단 간격 최소화 - 대폭 늘림 */
+        line-height: 1.7; /* 줄 간격 맞춤 - 대폭 늘림 */
     }
 }
 
@@ -2640,16 +2640,16 @@ body {
     .description-preview,
     .description-full {
         font-size: 13.5px; /* 폰트 크기 중간 조정 */
-        line-height: 1.7; /* 줄 간격 중간 최적화 - 더 여유있게 */
+        line-height: 1.8; /* 줄 간격 중간 최적화 - 대폭 늘림 */
         letter-spacing: 0.08px; /* 글자 간격 중간 조정 */
         word-spacing: 0.015em; /* 단어 간격 중간 조정 */
-        margin-bottom: 13px; /* 여백 중간 조정 */
+        margin-bottom: 15px; /* 여백 중간 조정 - 늘림 */
     }
     
     .description-preview p,
     .description-full p {
-        margin-bottom: 1.15em; /* 문단 간격 중간 조정 - 더 여유있게 */
-        line-height: 1.7; /* 줄 간격 맞춤 - 더 여유있게 */
+        margin-bottom: 1.4em; /* 문단 간격 중간 조정 - 대폭 늘림 */
+        line-height: 1.8; /* 줄 간격 맞춤 - 대폭 늘림 */
     }
     
     .brand-name {
@@ -2657,4 +2657,19 @@ body {
         letter-spacing: 0.15px; /* 글자 간격 중간 조정 */
         margin-bottom: 22px; /* 여백 중간 조정 */
     }
+}
+
+/* 매장 소개글 내의 br 태그 간격 조정 */
+.description-preview br,
+.description-full br {
+    line-height: 2.5; /* br 태그 높이 늘리기 */
+    margin: 0.8em 0; /* 위아래 여백 추가 */
+    display: block; /* 블록 요소로 만들기 */
+}
+
+/* br + br 연속 사용시 더 큰 간격 */
+.description-preview br + br,
+.description-full br + br {
+    line-height: 3.0; /* 연속 br 태그 높이 더 늘리기 */
+    margin: 1.0em 0; /* 더 큰 여백 */
 }
