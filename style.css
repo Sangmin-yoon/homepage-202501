@@ -426,7 +426,7 @@ body {
 /* 설명 텍스트 문단 간격 조정 */
 .description-preview p,
 .description-full p {
-    margin-bottom: 0.5em; /* 문단 간격 대폭 줄임 */
+    margin-bottom: 0.1em; /* 문단 간격 한 줄로 압축 */
     line-height: 1.4; /* 줄 간격 대폭 줄임 */
     text-align: left; /* 왼쪽 정렬 확실히 적용 */
     word-break: keep-all; /* 한국어 단어 단위 줄바꿈 확실히 적용 */
@@ -654,7 +654,7 @@ body {
         line-height: 1.6; /* 줄 간격 조정 */
         word-break: keep-all; /* 단어 단위로 줄바꿈 */
         word-spacing: 0.05em; /* 단어 간격 조정 */
-        margin-bottom: 1em; /* 문단 간격 추가 */
+        margin-bottom: 0.1em; /* 문단 간격 한 줄로 압축 */
     }
     .header-container {
         display: grid !important; /* 그리드 레이아웃 사용 */
@@ -813,7 +813,7 @@ body {
     /* 설명 텍스트 문단 간격 태블릿 조정 */
     .description-preview p,
     .description-full p {
-        margin-bottom: 0.4em; /* 문단 간격 대폭 줄임 */
+        margin-bottom: 0.1em; /* 문단 간격 한 줄로 압축 */
         line-height: 1.3; /* 줄 간격 대폭 줄임 */
         text-align: left; /* 왼쪽 정렬 확실히 적용 */
         word-break: keep-all; /* 한국어 단어 단위 줄바꿈 확실히 적용 */
@@ -855,7 +855,7 @@ body {
         line-height: 1.7; /* 줄 간격 증가 */
         word-break: keep-all; /* 단어 단위로 줄바꿈 */
         word-spacing: 0.1em; /* 단어 간격 조정 */
-        margin-bottom: 1em; /* 문단 간격 추가 */
+        margin-bottom: 0.1em; /* 문단 간격 한 줄로 압축 */
     }
     
     /* 미션 텍스트도 자연스럽게 */
@@ -866,12 +866,20 @@ body {
         word-spacing: 0.1em; /* 단어 간격 조정 */
     }
     
+    .mission-subtitle p {
+        margin-bottom: 0.1em; /* 문단 간격 한 줄로 압축 */
+    }
+    
     /* 약속 내용 텍스트도 자연스럽게 */
     .promise-content {
         text-align: center; /* 가운데 정렬 유지 */
         line-height: 1.7; /* 줄 간격 증가 */
         word-break: keep-all; /* 단어 단위로 줄바꿈 */
         word-spacing: 0.1em; /* 단어 간격 조정 */
+    }
+    
+    .promise-content p {
+        margin-bottom: 0.1em; /* 문단 간격 한 줄로 압축 */
     }
     .header-container {
         padding: 0 15px; /* 좌우 여백 줄이기 */
@@ -1071,7 +1079,7 @@ body {
     /* 설명 텍스트 문단 간격 모바일 조정 */
     .description-preview p,
     .description-full p {
-        margin-bottom: 0.3em; /* 문단 간격 대폭 줄임 */
+        margin-bottom: 0.1em; /* 문단 간격 한 줄로 압축 */
         line-height: 1.3; /* 줄 간격 대폭 줄임 */
         text-align: left; /* 왼쪽 정렬 확실히 적용 */
         word-break: keep-all; /* 한국어 단어 단위 줄바꿈 확실히 적용 */
@@ -1183,6 +1191,11 @@ body {
     text-align: center; /* 가운데 정렬 명시 */
 }
 
+/* 미션 부제목 문단 간격 압축 */
+.mission-subtitle p {
+    margin-bottom: 0.1em; /* 문단 간격 한 줄로 압축 */
+}
+
 /* 미션 리스트 */
 .mission-list {
     display: grid; /* 그리드 레이아웃 사용 */
@@ -1275,6 +1288,11 @@ body {
     letter-spacing: 0.4px; /* 글자 간격 증가 */
     word-spacing: 0.15em; /* 단어 간격 추가 */
     text-align: center; /* 가운데 정렬 명시 */
+}
+
+/* 약속 내용 문단 간격 압축 */
+.promise-content p {
+    margin-bottom: 0.1em; /* 문단 간격 한 줄로 압축 */
 }
 
 /* 약속 내용의 강조 텍스트 */
@@ -1726,7 +1744,7 @@ body {
     font-weight: 400; /* 일반 굵기 */
     color: #444; /* 글자 색상 조금 더 진하게 */
     line-height: 1.9; /* 줄 간격 늘리기 */
-    margin-bottom: 1.5em; /* 아래 여백 늘리기 - 문단 간격 증가 */
+    margin-bottom: 0.1em; /* 문단 간격 한 줄로 압축 */
     letter-spacing: 0.4px; /* 글자 간격 증가 */
     word-spacing: 0.1em; /* 단어 간격 추가 */
 }
@@ -2580,7 +2598,7 @@ body {
     
     .description-preview p,
     .description-full p {
-        margin-bottom: 0.2em; /* 문단 간격 대폭 줄임 */
+        margin-bottom: 0.1em; /* 문단 간격 한 줄로 압축 */
         line-height: 1.2; /* 줄 간격 대폭 줄임 */
     }
 }
@@ -2606,7 +2624,7 @@ body {
     
     .description-preview p,
     .description-full p {
-        margin-bottom: 0.15em; /* 문단 간격 대폭 줄임 */
+        margin-bottom: 0.1em; /* 문단 간격 한 줄로 압축 */
         line-height: 1.15; /* 줄 간격 대폭 줄임 */
     }
 }
@@ -2648,7 +2666,7 @@ body {
     
     .description-preview p,
     .description-full p {
-        margin-bottom: 0.25em; /* 문단 간격 대폭 줄임 */
+        margin-bottom: 0.1em; /* 문단 간격 한 줄로 압축 */
         line-height: 1.25; /* 줄 간격 대폭 줄임 */
     }
     
