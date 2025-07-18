@@ -1755,29 +1755,36 @@ body {
     word-break: keep-all; /* 한국어 단어 단위로 줄바꿈 */
 }
 
-/* 인사말 전체 텍스트의 강조 부분 */
-.greeting-full strong {
-    color: #2B5797; /* 브랜드 색상 */
-    font-weight: 700; /* 굵은 글자 */
-    font-size: 20px; /* 글씨 크기 늘리기 */
-    display: block; /* 블록 요소 */
-    margin-top: 30px; /* 위쪽 여백 늘리기 */
+/* 새로운 문단 스타일 */
+.greeting-paragraph {
+    font-size: 17px;
+    font-weight: 400;
+    color: #444;
+    line-height: 1.8; /* 더 넓은 줄 간격 */
+    margin-bottom: 30px; /* 문단 간격 늘리기 */
+    letter-spacing: 0.3px;
     text-align: center; /* 가운데 정렬 */
-    padding: 25px 30px; /* 안쪽 여백 늘리기 */
-    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); /* 그라데이션 배경 */
-    border-radius: 15px; /* 둥근 모서리 늘리기 */
-    border-left: 5px solid #2B5797; /* 왼쪽 강조 테두리 늘리기 */
-    box-shadow: 0 4px 15px rgba(43, 87, 151, 0.1); /* 그림자 추가 */
-    position: relative; /* 장식 요소를 위한 기준점 */
+    word-break: keep-all;
+    padding: 0 20px; /* 좌우 여백 추가 */
 }
 
-/* 강조 부분 장식 아이콘 */
-.greeting-full strong::before {
-    content: "💫"; /* 반짝이는 이모지 */
-    position: absolute; /* 절대 위치 */
-    top: -10px; /* 위쪽으로 올리기 */
-    right: 20px; /* 오른쪽에서 20px */
-    font-size: 24px; /* 크기 */
+/* 마지막 강조 문단 */
+.greeting-final {
+    font-size: 20px;
+    font-weight: 700;
+    color: #2B5797;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    padding: 0;
+}
+
+/* 인사말 전체 텍스트의 강조 부분 */
+.greeting-full strong {
+    color: #2B5797;
+    font-weight: 700;
+    font-size: 20px;
+    display: inline;
+    text-align: center;
 }
 
 /* 더보기/닫기 버튼 */
@@ -1804,160 +1811,148 @@ body {
     box-shadow: 0 8px 25px rgba(43, 87, 151, 0.4); /* 더 강한 그림자 */
 }
 
-/* 연락처 섹션 */
+/* 문의하기 섹션 전체 */
 .contact-section {
-    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%); /* 그라데이션 배경 */
-    padding: 50px; /* 안쪽 여백 늘리기 */
-    border-radius: 20px; /* 둥근 모서리 늘리기 */
-    text-align: center; /* 가운데 정렬 */
-    box-shadow: 
-        0 15px 35px rgba(43, 87, 151, 0.1), /* 더 강한 메인 그림자 */
-        0 6px 15px rgba(0, 0, 0, 0.05); /* 보조 그림자 */
-    border: 2px solid rgba(43, 87, 151, 0.1); /* 미세한 테두리 */
-    position: relative; /* 장식 요소를 위한 기준점 */
-    overflow: hidden; /* 장식 요소가 넘치지 않도록 */
+    padding: 80px 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    scroll-margin-top: 100px;
 }
 
-/* 연락처 섹션 장식 요소 */
-.contact-section::before {
-    content: ""; /* 빈 내용 */
-    position: absolute; /* 절대 위치 */
-    top: 0; /* 맨 위 */
-    left: 0; /* 맨 왼쪽 */
-    width: 100%; /* 전체 너비 */
-    height: 5px; /* 높이 */
-    background: linear-gradient(90deg, #f39c12 0%, #2B5797 100%); /* 주황에서 파랑 그라데이션 */
+/* 문의하기 섹션 제목 */
+.contact-section-title {
+    font-size: 42px;
+    font-weight: 700;
+    color: #2B5797;
+    text-align: center;
+    margin-bottom: 60px;
+    text-shadow: 0 2px 4px rgba(43, 87, 151, 0.1);
+    position: relative;
+}
+
+/* 제목 아래 장식 라인 */
+.contact-section-title::after {
+    content: "";
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #2B5797 0%, #f39c12 100%);
+    border-radius: 2px;
+}
+
+/* 연락처 정보 섹션 */
+.contact-info-section {
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 50px 40px;
+    background: white;
+    border-radius: 20px;
+    border: 2px solid rgba(43, 87, 151, 0.1);
+    text-align: center;
+    box-shadow: 0 15px 35px rgba(43, 87, 151, 0.1), 0 6px 15px rgba(0, 0, 0, 0.05);
 }
 
 /* 연락처 메시지 */
 .contact-message {
-    font-size: 20px; /* 글자 크기 */
-    font-weight: 600; /* 중간 굵기 */
-    color: #333; /* 글자 색상 */
-    margin-bottom: 40px; /* 아래 여백 */
-    line-height: 1.7; /* 줄 간격 증가 */
-    letter-spacing: 0.4px; /* 글자 간격 증가 */
-    word-spacing: 0.1em; /* 단어 간격 추가 */
-    text-align: center; /* 가운데 정렬 */
-    position: relative; /* 장식 요소를 위한 기준점 */
+    font-size: 16px;
+    font-weight: 400;
+    color: #555;
+    margin-bottom: 30px;
+    line-height: 1.6;
+    letter-spacing: 0.3px;
 }
 
-/* 연락처 메시지 장식 아이콘 */
-.contact-message::before {
-    content: "💬"; /* 말풍선 이모지 */
-    margin-right: 10px; /* 오른쪽 여백 */
-    font-size: 22px; /* 크기 */
+/* 연락처 카드 컨테이너 */
+.contact-cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
 }
 
-/* 연락처 상세 정보 */
-.contact-details {
-    display: flex; /* 가로 배치 */
-    flex-direction: column; /* 세로 배치로 변경 */
-    align-items: center; /* 가운데 정렬 */
-    gap: 25px; /* 간격 */
+/* 개별 연락처 카드 */
+.contact-card {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(43, 87, 151, 0.08);
+    border: 1px solid rgba(43, 87, 151, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: all 0.3s ease;
+    min-width: 250px;
 }
 
-/* 연락처 항목 공통 스타일 */
-.contact-item {
-    display: flex; /* 가로 배치 */
-    align-items: center; /* 세로 가운데 정렬 */
-    gap: 15px; /* 아이콘과 텍스트 간격 */
-    transition: all 0.3s ease; /* 부드러운 효과 */
-    padding: 8px 0; /* 위아래 패딩 */
-}
-
-/* 연락처 항목 호버 효과 */
-.contact-item:hover {
-    transform: translateX(5px); /* 살짝 오른쪽으로 이동 */
+/* 연락처 카드 호버 효과 */
+.contact-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(43, 87, 151, 0.15);
+    border-color: rgba(43, 87, 151, 0.2);
 }
 
 /* 연락처 아이콘 */
 .contact-icon {
-    width: 50px; /* 너비 */
-    height: 50px; /* 높이 */
-    display: flex; /* 플렉스 컨테이너 */
-    align-items: center; /* 세로 가운데 정렬 */
-    justify-content: center; /* 가로 가운데 정렬 */
-    border-radius: 50%; /* 원형 */
-    font-size: 24px; /* 아이콘 크기 */
-    transition: all 0.3s ease; /* 부드러운 효과 */
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    font-size: 20px;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
 }
 
 /* 이메일 아이콘 */
 .email-icon {
-    background: linear-gradient(135deg, rgba(43, 87, 151, 0.1) 0%, rgba(43, 87, 151, 0.2) 100%); /* 연한 브랜드 색상 배경 */
-    color: #2B5797; /* 브랜드 색상 */
-    border: 2px solid rgba(43, 87, 151, 0.2); /* 연한 테두리 */
+    background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+    color: #2B5797;
+    border: 2px solid rgba(43, 87, 151, 0.2);
 }
 
-/* 이름 아이콘 */
-.name-icon {
-    background: linear-gradient(135deg, rgba(243, 156, 18, 0.1) 0%, rgba(243, 156, 18, 0.2) 100%); /* 연한 주황 배경 */
-    color: #f39c12; /* 주황색 */
-    border: 2px solid rgba(243, 156, 18, 0.2); /* 연한 테두리 */
+/* 담당자 아이콘 */
+.person-icon {
+    background: linear-gradient(135deg, #fff3e0 0%, #ffcc02 100%);
+    color: #f57c00;
+    border: 2px solid rgba(245, 124, 0, 0.2);
 }
 
-/* 아이콘 호버 효과 */
-.contact-item:hover .email-icon {
-    background: linear-gradient(135deg, #2B5797 0%, #1e4a7a 100%); /* 진한 브랜드 색상 */
-    color: white; /* 흰색 */
-    transform: scale(1.1); /* 살짝 확대 */
-    box-shadow: 0 4px 15px rgba(43, 87, 151, 0.3); /* 그림자 */
-}
-
-.contact-item:hover .name-icon {
-    background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%); /* 진한 주황색 */
-    color: white; /* 흰색 */
-    transform: scale(1.1); /* 살짝 확대 */
-    box-shadow: 0 4px 15px rgba(243, 156, 18, 0.3); /* 그림자 */
-}
-
-/* 연락처 텍스트 */
-.contact-text {
-    display: flex; /* 플렉스 컨테이너 */
-    flex-direction: column; /* 세로 배치 */
-    gap: 5px; /* 간격 */
+/* 연락처 내용 */
+.contact-content {
+    text-align: left;
+    flex: 1;
 }
 
 /* 연락처 라벨 */
 .contact-label {
-    font-size: 14px; /* 작은 글씨 */
-    font-weight: 500; /* 중간 굵기 */
-    color: #666; /* 회색 */
-    letter-spacing: 0.5px; /* 글자 간격 */
-    text-transform: uppercase; /* 대문자 */
+    font-size: 12px;
+    font-weight: 600;
+    color: #888;
+    margin-bottom: 4px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
 }
 
-/* 이메일 주소 */
-.contact-email {
-    font-size: 20px; /* 글자 크기 */
-    font-weight: 700; /* 굵은 글자 */
-    color: #2B5797; /* 브랜드 색상 */
-    text-decoration: none; /* 밑줄 제거 */
-    letter-spacing: 0.3px; /* 글자 간격 */
-    transition: all 0.3s ease; /* 부드러운 효과 */
+/* 연락처 값 */
+.contact-value {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    letter-spacing: 0.2px;
 }
 
-/* 이메일 호버 효과 */
-.contact-email:hover {
-    color: #1e4a7a; /* 더 진한 색 */
-    text-shadow: 0 2px 4px rgba(43, 87, 151, 0.2); /* 텍스트 그림자 */
+/* 이메일 링크 호버 효과 */
+.contact-value[href]:hover {
+    color: #2B5797;
+    text-decoration: underline;
 }
 
-/* 이름 */
-.contact-name {
-    font-size: 18px; /* 글자 크기 */
-    font-weight: 700; /* 굵은 글자 */
-    color: #f39c12; /* 주황색 */
-    letter-spacing: 0.3px; /* 글자 간격 */
-    transition: all 0.3s ease; /* 부드러운 효과 */
-}
 
-/* 이름 호버 효과 */
-.contact-name:hover {
-    color: #e67e22; /* 더 진한 주황색 */
-    text-shadow: 0 2px 4px rgba(243, 156, 18, 0.2); /* 텍스트 그림자 */
-}
 
 /* 청춘다움 더알아보기 버튼 섹션 */
 .instagram-follow-section {
@@ -2093,9 +2088,23 @@ body {
         font-size: 16px; /* 글자 크기 조정 */
     }
     
+    /* 새로운 문단 스타일 - 태블릿 */
+    .greeting-paragraph {
+        font-size: 16px;
+        line-height: 1.7;
+        margin-bottom: 25px;
+        padding: 0 15px;
+        text-align: center;
+    }
+    
+    .greeting-final {
+        font-size: 18px;
+        padding: 0;
+        margin-top: 35px;
+    }
+    
     .greeting-full strong {
-        font-size: 18px; /* 강조 텍스트 크기 조정 */
-        padding: 20px 25px; /* 패딩 조정 */
+        font-size: 18px;
     }
     
     .greeting-toggle-btn {
@@ -2103,35 +2112,45 @@ body {
         font-size: 14px; /* 글자 크기 조정 */
     }
     
+    /* 문의하기 섹션 - 태블릿 */
     .contact-section {
-        padding: 40px 30px; /* 패딩 조정 */
+        padding: 60px 0;
+    }
+    
+    .contact-section-title {
+        font-size: 32px;
+        margin-bottom: 50px;
+    }
+    
+    .contact-info-section {
+        margin: 0 auto;
+        padding: 40px 30px;
     }
     
     .contact-message {
-        font-size: 18px; /* 글자 크기 조정 */
-        margin-bottom: 25px; /* 여백 조정 */
+        font-size: 15px;
+        margin-bottom: 25px;
     }
     
-    .contact-details {
-        gap: 20px; /* 간격 조정 */
+    .contact-cards {
+        gap: 20px;
+        flex-direction: column;
+        align-items: center;
     }
     
-    .contact-item {
-        gap: 12px; /* 아이콘과 텍스트 간격 조정 */
+    .contact-card {
+        min-width: 200px;
+        padding: 20px;
     }
     
     .contact-icon {
-        width: 45px; /* 아이콘 크기 조정 */
-        height: 45px; /* 아이콘 크기 조정 */
-        font-size: 22px; /* 아이콘 글자 크기 조정 */
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
     }
     
-    .contact-email {
-        font-size: 18px; /* 글자 크기 조정 */
-    }
-    
-    .contact-name {
-        font-size: 16px; /* 글자 크기 조정 */
+    .contact-value {
+        font-size: 15px;
     }
     
     /* 인스타그램 버튼 태블릿 스타일 */
@@ -2207,9 +2226,23 @@ body {
         line-height: 1.7; /* 줄 간격 조정 */
     }
     
+    /* 새로운 문단 스타일 - 모바일 */
+    .greeting-paragraph {
+        font-size: 15px;
+        line-height: 1.8;
+        margin-bottom: 20px;
+        padding: 0 10px;
+        text-align: center;
+    }
+    
+    .greeting-final {
+        font-size: 17px;
+        padding: 0;
+        margin-top: 30px;
+    }
+    
     .greeting-full strong {
-        font-size: 17px; /* 강조 텍스트 크기 조정 */
-        padding: 18px 20px; /* 패딩 조정 */
+        font-size: 17px;
     }
     
     .greeting-toggle-btn {
@@ -2217,39 +2250,49 @@ body {
         font-size: 14px; /* 글자 크기 조정 */
     }
     
+    /* 문의하기 섹션 - 모바일 */
     .contact-section {
-        padding: 30px 20px; /* 패딩 조정 */
+        padding: 50px 0;
+    }
+    
+    .contact-section-title {
+        font-size: 28px;
+        margin-bottom: 40px;
+    }
+    
+    .contact-info-section {
+        margin: 0 auto;
+        padding: 30px 20px;
     }
     
     .contact-message {
-        font-size: 17px; /* 글자 크기 조정 */
-        margin-bottom: 20px; /* 여백 조정 */
+        font-size: 14px;
+        margin-bottom: 20px;
     }
     
-    .contact-details {
-        gap: 18px; /* 간격 조정 */
+    .contact-cards {
+        gap: 15px;
+        flex-direction: column;
+        align-items: center;
     }
     
-    .contact-item {
-        gap: 10px; /* 아이콘과 텍스트 간격 조정 */
+    .contact-card {
+        min-width: 180px;
+        padding: 18px;
     }
     
     .contact-icon {
-        width: 40px; /* 아이콘 크기 조정 */
-        height: 40px; /* 아이콘 크기 조정 */
-        font-size: 20px; /* 아이콘 글자 크기 조정 */
+        width: 35px;
+        height: 35px;
+        font-size: 16px;
     }
     
     .contact-label {
-        font-size: 12px; /* 라벨 크기 조정 */
+        font-size: 11px;
     }
     
-    .contact-email {
-        font-size: 16px; /* 글자 크기 조정 */
-    }
-    
-    .contact-name {
-        font-size: 15px; /* 글자 크기 조정 */
+    .contact-value {
+        font-size: 14px;
     }
     
     /* 인스타그램 버튼 모바일 스타일 */
