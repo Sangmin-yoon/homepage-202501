@@ -2189,25 +2189,29 @@ body {
     .greeting-preview p,
     .greeting-full p {
         font-size: 15px; /* 글자 크기 조정 */
-        line-height: 1.7; /* 줄 간격 조정 */
+        line-height: 1.6; /* 줄 간격 조정 */
         text-align: left; /* 모바일에서 왼쪽 정렬 */
-        letter-spacing: 0.1px; /* 글자 간격 조정 */
-        word-spacing: 0.02em; /* 단어 간격 조정 */
+        letter-spacing: 0.05px; /* 글자 간격 조정 */
+        word-spacing: 0.01em; /* 단어 간격 조정 */
         word-break: keep-all; /* 단어 단위 줄바꿈 */
         padding: 0 15px; /* 좌우 여백 추가 */
+        hyphens: none;
+        white-space: pre-line;
     }
     
     /* 새로운 문단 스타일 - 모바일 */
     .greeting-paragraph {
         font-size: 15px;
-        line-height: 1.7;
+        line-height: 1.6;
         margin-bottom: 20px;
         padding: 0 15px;
         text-align: left;
-        letter-spacing: 0.1px;
-        word-spacing: 0.02em;
+        letter-spacing: 0.05px;
+        word-spacing: 0.01em;
         word-break: keep-all;
         text-rendering: optimizeLegibility;
+        hyphens: none;
+        white-space: pre-line;
     }
     
     .greeting-final {
@@ -2734,20 +2738,24 @@ body {
 @media (max-width: 400px) {
     .greeting-paragraph {
         font-size: 14px;
-        line-height: 1.6;
+        line-height: 1.5;
         padding: 0 10px;
-        letter-spacing: 0.05px;
-        word-spacing: 0.01em;
+        letter-spacing: 0.02px;
+        word-spacing: 0.005em;
         margin-bottom: 18px;
+        hyphens: none;
+        white-space: pre-line;
     }
     
     .greeting-preview p,
     .greeting-full p {
         font-size: 14px;
-        line-height: 1.6;
+        line-height: 1.5;
         padding: 0 10px;
-        letter-spacing: 0.05px;
-        word-spacing: 0.01em;
+        letter-spacing: 0.02px;
+        word-spacing: 0.005em;
+        hyphens: none;
+        white-space: pre-line;
     }
     
     .greeting-subtitle {
