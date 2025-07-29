@@ -2190,15 +2190,24 @@ body {
     .greeting-full p {
         font-size: 15px; /* 글자 크기 조정 */
         line-height: 1.7; /* 줄 간격 조정 */
+        text-align: left; /* 모바일에서 왼쪽 정렬 */
+        letter-spacing: 0.1px; /* 글자 간격 조정 */
+        word-spacing: 0.02em; /* 단어 간격 조정 */
+        word-break: keep-all; /* 단어 단위 줄바꿈 */
+        padding: 0 15px; /* 좌우 여백 추가 */
     }
     
     /* 새로운 문단 스타일 - 모바일 */
     .greeting-paragraph {
         font-size: 15px;
-        line-height: 1.8;
+        line-height: 1.7;
         margin-bottom: 20px;
-        padding: 0 10px;
-        text-align: center;
+        padding: 0 15px;
+        text-align: left;
+        letter-spacing: 0.1px;
+        word-spacing: 0.02em;
+        word-break: keep-all;
+        text-rendering: optimizeLegibility;
     }
     
     .greeting-final {
@@ -2719,4 +2728,30 @@ body {
     line-height: 0.1; /* 연속 br 태그 높이 최대한 최소화 */
     margin: 0; /* 여백 완전 제거 */
     padding: 0; /* 패딩도 제거 */
+}
+
+/* 모바일 전용 청춘다움 이야기 최적화 (400px 이하) */
+@media (max-width: 400px) {
+    .greeting-paragraph {
+        font-size: 14px;
+        line-height: 1.6;
+        padding: 0 10px;
+        letter-spacing: 0.05px;
+        word-spacing: 0.01em;
+        margin-bottom: 18px;
+    }
+    
+    .greeting-preview p,
+    .greeting-full p {
+        font-size: 14px;
+        line-height: 1.6;
+        padding: 0 10px;
+        letter-spacing: 0.05px;
+        word-spacing: 0.01em;
+    }
+    
+    .greeting-subtitle {
+        font-size: 20px;
+        padding: 0 10px;
+    }
 }
