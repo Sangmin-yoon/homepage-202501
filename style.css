@@ -35,9 +35,9 @@ body {
     padding: 0 20px; /* 좌우 여백 */
     display: flex; /* 가로로 나란히 배치 */
     align-items: center; /* 세로 가운데로 배치 */
-    justify-content: space-between; /* 양쪽 끝과 가운데로 배치 */
-    gap: 15px; /* 사이사이 간격을 15px로 증가 */
-    min-height: 70px; /* 최소 높이 설정으로 균형감 향상 */
+    justify-content: center; /* 가운데 정렬로 변경 */
+    gap: 40px; /* 간격을 더 늘려서 로고와 브랜드명 사이 여유 확보 */
+    min-height: 85px; /* 최소 높이를 늘려서 더 여유로운 헤더 */
 }
 
 /* 로고 이미지 설정 */
@@ -47,7 +47,7 @@ body {
 }
 
 .logo img {
-    height: 70px; /* 로고 높이 - 더 크게 변경 */
+    height: 85px; /* 로고 높이를 더 크게 변경 */
     width: auto; /* 너비는 자동으로 조정 */
 }
 
@@ -60,8 +60,8 @@ body {
     display: flex; /* 플렉스 컨테이너로 설정 */
     align-items: center; /* 세로 가운데 정렬 */
     justify-content: center; /* 가로 가운데 정렬 */
-    height: 70px; /* 로고 높이와 동일하게 설정 */
-    padding: 0 10px; /* 좌우 여백 추가로 균형감 향상 */
+    height: 85px; /* 로고 높이와 동일하게 설정 */
+    padding: 0 15px; /* 좌우 여백을 늘려서 더 여유롭게 */
 }
 
 /* 브랜드 이름 링크 설정 */
@@ -77,36 +77,22 @@ body {
 
 /* 헤더의 브랜드 이름 h1 설정 */
 .brand-name h1 {
-    font-size: 24px; /* 글자 크기 */
+    font-size: 28px; /* 글자 크기를 더 크게 */
     font-weight: 700; /* 굵은 글자 */
     color: #2B5797; /* 로고와 동일한 파란색 계열 */
     text-align: center; /* 가운데 정렬 */
     margin: 0; /* 기본 margin 제거하여 로고와 수직 정렬 맞춤 */
     padding: 0; /* 기본 padding 제거 */
-    line-height: 1.2; /* 줄 간격 조정 */
+    line-height: 1.3; /* 줄 간격을 약간 늘림 */
     transition: color 0.3s ease; /* 색상 변화 효과 */
+    letter-spacing: 0.5px; /* 글자 간격 추가로 더 세련된 느낌 */
 }
 
 .brand-name a:hover h1 {
     color: #1a3f66; /* 마우스 오버시 더 진한 파란색 */
 }
 
-/* 브랜드 이름 설정 */
-.brand-name {
-    font-size: 24px; /* 글자 크기 */
-    font-weight: 700; /* 굵은 글자 */
-    color: #2B5797; /* 로고와 동일한 파란색으로 변경 */
-    margin-bottom: 35px; /* 아래 여백 늘리기 (20px → 35px) - 매장명과 소개글 사이 간격 증가 */
-    text-align: center; /* 가운데 정렬 */
-    line-height: 1.3; /* 줄 간격 추가 */
-    letter-spacing: 0.5px; /* 글자 간격 추가 */
-    padding-bottom: 10px; /* 아래쪽 패딩 추가 */
-    border-bottom: 2px solid #f0f0f0; /* 미세한 구분선 추가 */
-}
 
-.brand-name a:hover h1 {
-    color: #1a3f66; /* 마우스 오버시 더 진한 파란색 */
-}
 
 /* 가운데 메뉴 설정 */
 .nav-menu ul {
@@ -131,26 +117,7 @@ body {
     color: #2c5530; /* 마우스 올렸을 때 글자색 */
 }
 
-/* 로그인 버튼 설정 */
-.login-btn {
-    background-color: white; /* 흰색 바탕 */
-    color: #333; /* 글자 색상 */
-    border: 2px solid #333; /* 검은색 테두리 */
-    border-radius: 25px; /* 둥근 모서리 (radius 25) */
-    padding: 10px 20px; /* 안쪽 여백 */
-    font-size: 16px; /* 글자 크기 */
-    font-weight: 500; /* 중간 굵기 */
-    cursor: pointer; /* 마우스 커서 모양 */
-    transition: all 0.3s ease; /* 부드러운 효과 */
-    display: flex; /* 플렉스 컨테이너 */
-    align-items: center; /* 세로 가운데 정렬 */
-    height: fit-content; /* 내용에 맞는 높이 */
-}
 
-.login-btn:hover {
-    background-color: #333; /* 마우스 올렸을 때 배경색 */
-    color: white; /* 마우스 올렸을 때 글자색 */
-}
 
 /* 히어로 섹션 전체 설정 */
 .hero {
@@ -413,7 +380,7 @@ body {
 .description-preview,
 .description-full {
     font-size: 16px; /* 글자 크기 */
-    line-height: 1.4; /* 줄 간격 압축 */
+    line-height: 1.3; /* 줄 간격 더 압축 */
     color: #666; /* 글자 색상 */
     margin-bottom: 15px; /* 아래 여백 줄이기 */
     letter-spacing: 0.3px; /* 글자 간격 데스크톱 최적화 */
@@ -426,11 +393,13 @@ body {
 /* 설명 텍스트 문단 간격 조정 */
 .description-preview p,
 .description-full p {
-    margin-bottom: 0.1em; /* 문단 간격 한 줄로 압축 */
+    margin-bottom: 0; /* 문단 간격 완전 제거 */
+    margin-top: 0; /* 위쪽 여백도 제거 */
     line-height: 1.4; /* 줄 간격 대폭 줄임 */
     text-align: left; /* 왼쪽 정렬 확실히 적용 */
     word-break: keep-all; /* 한국어 단어 단위 줄바꿈 확실히 적용 */
     text-rendering: optimizeLegibility; /* 텍스트 렌더링 최적화 */
+    padding: 0; /* 패딩도 제거 */
 }
 
 /* 더보기/접기 버튼 */
@@ -659,9 +628,9 @@ body {
     }
     .header-container {
         display: grid !important; /* 그리드 레이아웃 사용 */
-        grid-template-columns: auto 1fr auto; /* 3개 열: 로고, 회사명, 로그인 */
+        grid-template-columns: auto 1fr; /* 2개 열: 로고, 회사명 */
         grid-template-rows: auto auto; /* 2개 행 */
-        gap: 10px 15px; /* 행 간격 10px, 열 간격 15px */
+        gap: 10px 20px; /* 행 간격 10px, 열 간격 20px */
         align-items: center; /* 세로 가운데 정렬 */
         flex-direction: unset; /* 기존 flex-direction 제거 */
         justify-content: unset; /* 기존 justify-content 제거 */
@@ -681,11 +650,6 @@ body {
         margin: 0;
     }
     
-    .login-section {
-        grid-column: 3; /* 세 번째 열 */
-        grid-row: 1; /* 첫 번째 행 */
-    }
-    
     /* 두 번째 줄 배치 */
     .nav-menu {
         grid-column: 1 / -1; /* 전체 열 차지 */
@@ -693,10 +657,11 @@ body {
     }
     
     .brand-name h1 {
-        font-size: 20px; /* 글자 크기 줄이기 */
+        font-size: 24px; /* 글자 크기를 조금 더 크게 */
         text-align: center;
         margin: 0;
         color: #2B5797; /* 로고와 동일한 파란색 계열 */
+        letter-spacing: 0.3px; /* 글자 간격 추가 */
     }
     
     /* 태블릿 네비게이션 메뉴 */
@@ -814,10 +779,12 @@ body {
     /* 설명 텍스트 문단 간격 태블릿 조정 */
     .description-preview p,
     .description-full p {
-        margin-bottom: 0.1em; /* 문단 간격 한 줄로 압축 */
+        margin-bottom: 0; /* 문단 간격 완전 제거 */
+        margin-top: 0; /* 위쪽 여백도 제거 */
         line-height: 1.3; /* 줄 간격 대폭 줄임 */
         text-align: left; /* 왼쪽 정렬 확실히 적용 */
         word-break: keep-all; /* 한국어 단어 단위 줄바꿈 확실히 적용 */
+        padding: 0; /* 패딩도 제거 */
     }
     
     .qr-code {
@@ -886,9 +853,9 @@ body {
     .header-container {
         padding: 0 15px; /* 좌우 여백 줄이기 */
         display: grid !important; /* 그리드 레이아웃 사용 (flex 오버라이드) */
-        grid-template-columns: auto 1fr auto; /* 3개 열: 로고, 회사명, 로그인 */
+        grid-template-columns: auto 1fr; /* 2개 열: 로고, 회사명 */
         grid-template-rows: auto auto; /* 2개 행 */
-        gap: 8px 10px; /* 행 간격 8px, 열 간격 10px */
+        gap: 8px 15px; /* 행 간격 8px, 열 간격 15px */
         align-items: center; /* 세로 가운데 정렬 */
         flex-direction: unset; /* 기존 flex-direction 제거 */
         justify-content: unset; /* 기존 justify-content 제거 */
@@ -906,11 +873,6 @@ body {
         justify-content: center; /* 가운데 정렬 */
     }
     
-    .login-section {
-        grid-column: 3; /* 세 번째 열 */
-        grid-row: 1; /* 첫 번째 행 */
-    }
-    
     /* 두 번째 줄 배치 */
     .nav-menu {
         grid-column: 1 / -1; /* 전체 열 차지 */
@@ -918,7 +880,7 @@ body {
     }
     
     .logo img {
-        height: 35px; /* 로고 크기 줄이기 */
+        height: 50px; /* 로고 크기를 더 크게 */
     }
     
     .brand-name {
@@ -927,17 +889,15 @@ body {
     }
     
     .brand-name h1 {
-        font-size: 14px; /* 글자 크기 줄이기 */
+        font-size: 18px; /* 글자 크기를 더 크게 */
         text-align: center;
         margin: 0;
         line-height: 1.2;
         color: #2B5797; /* 로고와 동일한 파란색 계열 */
+        letter-spacing: 0.2px; /* 글자 간격 추가 */
     }
     
-    .login-btn {
-        padding: 6px 12px; /* 버튼 크기 줄이기 */
-        font-size: 12px; /* 글자 크기 줄이기 */
-    }
+
     
     /* 두 번째 줄: 네비게이션 메뉴 */
     .nav-menu ul {
@@ -953,10 +913,7 @@ body {
         padding: 8px 15px; /* 패딩 조정 */
     }
     
-    .login-btn {
-        padding: 8px 16px; /* 버튼 크기 줄이기 */
-        font-size: 14px; /* 글자 크기 줄이기 */
-    }
+
     
     /* 히어로 섹션 모바일 반응형 */
     .hero {
@@ -1081,11 +1038,13 @@ body {
     /* 설명 텍스트 문단 간격 모바일 조정 */
     .description-preview p,
     .description-full p {
-        margin-bottom: 0.1em; /* 문단 간격 한 줄로 압축 */
+        margin-bottom: 0; /* 문단 간격 완전 제거 */
+        margin-top: 0; /* 위쪽 여백도 제거 */
         line-height: 1.3; /* 줄 간격 대폭 줄임 */
         text-align: left; /* 왼쪽 정렬 확실히 적용 */
         word-break: keep-all; /* 한국어 단어 단위 줄바꿈 확실히 적용 */
         text-rendering: optimizeLegibility; /* 텍스트 렌더링 최적화 */
+        padding: 0; /* 패딩도 제거 */
     }
     
     .qr-code {
@@ -2130,17 +2089,24 @@ body {
     .contact-message {
         font-size: 15px;
         margin-bottom: 25px;
+        padding: 0 15px;
+        line-height: 1.5;
+        word-break: keep-all;
     }
     
     .contact-cards {
         gap: 20px;
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
     }
     
     .contact-card {
-        min-width: 200px;
-        padding: 20px;
+        min-width: 180px;
+        max-width: 220px;
+        padding: 18px 15px;
+        flex: 1;
     }
     
     .contact-icon {
@@ -2266,33 +2232,43 @@ body {
     }
     
     .contact-message {
-        font-size: 14px;
+        font-size: 13px;
         margin-bottom: 20px;
+        padding: 0 10px;
+        line-height: 1.4;
+        word-break: keep-all;
     }
     
     .contact-cards {
-        gap: 15px;
-        flex-direction: column;
+        gap: 10px;
+        flex-direction: row;
         align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
     }
     
     .contact-card {
-        min-width: 180px;
-        padding: 18px;
+        min-width: 140px;
+        max-width: 160px;
+        padding: 12px 8px;
+        flex: 1;
     }
     
     .contact-icon {
-        width: 35px;
-        height: 35px;
-        font-size: 16px;
+        width: 30px;
+        height: 30px;
+        font-size: 14px;
     }
     
     .contact-label {
-        font-size: 11px;
+        font-size: 10px;
+        margin-bottom: 4px;
     }
     
     .contact-value {
-        font-size: 14px;
+        font-size: 12px;
+        line-height: 1.3;
+        word-break: break-all;
     }
     
     /* 인스타그램 버튼 모바일 스타일 */
@@ -2715,8 +2691,10 @@ body {
     
     .description-preview p,
     .description-full p {
-        margin-bottom: 0.1em; /* 문단 간격 한 줄로 압축 */
+        margin-bottom: 0; /* 문단 간격 완전 제거 */
+        margin-top: 0; /* 위쪽 여백도 제거 */
         line-height: 1.25; /* 줄 간격 대폭 줄임 */
+        padding: 0; /* 패딩도 제거 */
     }
     
     .brand-name {
@@ -2729,14 +2707,16 @@ body {
 /* 매장 소개글 내의 br 태그 간격 조정 - 압축 */
 .description-preview br,
 .description-full br {
-    line-height: 0.5; /* br 태그 높이 최소화 */
-    margin: 0.1em 0; /* 위아래 여백 최소화 */
+    line-height: 0.2; /* br 태그 높이 최대한 최소화 */
+    margin: 0; /* 위아래 여백 완전 제거 */
+    padding: 0; /* 패딩도 제거 */
     display: inline; /* 인라인 요소로 변경 */
 }
 
 /* br + br 연속 사용시 한 줄로 압축 */
 .description-preview br + br,
 .description-full br + br {
-    line-height: 0.3; /* 연속 br 태그 높이 최소화 */
+    line-height: 0.1; /* 연속 br 태그 높이 최대한 최소화 */
     margin: 0; /* 여백 완전 제거 */
+    padding: 0; /* 패딩도 제거 */
 }
