@@ -391,6 +391,7 @@ body {
     margin-bottom: 0; /* 문단 간격 통일 */
     margin-top: 0; /* 위쪽 여백 통일 */
     padding: 0; /* 패딩 통일 */
+    white-space: pre-line; /* 줄바꿈 처리 최적화 */
 }
 
 /* description-full div 컨테이너 자체 */
@@ -402,6 +403,8 @@ body {
 .description-preview {
     margin-bottom: 15px; /* preview도 동일한 아래 여백 */
 }
+
+
 
 /* 더보기/접기 버튼 */
 .toggle-btn {
@@ -790,6 +793,23 @@ body {
         margin-bottom: 12px; /* preview도 동일한 아래 여백 */
     }
     
+    /* 매장 소개글 내의 br 태그 간격 조정 - 태블릿 */
+    .description-preview br,
+    .description-full br {
+        line-height: 0.4; /* br 태그 높이 줄이기 */
+        margin: 0; /* 위아래 여백 제거 */
+        padding: 0; /* 패딩도 제거 */
+        display: inline; /* 인라인 요소로 변경 */
+    }
+    
+    /* br + br 연속 사용시 간격 최소화 - 태블릿 */
+    .description-preview br + br,
+    .description-full br + br {
+        line-height: 0.1; /* 연속 br 태그 높이 최소화 */
+        margin: 0; /* 여백 완전 제거 */
+        padding: 0; /* 패딩도 제거 */
+    }
+    
     .qr-code {
         width: 110px; /* QR코드 크기 조정 */
         height: 110px; /* QR코드 크기 조정 */
@@ -1049,6 +1069,23 @@ body {
     
     .description-preview {
         margin-bottom: 10px; /* preview도 동일한 아래 여백 */
+    }
+    
+    /* 매장 소개글 내의 br 태그 간격 조정 - 모바일 */
+    .description-preview br,
+    .description-full br {
+        line-height: 0.3; /* br 태그 높이 줄이기 */
+        margin: 0; /* 위아래 여백 제거 */
+        padding: 0; /* 패딩도 제거 */
+        display: inline; /* 인라인 요소로 변경 */
+    }
+    
+    /* br + br 연속 사용시 간격 최소화 - 모바일 */
+    .description-preview br + br,
+    .description-full br + br {
+        line-height: 0.1; /* 연속 br 태그 높이 최소화 */
+        margin: 0; /* 여백 완전 제거 */
+        padding: 0; /* 패딩도 제거 */
     }
     
     .qr-code {
@@ -2672,6 +2709,23 @@ body {
     .description-preview {
         margin-bottom: 6px; /* preview도 동일한 아래 여백 */
     }
+    
+    /* 매장 소개글 내의 br 태그 간격 조정 - 작은 모바일 */
+    .description-preview br,
+    .description-full br {
+        line-height: 0.2; /* br 태그 높이 더 줄이기 */
+        margin: 0; /* 위아래 여백 제거 */
+        padding: 0; /* 패딩도 제거 */
+        display: inline; /* 인라인 요소로 변경 */
+    }
+    
+    /* br + br 연속 사용시 간격 최소화 - 작은 모바일 */
+    .description-preview br + br,
+    .description-full br + br {
+        line-height: 0.1; /* 연속 br 태그 높이 최소화 */
+        margin: 0; /* 여백 완전 제거 */
+        padding: 0; /* 패딩도 제거 */
+    }
 }
 
 /* 반응형 디자인 - 극소형 모바일 크기 (360px 이하) */
@@ -2702,6 +2756,23 @@ body {
     
     .description-preview {
         margin-bottom: 5px; /* preview도 동일한 아래 여백 */
+    }
+    
+    /* 매장 소개글 내의 br 태그 간격 조정 - 극소형 모바일 */
+    .description-preview br,
+    .description-full br {
+        line-height: 0.15; /* br 태그 높이 최소화 */
+        margin: 0; /* 위아래 여백 제거 */
+        padding: 0; /* 패딩도 제거 */
+        display: inline; /* 인라인 요소로 변경 */
+    }
+    
+    /* br + br 연속 사용시 간격 최소화 - 극소형 모바일 */
+    .description-preview br + br,
+    .description-full br + br {
+        line-height: 0.05; /* 연속 br 태그 높이 완전 최소화 */
+        margin: 0; /* 여백 완전 제거 */
+        padding: 0; /* 패딩도 제거 */
     }
 }
 
@@ -2751,6 +2822,23 @@ body {
         margin-bottom: 8px; /* preview도 동일한 아래 여백 */
     }
     
+    /* 매장 소개글 내의 br 태그 간격 조정 - 중간 모바일 */
+    .description-preview br,
+    .description-full br {
+        line-height: 0.3; /* br 태그 높이 줄이기 */
+        margin: 0; /* 위아래 여백 제거 */
+        padding: 0; /* 패딩도 제거 */
+        display: inline; /* 인라인 요소로 변경 */
+    }
+    
+    /* br + br 연속 사용시 간격 최소화 - 중간 모바일 */
+    .description-preview br + br,
+    .description-full br + br {
+        line-height: 0.1; /* 연속 br 태그 높이 최소화 */
+        margin: 0; /* 여백 완전 제거 */
+        padding: 0; /* 패딩도 제거 */
+    }
+    
     .brand-name {
         font-size: 17px; /* 브랜드명 크기 중간 조정 */
         letter-spacing: 0.15px; /* 글자 간격 중간 조정 */
@@ -2758,19 +2846,19 @@ body {
     }
 }
 
-/* 매장 소개글 내의 br 태그 간격 조정 - 압축 */
+/* 매장 소개글 내의 br 태그 간격 조정 - 모든 화면 공통 */
 .description-preview br,
 .description-full br {
-    line-height: 0.2; /* br 태그 높이 최대한 최소화 */
+    line-height: 0.2; /* br 태그 높이 줄이기 */
     margin: 0; /* 위아래 여백 완전 제거 */
     padding: 0; /* 패딩도 제거 */
     display: inline; /* 인라인 요소로 변경 */
 }
 
-/* br + br 연속 사용시 한 줄로 압축 */
+/* br + br 연속 사용시 간격 최소화 */
 .description-preview br + br,
 .description-full br + br {
-    line-height: 0.1; /* 연속 br 태그 높이 최대한 최소화 */
+    line-height: 0.1; /* 연속 br 태그 높이 최소화 */
     margin: 0; /* 여백 완전 제거 */
     padding: 0; /* 패딩도 제거 */
 }
