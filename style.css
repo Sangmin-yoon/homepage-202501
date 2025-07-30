@@ -376,30 +376,31 @@ body {
     margin-top: 15px; /* 위쪽 여백 추가 - 매장명과의 간격 더 늘리기 */
 }
 
-/* 설명 텍스트 */
+/* 설명 텍스트 공통 스타일 */
 .description-preview,
-.description-full {
+.description-full,
+.description-full p {
     font-size: 16px; /* 글자 크기 */
-    line-height: 1.3; /* 줄 간격 더 압축 */
+    line-height: 1.4; /* 줄 간격 통일 */
     color: #666; /* 글자 색상 */
-    margin-bottom: 15px; /* 아래 여백 줄이기 */
     letter-spacing: 0.3px; /* 글자 간격 데스크톱 최적화 */
     word-spacing: 0.08em; /* 단어 간격 데스크톱 최적화 */
     text-align: left; /* 왼쪽 정렬로 변경하여 간격 최적화 */
     word-break: keep-all; /* 한국어 단어 단위 줄바꿈 */
     text-rendering: optimizeLegibility; /* 텍스트 렌더링 최적화 */
+    margin-bottom: 0; /* 문단 간격 통일 */
+    margin-top: 0; /* 위쪽 여백 통일 */
+    padding: 0; /* 패딩 통일 */
 }
 
-/* 설명 텍스트 문단 간격 조정 */
-.description-preview p,
-.description-full p {
-    margin-bottom: 0; /* 문단 간격 완전 제거 */
-    margin-top: 0; /* 위쪽 여백도 제거 */
-    line-height: 1.4; /* 줄 간격 대폭 줄임 */
-    text-align: left; /* 왼쪽 정렬 확실히 적용 */
-    word-break: keep-all; /* 한국어 단어 단위 줄바꿈 확실히 적용 */
-    text-rendering: optimizeLegibility; /* 텍스트 렌더링 최적화 */
-    padding: 0; /* 패딩도 제거 */
+/* description-full div 컨테이너 자체 */
+.description-full {
+    margin-bottom: 15px; /* 컨테이너 아래 여백 */
+}
+
+/* description-preview p 태그 */
+.description-preview {
+    margin-bottom: 15px; /* preview도 동일한 아래 여백 */
 }
 
 /* 더보기/접기 버튼 */
@@ -765,26 +766,28 @@ body {
         margin-top: 12px; /* 위쪽 여백 유지 */
     }
     
+    /* 매장 소개글 태블릿 통합 스타일 */
     .description-preview,
-    .description-full {
+    .description-full,
+    .description-full p {
         font-size: 15px; /* 텍스트 크기 조정 */
-        line-height: 1.3; /* 줄 간격 압축 */
-        margin-bottom: 12px; /* 아래 여백 줄임 */
+        line-height: 1.3; /* 줄 간격 통일 */
         letter-spacing: 0.2px; /* 글자 간격 태블릿 최적화 */
         word-spacing: 0.05em; /* 단어 간격 태블릿 최적화 */
         text-align: left; /* 왼쪽 정렬로 변경하여 간격 최적화 */
         word-break: keep-all; /* 한국어 단어 단위 줄바꿈 */
+        margin-bottom: 0; /* 문단 간격 통일 */
+        margin-top: 0; /* 위쪽 여백 통일 */
+        padding: 0; /* 패딩 통일 */
     }
     
-    /* 설명 텍스트 문단 간격 태블릿 조정 */
-    .description-preview p,
-    .description-full p {
-        margin-bottom: 0; /* 문단 간격 완전 제거 */
-        margin-top: 0; /* 위쪽 여백도 제거 */
-        line-height: 1.3; /* 줄 간격 대폭 줄임 */
-        text-align: left; /* 왼쪽 정렬 확실히 적용 */
-        word-break: keep-all; /* 한국어 단어 단위 줄바꿈 확실히 적용 */
-        padding: 0; /* 패딩도 제거 */
+    /* 컨테이너별 하단 여백 설정 */
+    .description-full {
+        margin-bottom: 12px; /* 컨테이너 아래 여백 */
+    }
+    
+    .description-preview {
+        margin-bottom: 12px; /* preview도 동일한 아래 여백 */
     }
     
     .qr-code {
@@ -1023,28 +1026,29 @@ body {
         margin-top: 10px; /* 위쪽 여백 유지 */
     }
     
+    /* 매장 소개글 모바일 통합 스타일 */
     .description-preview,
-    .description-full {
+    .description-full,
+    .description-full p {
         font-size: 14px; /* 텍스트 크기 줄이기 */
-        line-height: 1.3; /* 줄 간격 압축 */
-        margin-bottom: 10px; /* 아래 여백 줄임 */
+        line-height: 1.3; /* 줄 간격 통일 */
         letter-spacing: 0.1px; /* 글자 간격 모바일 최적화 */
         word-spacing: 0.02em; /* 단어 간격 모바일 최적화 */
         text-align: left; /* 왼쪽 정렬로 변경하여 간격 최적화 */
         word-break: keep-all; /* 한국어 단어 단위 줄바꿈 */
         text-rendering: optimizeLegibility; /* 텍스트 렌더링 최적화 */
+        margin-bottom: 0; /* 문단 간격 통일 */
+        margin-top: 0; /* 위쪽 여백 통일 */
+        padding: 0; /* 패딩 통일 */
     }
     
-    /* 설명 텍스트 문단 간격 모바일 조정 */
-    .description-preview p,
-    .description-full p {
-        margin-bottom: 0; /* 문단 간격 완전 제거 */
-        margin-top: 0; /* 위쪽 여백도 제거 */
-        line-height: 1.3; /* 줄 간격 대폭 줄임 */
-        text-align: left; /* 왼쪽 정렬 확실히 적용 */
-        word-break: keep-all; /* 한국어 단어 단위 줄바꿈 확실히 적용 */
-        text-rendering: optimizeLegibility; /* 텍스트 렌더링 최적화 */
-        padding: 0; /* 패딩도 제거 */
+    /* 컨테이너별 하단 여백 설정 */
+    .description-full {
+        margin-bottom: 10px; /* 컨테이너 아래 여백 */
+    }
+    
+    .description-preview {
+        margin-bottom: 10px; /* preview도 동일한 아래 여백 */
     }
     
     .qr-code {
@@ -2648,20 +2652,25 @@ body {
         padding-bottom: 5px; /* 패딩 조정 */
     }
     
-    /* 매장 소개글 아주 작은 모바일 최적화 */
+    /* 매장 소개글 아주 작은 모바일 통합 스타일 */
     .description-preview,
-    .description-full {
+    .description-full,
+    .description-full p {
         font-size: 13px; /* 폰트 크기 더 줄이기 */
-        line-height: 1.2; /* 줄 간격 압축 */
+        line-height: 1.2; /* 줄 간격 통일 */
         letter-spacing: 0.05px; /* 글자 간격 더 세밀하게 */
         word-spacing: 0.01em; /* 단어 간격 더 세밀하게 */
-        margin-bottom: 6px; /* 여백 줄임 */
+        margin-bottom: 0; /* 문단 간격 통일 */
+        margin-top: 0; /* 위쪽 여백 통일 */
+        padding: 0; /* 패딩 통일 */
     }
     
-    .description-preview p,
-    .description-full p {
-        margin-bottom: 0.1em; /* 문단 간격 한 줄로 압축 */
-        line-height: 1.2; /* 줄 간격 대폭 줄임 */
+    .description-full {
+        margin-bottom: 6px; /* 컨테이너 아래 여백 */
+    }
+    
+    .description-preview {
+        margin-bottom: 6px; /* preview도 동일한 아래 여백 */
     }
 }
 
@@ -2674,20 +2683,25 @@ body {
         padding-bottom: 4px; /* 패딩 조정 */
     }
     
-    /* 매장 소개글 극소형 모바일 최적화 */
+    /* 매장 소개글 극소형 모바일 통합 스타일 */
     .description-preview,
-    .description-full {
+    .description-full,
+    .description-full p {
         font-size: 12px; /* 폰트 크기 최소화 */
-        line-height: 1.15; /* 줄 간격 압축 */
+        line-height: 1.15; /* 줄 간격 통일 */
         letter-spacing: 0px; /* 글자 간격 최소화 */
         word-spacing: 0px; /* 단어 간격 최소화 */
-        margin-bottom: 5px; /* 여백 줄임 */
+        margin-bottom: 0; /* 문단 간격 통일 */
+        margin-top: 0; /* 위쪽 여백 통일 */
+        padding: 0; /* 패딩 통일 */
     }
     
-    .description-preview p,
-    .description-full p {
-        margin-bottom: 0.1em; /* 문단 간격 한 줄로 압축 */
-        line-height: 1.15; /* 줄 간격 대폭 줄임 */
+    .description-full {
+        margin-bottom: 5px; /* 컨테이너 아래 여백 */
+    }
+    
+    .description-preview {
+        margin-bottom: 5px; /* preview도 동일한 아래 여백 */
     }
 }
 
@@ -2716,22 +2730,25 @@ body {
 
 /* 반응형 디자인 - 중간 크기 모바일 (450px 이하) */
 @media (max-width: 450px) {
-    /* 매장 소개글 중간 모바일 최적화 */
+    /* 매장 소개글 중간 모바일 통합 스타일 */
     .description-preview,
-    .description-full {
+    .description-full,
+    .description-full p {
         font-size: 13.5px; /* 폰트 크기 중간 조정 */
-        line-height: 1.25; /* 줄 간격 압축 */
+        line-height: 1.25; /* 줄 간격 통일 */
         letter-spacing: 0.08px; /* 글자 간격 중간 조정 */
         word-spacing: 0.015em; /* 단어 간격 중간 조정 */
-        margin-bottom: 8px; /* 여백 줄임 */
+        margin-bottom: 0; /* 문단 간격 통일 */
+        margin-top: 0; /* 위쪽 여백 통일 */
+        padding: 0; /* 패딩 통일 */
     }
     
-    .description-preview p,
-    .description-full p {
-        margin-bottom: 0; /* 문단 간격 완전 제거 */
-        margin-top: 0; /* 위쪽 여백도 제거 */
-        line-height: 1.25; /* 줄 간격 대폭 줄임 */
-        padding: 0; /* 패딩도 제거 */
+    .description-full {
+        margin-bottom: 8px; /* 컨테이너 아래 여백 */
+    }
+    
+    .description-preview {
+        margin-bottom: 8px; /* preview도 동일한 아래 여백 */
     }
     
     .brand-name {
