@@ -381,7 +381,7 @@ body {
 .description-full,
 .description-full p {
     font-size: 16px; /* 글자 크기 */
-    line-height: 1.4; /* 줄 간격 통일 */
+    line-height: 1.3; /* 줄 간격 축소하여 더 타이트하게 */
     color: #666; /* 글자 색상 */
     letter-spacing: 0.3px; /* 글자 간격 데스크톱 최적화 */
     word-spacing: 0.08em; /* 단어 간격 데스크톱 최적화 */
@@ -774,7 +774,7 @@ body {
     .description-full,
     .description-full p {
         font-size: 15px; /* 텍스트 크기 조정 */
-        line-height: 1.3; /* 줄 간격 통일 */
+        line-height: 1.25; /* 줄 간격 축소하여 더 타이트하게 */
         letter-spacing: 0.2px; /* 글자 간격 태블릿 최적화 */
         word-spacing: 0.05em; /* 단어 간격 태블릿 최적화 */
         text-align: left; /* 왼쪽 정렬로 변경하여 간격 최적화 */
@@ -793,21 +793,25 @@ body {
         margin-bottom: 12px; /* preview도 동일한 아래 여백 */
     }
     
-    /* 매장 소개글 내의 br 태그 간격 조정 - 태블릿 */
+    /* 매장 소개글 내의 br 태그 간격 대폭 축소 - 태블릿 */
     .description-preview br,
     .description-full br {
-        line-height: 0.4; /* br 태그 높이 줄이기 */
+        line-height: 0.04; /* br 태그 높이 대폭 줄이기 */
+        height: 0.25em; /* 고정 높이 설정 */
         margin: 0; /* 위아래 여백 제거 */
         padding: 0; /* 패딩도 제거 */
-        display: inline; /* 인라인 요소로 변경 */
+        display: block; /* 블록 요소로 변경하되 높이 최소화 */
+        font-size: 0.25em; /* 글자 크기도 줄여서 간격 최소화 */
     }
     
     /* br + br 연속 사용시 간격 최소화 - 태블릿 */
     .description-preview br + br,
     .description-full br + br {
-        line-height: 0.1; /* 연속 br 태그 높이 최소화 */
+        line-height: 0.02; /* 연속 br 태그 높이 최대한 최소화 */
+        height: 0.1em; /* 연속 br은 더 작은 높이 */
         margin: 0; /* 여백 완전 제거 */
         padding: 0; /* 패딩도 제거 */
+        font-size: 0.1em; /* 더 작은 글자 크기 */
     }
     
     .qr-code {
@@ -1051,7 +1055,7 @@ body {
     .description-full,
     .description-full p {
         font-size: 14px; /* 텍스트 크기 줄이기 */
-        line-height: 1.3; /* 줄 간격 통일 */
+        line-height: 1.2; /* 줄 간격 축소하여 더 타이트하게 */
         letter-spacing: 0.1px; /* 글자 간격 모바일 최적화 */
         word-spacing: 0.02em; /* 단어 간격 모바일 최적화 */
         text-align: left; /* 왼쪽 정렬로 변경하여 간격 최적화 */
@@ -1071,21 +1075,25 @@ body {
         margin-bottom: 10px; /* preview도 동일한 아래 여백 */
     }
     
-    /* 매장 소개글 내의 br 태그 간격 조정 - 모바일 */
+    /* 매장 소개글 내의 br 태그 간격 대폭 축소 - 모바일 */
     .description-preview br,
     .description-full br {
-        line-height: 0.3; /* br 태그 높이 줄이기 */
+        line-height: 0.03; /* br 태그 높이 대폭 줄이기 */
+        height: 0.2em; /* 고정 높이 설정 */
         margin: 0; /* 위아래 여백 제거 */
         padding: 0; /* 패딩도 제거 */
-        display: inline; /* 인라인 요소로 변경 */
+        display: block; /* 블록 요소로 변경하되 높이 최소화 */
+        font-size: 0.2em; /* 글자 크기도 줄여서 간격 최소화 */
     }
     
     /* br + br 연속 사용시 간격 최소화 - 모바일 */
     .description-preview br + br,
     .description-full br + br {
-        line-height: 0.1; /* 연속 br 태그 높이 최소화 */
+        line-height: 0.01; /* 연속 br 태그 높이 최대한 최소화 */
+        height: 0.05em; /* 연속 br은 더 작은 높이 */
         margin: 0; /* 여백 완전 제거 */
         padding: 0; /* 패딩도 제거 */
+        font-size: 0.05em; /* 더 작은 글자 크기 */
     }
     
     .qr-code {
@@ -2694,7 +2702,7 @@ body {
     .description-full,
     .description-full p {
         font-size: 13px; /* 폰트 크기 더 줄이기 */
-        line-height: 1.2; /* 줄 간격 통일 */
+        line-height: 1.1; /* 줄 간격 축소하여 더 타이트하게 */
         letter-spacing: 0.05px; /* 글자 간격 더 세밀하게 */
         word-spacing: 0.01em; /* 단어 간격 더 세밀하게 */
         margin-bottom: 0; /* 문단 간격 통일 */
@@ -2710,21 +2718,25 @@ body {
         margin-bottom: 6px; /* preview도 동일한 아래 여백 */
     }
     
-    /* 매장 소개글 내의 br 태그 간격 조정 - 작은 모바일 */
+    /* 매장 소개글 내의 br 태그 간격 대폭 축소 - 작은 모바일 */
     .description-preview br,
     .description-full br {
-        line-height: 0.2; /* br 태그 높이 더 줄이기 */
+        line-height: 0.02; /* br 태그 높이 대폭 줄이기 */
+        height: 0.15em; /* 고정 높이 설정 */
         margin: 0; /* 위아래 여백 제거 */
         padding: 0; /* 패딩도 제거 */
-        display: inline; /* 인라인 요소로 변경 */
+        display: block; /* 블록 요소로 변경하되 높이 최소화 */
+        font-size: 0.15em; /* 글자 크기도 줄여서 간격 최소화 */
     }
     
     /* br + br 연속 사용시 간격 최소화 - 작은 모바일 */
     .description-preview br + br,
     .description-full br + br {
-        line-height: 0.1; /* 연속 br 태그 높이 최소화 */
+        line-height: 0.01; /* 연속 br 태그 높이 최대한 최소화 */
+        height: 0.03em; /* 연속 br은 더 작은 높이 */
         margin: 0; /* 여백 완전 제거 */
         padding: 0; /* 패딩도 제거 */
+        font-size: 0.03em; /* 더 작은 글자 크기 */
     }
 }
 
@@ -2742,7 +2754,7 @@ body {
     .description-full,
     .description-full p {
         font-size: 12px; /* 폰트 크기 최소화 */
-        line-height: 1.15; /* 줄 간격 통일 */
+        line-height: 1.05; /* 줄 간격 축소하여 더 타이트하게 */
         letter-spacing: 0px; /* 글자 간격 최소화 */
         word-spacing: 0px; /* 단어 간격 최소화 */
         margin-bottom: 0; /* 문단 간격 통일 */
@@ -2758,21 +2770,25 @@ body {
         margin-bottom: 5px; /* preview도 동일한 아래 여백 */
     }
     
-    /* 매장 소개글 내의 br 태그 간격 조정 - 극소형 모바일 */
+    /* 매장 소개글 내의 br 태그 간격 대폭 축소 - 극소형 모바일 */
     .description-preview br,
     .description-full br {
-        line-height: 0.15; /* br 태그 높이 최소화 */
+        line-height: 0.01; /* br 태그 높이 최대한 줄이기 */
+        height: 0.1em; /* 고정 높이 설정 */
         margin: 0; /* 위아래 여백 제거 */
         padding: 0; /* 패딩도 제거 */
-        display: inline; /* 인라인 요소로 변경 */
+        display: block; /* 블록 요소로 변경하되 높이 최소화 */
+        font-size: 0.1em; /* 글자 크기도 줄여서 간격 최소화 */
     }
     
     /* br + br 연속 사용시 간격 최소화 - 극소형 모바일 */
     .description-preview br + br,
     .description-full br + br {
-        line-height: 0.05; /* 연속 br 태그 높이 완전 최소화 */
+        line-height: 0.005; /* 연속 br 태그 높이 완전 최소화 */
+        height: 0.02em; /* 연속 br은 더 작은 높이 */
         margin: 0; /* 여백 완전 제거 */
         padding: 0; /* 패딩도 제거 */
+        font-size: 0.02em; /* 더 작은 글자 크기 */
     }
 }
 
@@ -2806,7 +2822,7 @@ body {
     .description-full,
     .description-full p {
         font-size: 13.5px; /* 폰트 크기 중간 조정 */
-        line-height: 1.25; /* 줄 간격 통일 */
+        line-height: 1.15; /* 줄 간격 축소하여 더 타이트하게 */
         letter-spacing: 0.08px; /* 글자 간격 중간 조정 */
         word-spacing: 0.015em; /* 단어 간격 중간 조정 */
         margin-bottom: 0; /* 문단 간격 통일 */
@@ -2822,21 +2838,25 @@ body {
         margin-bottom: 8px; /* preview도 동일한 아래 여백 */
     }
     
-    /* 매장 소개글 내의 br 태그 간격 조정 - 중간 모바일 */
+    /* 매장 소개글 내의 br 태그 간격 대폭 축소 - 중간 모바일 */
     .description-preview br,
     .description-full br {
-        line-height: 0.3; /* br 태그 높이 줄이기 */
+        line-height: 0.03; /* br 태그 높이 대폭 줄이기 */
+        height: 0.2em; /* 고정 높이 설정 */
         margin: 0; /* 위아래 여백 제거 */
         padding: 0; /* 패딩도 제거 */
-        display: inline; /* 인라인 요소로 변경 */
+        display: block; /* 블록 요소로 변경하되 높이 최소화 */
+        font-size: 0.2em; /* 글자 크기도 줄여서 간격 최소화 */
     }
     
     /* br + br 연속 사용시 간격 최소화 - 중간 모바일 */
     .description-preview br + br,
     .description-full br + br {
-        line-height: 0.1; /* 연속 br 태그 높이 최소화 */
+        line-height: 0.01; /* 연속 br 태그 높이 최대한 최소화 */
+        height: 0.05em; /* 연속 br은 더 작은 높이 */
         margin: 0; /* 여백 완전 제거 */
         padding: 0; /* 패딩도 제거 */
+        font-size: 0.05em; /* 더 작은 글자 크기 */
     }
     
     .brand-name {
@@ -2846,21 +2866,25 @@ body {
     }
 }
 
-/* 매장 소개글 내의 br 태그 간격 조정 - 모든 화면 공통 */
+/* 매장 소개글 내의 br 태그 간격 대폭 축소 - 모든 화면 공통 */
 .description-preview br,
 .description-full br {
-    line-height: 0.2; /* br 태그 높이 줄이기 */
+    line-height: 0.05; /* br 태그 높이 대폭 줄이기 */
+    height: 0.3em; /* 고정 높이 설정 */
     margin: 0; /* 위아래 여백 완전 제거 */
     padding: 0; /* 패딩도 제거 */
-    display: inline; /* 인라인 요소로 변경 */
+    display: block; /* 블록 요소로 변경하되 높이 최소화 */
+    font-size: 0.3em; /* 글자 크기도 줄여서 간격 최소화 */
 }
 
 /* br + br 연속 사용시 간격 최소화 */
 .description-preview br + br,
 .description-full br + br {
-    line-height: 0.1; /* 연속 br 태그 높이 최소화 */
+    line-height: 0.02; /* 연속 br 태그 높이 최대한 최소화 */
+    height: 0.1em; /* 연속 br은 더 작은 높이 */
     margin: 0; /* 여백 완전 제거 */
     padding: 0; /* 패딩도 제거 */
+    font-size: 0.1em; /* 더 작은 글자 크기 */
 }
 
 /* 모바일 전용 청춘다움 이야기 최적화 (400px 이하) */
