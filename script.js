@@ -44,24 +44,40 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // 스크롤 이벤트 - 헤더 효과 및 맨 위로 가기 버튼 제어
-    window.addEventListener('scroll', function() {
+    function handleScroll() {
         const header = document.querySelector('.header');
         const scrollToTopBtn = document.getElementById('scrollToTopBtn');
         
         // 스크롤이 50px 이상 되면 헤더에 그림자 효과 강화
         if (window.scrollY > 50) {
-            header.style.boxShadow = '0 4px 10px rgba(0,0,0,0.2)';
+            if (header) {
+                header.style.boxShadow = '0 4px 10px rgba(0,0,0,0.2)';
+            }
         } else {
-            header.style.boxShadow = '0 2px 5px rgba(0,0,0,0.1)';
+            if (header) {
+                header.style.boxShadow = '0 2px 5px rgba(0,0,0,0.1)';
+            }
         }
         
-        // 스크롤이 300px 이상 되면 맨 위로 가기 버튼 표시
-        if (window.scrollY > 300) {
-            scrollToTopBtn.classList.add('show');
+        // 스크롤이 10px 이상 되면 맨 위로 가기 버튼 표시 (테스트용으로 매우 낮게 설정)
+        if (window.scrollY > 10) {
+            if (scrollToTopBtn) {
+                console.log('버튼 표시 - 스크롤 위치:', window.scrollY);
+                scrollToTopBtn.classList.add('show');
+            } else {
+                console.log('버튼 요소를 찾을 수 없습니다');
+            }
         } else {
-            scrollToTopBtn.classList.remove('show');
+            if (scrollToTopBtn) {
+                scrollToTopBtn.classList.remove('show');
+            }
         }
-    });
+    }
+    
+    window.addEventListener('scroll', handleScroll);
+    
+    // 즉시 한 번 실행하여 현재 스크롤 위치 확인
+    handleScroll();
     
     // 반응형 메뉴 처리 (모바일에서 사용할 수 있도록)
     function checkScreenSize() {
@@ -402,4 +418,43 @@ function scrollToTop(event) {
         behavior: 'smooth'
     });
     console.log('페이지 맨 위로 스크롤했습니다.');
-} 
+}
+
+// window.onload에도 스크롤 이벤트 등록 (DOMContentLoaded가 안 될 경우를 대비)
+window.onload = function() {
+    const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+    console.log('window.onload에서 버튼 확인:', scrollToTopBtn);
+    
+    if (!window.scrollEventAdded) {
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.header');
+            const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+            
+            // 스크롤이 50px 이상 되면 헤더에 그림자 효과 강화
+            if (window.scrollY > 50) {
+                if (header) {
+                    header.style.boxShadow = '0 4px 10px rgba(0,0,0,0.2)';
+                }
+            } else {
+                if (header) {
+                    header.style.boxShadow = '0 2px 5px rgba(0,0,0,0.1)';
+                }
+            }
+            
+            // 스크롤이 10px 이상 되면 맨 위로 가기 버튼 표시 (테스트용으로 매우 낮게 설정)
+            if (window.scrollY > 10) {
+                if (scrollToTopBtn) {
+                    console.log('window.onload 스크롤 이벤트 - 버튼 표시');
+                    scrollToTopBtn.classList.add('show');
+                } else {
+                    console.log('window.onload - 버튼 요소를 찾을 수 없습니다');
+                }
+            } else {
+                if (scrollToTopBtn) {
+                    scrollToTopBtn.classList.remove('show');
+                }
+            }
+        });
+        window.scrollEventAdded = true;
+    }
+}; 
