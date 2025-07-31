@@ -49,6 +49,8 @@ body {
 .logo img {
     height: 85px; /* 로고 높이를 더 크게 변경 */
     width: auto; /* 너비는 자동으로 조정 */
+    vertical-align: middle; /* 수직 정렬 명시적 설정 */
+    display: block; /* 블록 요소로 설정하여 정확한 정렬 */
 }
 
 .logo a:hover {
@@ -60,7 +62,7 @@ body {
     display: flex; /* 플렉스 컨테이너로 설정 */
     align-items: center; /* 세로 가운데 정렬 */
     justify-content: center; /* 가로 가운데 정렬 */
-    height: 85px; /* 로고 높이와 동일하게 설정 */
+    height: auto; /* 높이를 자동으로 변경하여 정확한 정렬 */
     padding: 0 15px; /* 좌우 여백을 늘려서 더 여유롭게 */
 }
 
@@ -83,9 +85,10 @@ body {
     text-align: center; /* 가운데 정렬 */
     margin: 0; /* 기본 margin 제거하여 로고와 수직 정렬 맞춤 */
     padding: 0; /* 기본 padding 제거 */
-    line-height: 1.3; /* 줄 간격을 약간 늘림 */
+    line-height: 1.1; /* 줄 간격을 줄여서 정확한 정렬 */
     transition: color 0.3s ease; /* 색상 변화 효과 */
     letter-spacing: 0.5px; /* 글자 간격 추가로 더 세련된 느낌 */
+    vertical-align: middle; /* 수직 정렬 명시적 설정 */
 }
 
 .brand-name a:hover h1 {
@@ -645,6 +648,7 @@ body {
         grid-template-rows: auto auto; /* 2개 행 */
         gap: 10px 20px; /* 행 간격 10px, 열 간격 20px */
         align-items: center; /* 세로 가운데 정렬 */
+        align-content: center; /* 그리드 컨텐츠 자체도 가운데 정렬 */
         flex-direction: unset; /* 기존 flex-direction 제거 */
         justify-content: unset; /* 기존 justify-content 제거 */
     }
@@ -653,6 +657,7 @@ body {
     .logo {
         grid-column: 1; /* 첫 번째 열 */
         grid-row: 1; /* 첫 번째 행 */
+        align-self: center; /* 개별 그리드 아이템 가운데 정렬 */
     }
     
     .brand-name {
@@ -660,6 +665,7 @@ body {
         grid-row: 1; /* 첫 번째 행 */
         height: auto; /* 태블릿에서는 높이 자동 조정 */
         justify-content: center; /* 가운데 정렬 */
+        align-self: center; /* 개별 그리드 아이템 가운데 정렬 */
         margin: 0;
     }
     
@@ -673,8 +679,10 @@ body {
         font-size: 24px; /* 글자 크기를 조금 더 크게 */
         text-align: center;
         margin: 0;
+        line-height: 1.1; /* 줄 간격을 줄여서 정확한 정렬 */
         color: #2B5797; /* 로고와 동일한 파란색 계열 */
         letter-spacing: 0.3px; /* 글자 간격 추가 */
+        vertical-align: middle; /* 수직 정렬 명시적 설정 */
     }
     
     /* 태블릿 네비게이션 메뉴 */
@@ -898,6 +906,7 @@ body {
         grid-template-rows: auto auto; /* 2개 행 */
         gap: 8px 15px; /* 행 간격 8px, 열 간격 15px */
         align-items: center; /* 세로 가운데 정렬 */
+        align-content: center; /* 그리드 컨텐츠 자체도 가운데 정렬 */
         flex-direction: unset; /* 기존 flex-direction 제거 */
         justify-content: unset; /* 기존 justify-content 제거 */
     }
@@ -906,12 +915,14 @@ body {
     .logo {
         grid-column: 1; /* 첫 번째 열 */
         grid-row: 1; /* 첫 번째 행 */
+        align-self: center; /* 개별 그리드 아이템 가운데 정렬 */
     }
     
     .brand-name {
         grid-column: 2; /* 두 번째 열 */
         grid-row: 1; /* 첫 번째 행 */
         justify-content: center; /* 가운데 정렬 */
+        align-self: center; /* 개별 그리드 아이템 가운데 정렬 */
     }
     
     /* 두 번째 줄 배치 */
@@ -933,9 +944,10 @@ body {
         font-size: 18px; /* 글자 크기를 더 크게 */
         text-align: center;
         margin: 0;
-        line-height: 1.2;
+        line-height: 1.1; /* 줄 간격을 줄여서 정확한 정렬 */
         color: #2B5797; /* 로고와 동일한 파란색 계열 */
         letter-spacing: 0.2px; /* 글자 간격 추가 */
+        vertical-align: middle; /* 수직 정렬 명시적 설정 */
     }
     
 
