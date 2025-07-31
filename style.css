@@ -462,6 +462,15 @@ body {
     transform: scale(1.1); /* 마우스 올리면 조금 크게 */
 }
 
+/* QR 코드들을 나란히 배치하는 컨테이너 */
+.qr-codes-container {
+    display: flex; /* 가로 배치 */
+    gap: 15px; /* QR 코드 사이 간격 */
+    align-items: center; /* 세로 가운데 정렬 */
+    justify-content: center; /* 가로 가운데 정렬 */
+    flex-wrap: wrap; /* 작은 화면에서 줄바꿈 허용 */
+}
+
 /* 계정 정보 영역 */
 .account-info {
     display: flex; /* 세로 배치 */
@@ -819,6 +828,11 @@ body {
         height: 110px; /* QR코드 크기 조정 */
     }
     
+    /* QR 코드 컨테이너 태블릿 반응형 */
+    .qr-codes-container {
+        gap: 12px; /* QR 코드 사이 간격 줄이기 */
+    }
+    
     /* 연락처 정보 태블릿 반응형 */
     .contact-info {
         gap: 15px; /* 간격 조정 */
@@ -1099,6 +1113,12 @@ body {
     .qr-code {
         width: 100px; /* QR코드 크기 줄이기 */
         height: 100px; /* QR코드 크기 줄이기 */
+    }
+    
+    /* QR 코드 컨테이너 모바일 반응형 */
+    .qr-codes-container {
+        gap: 10px; /* QR 코드 사이 간격 더 줄이기 */
+        justify-content: center; /* 가운데 정렬 */
     }
     
     /* 연락처 정보 모바일 반응형 */
