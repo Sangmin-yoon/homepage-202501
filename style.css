@@ -34,10 +34,10 @@ body {
     margin: 0 auto; /* 가운데 정렬 */
     padding: 0 20px; /* 좌우 여백 */
     display: flex; /* 가로로 나란히 배치 */
-    align-items: center; /* 세로 가운데로 배치 */
+    align-items: center; /* 중앙 정렬로 복원하여 깔끔한 균형 */
     justify-content: center; /* 가운데 정렬로 변경 */
     gap: 40px; /* 간격을 더 늘려서 로고와 브랜드명 사이 여유 확보 */
-    min-height: 85px; /* 최소 높이를 늘려서 더 여유로운 헤더 */
+    min-height: 100px; /* 브랜드명이 아래로 내려간 만큼 높이 증가 */
 }
 
 /* 로고 이미지 설정 */
@@ -50,7 +50,6 @@ body {
     height: 85px; /* 로고 높이를 더 크게 변경 */
     width: auto; /* 너비는 자동으로 조정 */
     vertical-align: middle; /* 수직 정렬 명시적 설정 */
-    display: block; /* 블록 요소로 설정하여 정확한 정렬 */
 }
 
 .logo a:hover {
@@ -63,7 +62,7 @@ body {
     align-items: center; /* 세로 가운데 정렬 */
     justify-content: center; /* 가로 가운데 정렬 */
     height: auto; /* 높이를 자동으로 변경하여 정확한 정렬 */
-    padding: 0 15px; /* 좌우 여백을 늘려서 더 여유롭게 */
+    padding: 15px 15px 0 15px; /* 상단 패딩 추가하여 아래로 이동 */
 }
 
 /* 브랜드 이름 링크 설정 */
@@ -84,11 +83,11 @@ body {
     color: #2B5797; /* 로고와 동일한 파란색 계열 */
     text-align: center; /* 가운데 정렬 */
     margin: 0; /* 기본 margin 제거하여 로고와 수직 정렬 맞춤 */
-    padding: 0; /* 기본 padding 제거 */
+    padding: 0; /* 패딩 제거하여 깔끔하게 */
     line-height: 1.1; /* 줄 간격을 줄여서 정확한 정렬 */
     transition: color 0.3s ease; /* 색상 변화 효과 */
     letter-spacing: 0.5px; /* 글자 간격 추가로 더 세련된 느낌 */
-    vertical-align: middle; /* 수직 정렬 명시적 설정 */
+    vertical-align: middle; /* 중앙 정렬로 복원하여 깔끔한 균형 */
 }
 
 .brand-name a:hover h1 {
@@ -657,7 +656,7 @@ body {
     .logo {
         grid-column: 1; /* 첫 번째 열 */
         grid-row: 1; /* 첫 번째 행 */
-        align-self: center; /* 개별 그리드 아이템 가운데 정렬 */
+        align-self: center; /* 개별 그리드 아이템 중앙 정렬로 복원 */
     }
     
     .brand-name {
@@ -665,8 +664,9 @@ body {
         grid-row: 1; /* 첫 번째 행 */
         height: auto; /* 태블릿에서는 높이 자동 조정 */
         justify-content: center; /* 가운데 정렬 */
-        align-self: center; /* 개별 그리드 아이템 가운데 정렬 */
+        align-self: center; /* 개별 그리드 아이템 중앙 정렬로 복원 */
         margin: 0;
+        padding-top: 12px; /* 태블릿에서도 상단 패딩 추가 */
     }
     
     /* 두 번째 줄 배치 */
@@ -679,10 +679,11 @@ body {
         font-size: 24px; /* 글자 크기를 조금 더 크게 */
         text-align: center;
         margin: 0;
+        padding: 0; /* 패딩 제거하여 깔끔하게 */
         line-height: 1.1; /* 줄 간격을 줄여서 정확한 정렬 */
         color: #2B5797; /* 로고와 동일한 파란색 계열 */
         letter-spacing: 0.3px; /* 글자 간격 추가 */
-        vertical-align: middle; /* 수직 정렬 명시적 설정 */
+        vertical-align: middle; /* 중앙 정렬로 복원하여 깔끔한 균형 */
     }
     
     /* 태블릿 네비게이션 메뉴 */
@@ -915,14 +916,14 @@ body {
     .logo {
         grid-column: 1; /* 첫 번째 열 */
         grid-row: 1; /* 첫 번째 행 */
-        align-self: center; /* 개별 그리드 아이템 가운데 정렬 */
+        align-self: center; /* 개별 그리드 아이템 중앙 정렬로 복원 */
     }
     
     .brand-name {
         grid-column: 2; /* 두 번째 열 */
         grid-row: 1; /* 첫 번째 행 */
         justify-content: center; /* 가운데 정렬 */
-        align-self: center; /* 개별 그리드 아이템 가운데 정렬 */
+        align-self: center; /* 개별 그리드 아이템 중앙 정렬로 복원 */
     }
     
     /* 두 번째 줄 배치 */
@@ -938,16 +939,18 @@ body {
     .brand-name {
         height: auto;
         margin: 0;
+        padding-top: 10px; /* 모바일에서도 상단 패딩 추가 (작은 화면이므로 더 작게) */
     }
     
     .brand-name h1 {
         font-size: 18px; /* 글자 크기를 더 크게 */
         text-align: center;
         margin: 0;
+        padding: 0; /* 패딩 제거하여 깔끔하게 */
         line-height: 1.1; /* 줄 간격을 줄여서 정확한 정렬 */
         color: #2B5797; /* 로고와 동일한 파란색 계열 */
         letter-spacing: 0.2px; /* 글자 간격 추가 */
-        vertical-align: middle; /* 수직 정렬 명시적 설정 */
+        vertical-align: middle; /* 중앙 정렬로 복원하여 깔끔한 균형 */
     }
     
 
